@@ -1,0 +1,395 @@
+/* ==========================================================================
+   The Forbidden World — compiled CSS
+   Compiled by hand from /scss/*.scss (see README.md to regenerate this
+   properly once you have Sass installed).
+   ========================================================================== */
+
+/* --- base ---------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0a0a09;
+  color: #efe6d8;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3,
+.title,
+.section-title {
+  font-family: 'Grenze Gotisch', serif;
+  font-weight: 500;
+  margin: 0;
+}
+
+button,
+.btn {
+  font-family: 'Roboto', sans-serif;
+}
+
+.placeholder {
+  color: #a89f90;
+  font-style: normal;
+}
+.placeholder::before {
+  content: "???";
+}
+
+/* --- buttons --------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border: 1px solid #a8842a;
+  border-radius: 0;
+  color: #d9a927;
+  background: transparent;
+  cursor: pointer;
+}
+.btn--wide {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.btn--crescent {
+  border-color: #8a2536;
+  color: #b23148;
+}
+
+/* --- header / nav ----------------------------------------------------------- */
+.page {
+  width: 360px;
+  margin: 0 auto;
+  background: #121110;
+  min-height: 100vh;
+}
+@media (min-width: 768px) {
+  .page {
+    margin: 0 0 0 360px;
+  }
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 52px;
+  padding: 0 14px;
+  border-bottom: 1px solid #2c2a26;
+  background: #0a0a09;
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+}
+@media (min-width: 768px) {
+  .site-header {
+    display: none;
+  }
+}
+
+.burger {
+  width: 22px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+.burger span {
+  display: block;
+  height: 2px;
+  background: #efe6d8;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Grenze Gotisch', serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #efe6d8;
+}
+.wordmark svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #d9a927;
+}
+
+.nav-panel {
+  display: none;
+  background: #1a1917;
+  border-bottom: 1px solid #2c2a26;
+}
+.nav-panel.is-open {
+  display: block;
+}
+@media (min-width: 768px) {
+  .nav-panel {
+    display: none !important;
+  }
+}
+
+.nav-panel__list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.nav-panel__link {
+  display: block;
+  padding: 12px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid #2c2a26;
+}
+.nav-panel__link:last-child {
+  border-bottom: none;
+}
+.nav-panel__link.is-active {
+  color: #d9a927;
+}
+
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #0a0a09;
+    border-right: 1px solid #2c2a26;
+    padding: 18px 14px;
+  }
+}
+
+.sidebar .wordmark {
+  font-size: 17px;
+  margin-bottom: 24px;
+}
+.sidebar .wordmark svg {
+  width: 26px;
+  height: 26px;
+}
+
+.sidebar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar__link {
+  display: block;
+  padding: 10px 0;
+  font-size: 13px;
+  border-bottom: 1px solid #2c2a26;
+  color: #a89f90;
+}
+.sidebar__link.is-active {
+  color: #d9a927;
+}
+
+/* --- footer ------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid #2c2a26;
+  padding: 18px 14px 24px;
+  text-align: center;
+}
+
+.site-footer__credit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.site-footer__credit .placeholder {
+  width: 28px;
+  height: 28px;
+  border: 1px dashed #2c2a26;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+}
+.site-footer__credit p {
+  margin: 0;
+  font-size: 12px;
+  color: #efe6d8;
+}
+
+.site-footer__line {
+  margin: 2px 0;
+  font-size: 11px;
+  color: #a89f90;
+}
+
+/* --- home page ------------------------------------------------------------ */
+.hero {
+  border-bottom: 1px solid #2c2a26;
+}
+
+.hero-image {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: #1a1917;
+  border-bottom: 1px solid #2c2a26;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Grenze Gotisch', serif;
+  font-size: 28px;
+}
+
+.hero-body {
+  padding: 16px 14px 18px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  color: #d9a927;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 6px;
+}
+
+.hero-title {
+  font-size: 26px;
+  margin: 0 0 8px;
+  line-height: 1.1;
+}
+
+.hero-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #a89f90;
+  margin: 0 0 14px;
+}
+
+.world {
+  padding: 20px 14px;
+  border-bottom: 1px solid #2c2a26;
+}
+.world p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #a89f90;
+  margin: 0 0 14px;
+}
+
+.quicklinks {
+  padding: 18px 14px;
+  border-bottom: 1px solid #2c2a26;
+}
+.quicklinks .section-title {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.link-card {
+  display: block;
+  border: 1px solid #2c2a26;
+  background: #1a1917;
+  padding: 14px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #efe6d8;
+  text-align: center;
+}
+
+.campaigns {
+  padding: 18px 14px 26px;
+}
+.campaigns .section-title {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.campaign-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 14px;
+  background: #1a1917;
+  border: 1px solid #2c2a26;
+  border-left: 3px solid #d9a927;
+  margin-bottom: 10px;
+}
+.campaign-bar--crescent {
+  border-left-color: #b23148;
+}
+.campaign-bar--crescent .name {
+  color: #b23148;
+}
+.campaign-bar .info {
+  min-width: 0;
+}
+.campaign-bar .name {
+  font-family: 'Grenze Gotisch', serif;
+  font-size: 16px;
+  margin: 0 0 3px;
+  color: #d9a927;
+}
+.campaign-bar .mystery {
+  font-size: 12px;
+  color: #a89f90;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.campaign-bar .arrow {
+  font-size: 16px;
+  color: #a89f90;
+  flex-shrink: 0;
+}
+
+.placeholder-page {
+  padding: 40px 14px;
+  text-align: center;
+  color: #a89f90;
+  font-size: 13px;
+}

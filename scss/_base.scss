@@ -1,0 +1,58 @@
+// ==========================================================================
+// Base — resets, typography, global rules
+// ==========================================================================
+@use 'variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $color-black;
+  color: $color-offwhite;
+  font-family: $font-body;
+  min-height: 100vh;
+  // Safe-area padding for notched/rounded-corner phones.
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Grenze Gotisch — titles only. Never apply this class to buttons.
+h1, h2, h3,
+.title,
+.section-title {
+  font-family: $font-title;
+  font-weight: 500;
+  margin: 0;
+}
+
+button,
+.btn {
+  font-family: $font-body; // buttons NEVER use the title font
+}
+
+// Any card field that hasn't been filled in yet (missing image/text)
+// shows this placeholder instead of breaking the layout.
+.placeholder {
+  color: $color-offwhite-dim;
+  font-style: normal;
+}
+.placeholder::before {
+  content: "???";
+}

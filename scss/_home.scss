@@ -1,0 +1,152 @@
+// ==========================================================================
+// Home page sections
+// ==========================================================================
+@use 'variables' as *;
+
+.hero {
+  border-bottom: 1px solid $color-border;
+}
+
+.hero-image {
+  // 16:9 — the agreed aspect ratio for hero/news photos and card cover
+  // images across the site. object-fit keeps off-ratio phone photos
+  // from stretching once real images replace the placeholder.
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: $color-bg-surface;
+  border-bottom: 1px solid $color-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-title;
+  font-size: 28px;
+}
+
+.hero-body {
+  padding: 16px 14px 18px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  color: $color-openeyes;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 6px;
+}
+
+.hero-title {
+  font-size: 26px;
+  margin: 0 0 8px;
+  line-height: 1.1;
+}
+
+.hero-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: $color-offwhite-dim;
+  margin: 0 0 14px;
+}
+
+.world {
+  padding: 20px 14px;
+  border-bottom: 1px solid $color-border;
+
+  p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: $color-offwhite-dim;
+    margin: 0 0 14px;
+  }
+}
+
+.quicklinks {
+  padding: 18px 14px;
+  border-bottom: 1px solid $color-border;
+
+  .section-title {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.link-card {
+  display: block;
+  border: 1px solid $color-border;
+  background: $color-bg-surface;
+  padding: 14px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: $color-offwhite;
+  text-align: center;
+}
+
+.campaigns {
+  padding: 18px 14px 26px;
+
+  .section-title {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+}
+
+.campaign-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 14px;
+  background: $color-bg-surface;
+  border: 1px solid $color-border;
+  border-left: 3px solid $color-openeyes;
+  margin-bottom: 10px;
+
+  &--crescent {
+    border-left-color: $color-crescent;
+
+    .name {
+      color: $color-crescent;
+    }
+  }
+
+  .info {
+    min-width: 0;
+  }
+
+  .name {
+    font-family: $font-title;
+    font-size: 16px;
+    margin: 0 0 3px;
+    color: $color-openeyes;
+  }
+
+  .mystery {
+    font-size: 12px;
+    color: $color-offwhite-dim;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .arrow {
+    font-size: 16px;
+    color: $color-offwhite-dim;
+    flex-shrink: 0;
+  }
+}
+
+// Generic "not built yet" state for stub pages during early phases.
+.placeholder-page {
+  padding: 40px 14px;
+  text-align: center;
+  color: $color-offwhite-dim;
+  font-size: 13px;
+}

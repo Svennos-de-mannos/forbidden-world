@@ -1,0 +1,39 @@
+// ==========================================================================
+// Variables — The Forbidden World
+// ==========================================================================
+
+// --- Base (standard, used everywhere) ---------------------------------
+$color-black:        #0a0a09;
+$color-bg-panel:     #121110;
+$color-bg-surface:   #1a1917;
+$color-border:       #2c2a26;
+$color-gray:         #4a463f;
+$color-offwhite:     #efe6d8; // warm off-white — main text color
+$color-offwhite-dim: #a89f90; // secondary/muted text
+
+// --- Accent: Open Eyes campaign ----------------------------------------
+$color-openeyes:        #d9a927; // main
+$color-openeyes-alt:    #a8842a; // secondary/darker variation
+
+// --- Accent: Crescent Hills campaign ------------------------------------
+$color-crescent:        #b23148; // main
+$color-crescent-alt:    #8a2536; // secondary/darker variation
+
+// --- Fonts ---------------------------------------------------------------
+// Grenze Gotisch: titles ONLY — list category titles, in-card titles.
+// Never used for buttons.
+$font-title: 'Grenze Gotisch', serif;
+// Roboto: everything else, including buttons.
+$font-body: 'Roboto', sans-serif;
+
+// --- Layout ----------------------------------------------------------------
+// The content column always stays at mobile width, even on desktop.
+// On desktop the nav becomes a sidebar placed next to this column
+// instead of stretching the layout wider.
+$content-width: 360px;
+$header-height: 52px;
+$breakpoint-desktop: 768px;
+
+// --- Misc ------------------------------------------------------------------
+// No rounded corners anywhere in this project — sharp edges only.
+$radius: 0;
