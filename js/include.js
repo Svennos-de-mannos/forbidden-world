@@ -40,7 +40,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   await Promise.all([
     loadPartial('partials/header.html', '[data-include="header"]'),
     loadPartial('partials/footer.html', '[data-include="footer"]'),
+    loadPartial('partials/popup-campaign.html', '[data-include="popup-campaign"]'),
   ]);
   buildNavLists();
   initHamburger();
+  if (typeof initPopup === 'function') initPopup();
 });
