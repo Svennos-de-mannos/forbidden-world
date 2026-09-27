@@ -172,14 +172,8 @@
   gap: 6px;
   margin-bottom: 10px;
 
-  .placeholder {
-    width: 28px;
-    height: 28px;
-    border: 1px dashed $color-border;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 9px;
+.footer-logo {
+    height: 32px;
   }
 
   p {
