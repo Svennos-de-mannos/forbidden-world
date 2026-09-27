@@ -1,0 +1,32 @@
+[
+  {
+    "id": "npc-silas-ravencroft",
+    "kind": "npc",
+    "campaign": ["crescenthills"],
+    "name": "Silas Ravencroft",
+    "role": "Count (dead)",
+    "race": "Human",
+    "class": "",
+    "age": "",
+    "aliveStatus": "dead",
+    "residence": "Crescent Keep (ruins)",
+    "color": "#b23148",
+    "image": "",
+    "text": "The first Count of Crescent Hills, used his own castle, Crescent Keep, as an asylum for the mentally unwell. Years later, after a visit from the king, the asylum burned down with everyone inside, including the count."
+  },
+  {
+    "id": "player-example",
+    "kind": "player",
+    "campaign": ["openeyes", "crescenthills"],
+    "name": "",
+    "role": "Player character",
+    "race": "",
+    "class": "",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "",
+    "color": "#d9a927",
+    "image": "",
+    "text": ""
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "oldetowne",
+    "campaign": "crescenthills",
+    "title": "Olde Towne",
+    "parent": "self",
+    "color": "#b23148",
+    "text": "The historical center of the city, and the oldest part of town. These streets hold the most gothic buildings, and are said to be haunted at times."
+  },
+  {
+    "id": "graveseal-library",
+    "campaign": "crescenthills",
+    "title": "The Graveseal Library",
+    "parent": "oldetowne",
+    "color": "#b23148",
+    "text": "Part of the country-wide Graveseal Library organization. Crescent Hills' branch is located in the same building it started out in, and specialises in magical knowledge."
+  }
+]

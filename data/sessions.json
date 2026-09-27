@@ -1,0 +1,22 @@
+[
+  {
+    "id": "session-cresthills-01",
+    "campaign": "crescenthills",
+    "oneShot": false,
+    "sessionNumber": "1",
+    "title": "",
+    "coverImage": "",
+    "text": "",
+    "players": []
+  },
+  {
+    "id": "oneshot-01",
+    "campaign": null,
+    "oneShot": true,
+    "sessionNumber": "",
+    "title": "",
+    "coverImage": "",
+    "text": "",
+    "players": []
+  }
+]

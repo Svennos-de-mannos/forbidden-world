@@ -1,0 +1,22 @@
+[
+  {
+    "id": "quest-01",
+    "type": "quest",
+    "campaign": ["crescenthills"],
+    "title": "The Burning of Carsteen Street",
+    "status": "ongoing",
+    "color": "#b23148",
+    "description": "Find out who really torched Carsteen Street three months ago.",
+    "text": "The City Guard blamed the People's Church of the Perfect Body for trafficking illegal goods in their Chappell, but no proof was ever shown, and the church denies it. The street is still closed off and unrebuilt."
+  },
+  {
+    "id": "mystery-01",
+    "type": "mystery",
+    "campaign": ["openeyes", "crescenthills"],
+    "title": "The Watching Eyes",
+    "status": "ongoing",
+    "color": "#d9a927",
+    "description": "Something is watching from between the walls in both cities.",
+    "text": ""
+  }
+]

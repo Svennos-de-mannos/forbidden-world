@@ -1,0 +1,18 @@
+[
+  {
+    "id": "anchor-corp",
+    "campaign": ["crescenthills"],
+    "title": "Anchor Corporation",
+    "image": "",
+    "color": "#7a8a94",
+    "text": "A powerhouse in the overseas shipping industry, owning most of the harbour district. Run by Lord Addelard Nelson, an Illithid who keeps the business on schedule through a hivemind of hired mindflayer security."
+  },
+  {
+    "id": "volcron-industries",
+    "campaign": ["crescenthills"],
+    "title": "Volcron Industries",
+    "image": "",
+    "color": "#d94f8f",
+    "text": "Built an empire on architecture and magical machinery. Now a central location for factories and assembly lines, run by the feared Baron Maximilian Faust."
+  }
+]
