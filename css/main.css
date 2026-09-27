@@ -340,14 +340,8 @@ button,
   padding: 14px 14px;
   background: #1a1917;
   border: 1px solid #2c2a26;
-  border-left: 3px solid #d9a927;
+  border-left: 3px solid var(--accent, #d9a927);
   margin-bottom: 10px;
-}
-.campaign-bar--crescent {
-  border-left-color: #b23148;
-}
-.campaign-bar--crescent .name {
-  color: #b23148;
 }
 .campaign-bar .info {
   min-width: 0;
@@ -356,7 +350,7 @@ button,
   font-family: "Grenze Gotisch", serif;
   font-size: 16px;
   margin: 0 0 3px;
-  color: #d9a927;
+  color: var(--accent, #d9a927);
 }
 .campaign-bar .mystery {
   font-size: 12px;

@@ -105,16 +105,8 @@
   padding: 14px 14px;
   background: $color-bg-surface;
   border: 1px solid $color-border;
-  border-left: 3px solid $color-openeyes;
+  border-left: 3px solid var(--accent, #{$color-openeyes});
   margin-bottom: 10px;
-
-  &--crescent {
-    border-left-color: $color-crescent;
-
-    .name {
-      color: $color-crescent;
-    }
-  }
 
   .info {
     min-width: 0;
@@ -124,7 +116,7 @@
     font-family: $font-title;
     font-size: 16px;
     margin: 0 0 3px;
-    color: $color-openeyes;
+    color: var(--accent, #{$color-openeyes});
   }
 
   .mystery {
@@ -142,7 +134,6 @@
     flex-shrink: 0;
   }
 }
-
 // Generic "not built yet" state for stub pages during early phases.
 .placeholder-page {
   padding: 40px 14px;
