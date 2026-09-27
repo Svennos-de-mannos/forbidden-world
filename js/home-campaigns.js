@@ -1,7 +1,6 @@
-// Renders the "Campaigns" section on the home page from data/campaigns.json.
-// This is the first real proof that the registry pattern works end to
-// end: add a campaign to the JSON and it appears here with zero code
-// changes.
+// Renders the "Campaigns" section on the home page from data/campaigns.json,
+// and opens the shared popup (filled via popup-campaign.js) when a bar
+// is clicked — instead of navigating to campaigns.html.
 
 async function renderHomeCampaigns() {
   const list = document.getElementById('campaignsList');
@@ -9,15 +8,21 @@ async function renderHomeCampaigns() {
 
   const campaigns = await loadCards('data/campaigns.json');
 
-  list.innerHTML = campaigns.map((c) => `
-    <a class="campaign-bar" href="campaigns.html" style="--accent: ${c.colorMain}">
+  campaigns.forEach((c) => {
+    const bar = document.createElement('button');
+    bar.type = 'button';
+    bar.className = 'campaign-bar';
+    bar.style.setProperty('--accent', c.colorMain);
+    bar.innerHTML = `
       <div class="info">
         <p class="name">${c.title}</p>
         <p class="mystery${c.mainMystery ? '' : ' placeholder'}">${c.mainMystery || ''}</p>
       </div>
       <div class="arrow">&rsaquo;</div>
-    </a>
-  `).join('');
+    `;
+    bar.addEventListener('click', () => fillCampaignPopup(c));
+    list.appendChild(bar);
+  });
 }
 
 document.addEventListener('DOMContentLoaded', renderHomeCampaigns);

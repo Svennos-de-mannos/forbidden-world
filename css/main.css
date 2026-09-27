@@ -337,11 +337,16 @@ button,
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  width: 100%;
   padding: 14px 14px;
   background: #1a1917;
   border: 1px solid #2c2a26;
   border-left: 3px solid var(--accent, #d9a927);
   margin-bottom: 10px;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
 }
 .campaign-bar .info {
   min-width: 0;
@@ -416,18 +421,15 @@ button,
   aspect-ratio: 16/9;
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
   background: #121110;
+  background-size: cover;
+  background-position: center;
   border-bottom: 1px solid #2c2a26;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Grenze Gotisch", serif;
   font-size: 28px;
-}
-.popup-image:not(.placeholder) {
-  display: block;
 }
 
 .popup-body {

@@ -102,11 +102,16 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  width: 100%;
   padding: 14px 14px;
   background: $color-bg-surface;
   border: 1px solid $color-border;
   border-left: 3px solid var(--accent, #{$color-openeyes});
   margin-bottom: 10px;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
 
   .info {
     min-width: 0;
@@ -134,6 +139,7 @@
     flex-shrink: 0;
   }
 }
+
 // Generic "not built yet" state for stub pages during early phases.
 .placeholder-page {
   padding: 40px 14px;
