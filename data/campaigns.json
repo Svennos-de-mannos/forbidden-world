@@ -1,0 +1,23 @@
+[
+  {
+    "id": "openeyes",
+    "title": "Open Eyes",
+    "colorMain": "#d9a927",
+    "colorSecondary": "#a8842a",
+    "image": "",
+    "description": "Eagle's Hope is frozen in time. Its secret underground has opened.",
+    "mainMystery": "Why did the city freeze in time, and what is in the Underground Castle?",
+    "text": "On September 3rd, at midnight, the clock tower of Eagle's Hope fell, and the city froze in time. The ground below it broke open, revealing a large castle under it. The city has been sealed off by the Order of the Black Cloak, and anomalous individuals are sent into the city and down into the castle ravines to explore, document, and find a way to counter the temporal effect."
+  },
+  {
+    "id": "crescenthills",
+    "title": "Crescent Hills",
+    "colorMain": "#C42847",
+    "colorSecondary": "#DE3C4B",
+    "image": "",
+    "description": "The end of the world will start in the city of debauchery and crime, all in the name of its five factions.",
+    "mainMystery": "How will the world end?",
+    "text": "The cults in Crescent Hills and the surrounding area are more active than ever. They seem to be in a hurry to accomplish their goals before the end of the world comes. No one knows the whole story, but one thing is clear: the city's destruction is coming. This is especially bad because it seems like the city won't let you leave."
+  }
+]
+
