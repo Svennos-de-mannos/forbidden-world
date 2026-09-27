@@ -1,10 +1,3 @@
-/* ==========================================================================
-   The Forbidden World — compiled CSS
-   Compiled by hand from /scss/*.scss (see README.md to regenerate this
-   properly once you have Sass installed).
-   ========================================================================== */
-
-/* --- base ---------------------------------------------------------------- */
 * {
   box-sizing: border-box;
 }
@@ -18,7 +11,7 @@ body {
 body {
   background: #0a0a09;
   color: #efe6d8;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   min-height: 100vh;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -37,25 +30,25 @@ a {
 h1, h2, h3,
 .title,
 .section-title {
-  font-family: 'Grenze Gotisch', serif;
+  font-family: "Grenze Gotisch", serif;
   font-weight: 500;
   margin: 0;
 }
 
 button,
 .btn {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .placeholder {
   color: #a89f90;
   font-style: normal;
 }
+
 .placeholder::before {
   content: "???";
 }
 
-/* --- buttons --------------------------------------------------------------- */
 .btn {
   display: inline-block;
   font-size: 12px;
@@ -79,7 +72,6 @@ button,
   color: #b23148;
 }
 
-/* --- header / nav ----------------------------------------------------------- */
 .page {
   width: 360px;
   margin: 0 auto;
@@ -131,7 +123,7 @@ button,
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Grenze Gotisch', serif;
+  font-family: "Grenze Gotisch", serif;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -223,7 +215,6 @@ button,
   color: #d9a927;
 }
 
-/* --- footer ------------------------------------------------------------- */
 .site-footer {
   border-top: 1px solid #2c2a26;
   padding: 18px 14px 24px;
@@ -237,14 +228,8 @@ button,
   gap: 6px;
   margin-bottom: 10px;
 }
-.site-footer__credit .placeholder {
-  width: 28px;
-  height: 28px;
-  border: 1px dashed #2c2a26;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 9px;
+.site-footer__credit .footer-logo {
+  height: 32px;
 }
 .site-footer__credit p {
   margin: 0;
@@ -258,22 +243,22 @@ button,
   color: #a89f90;
 }
 
-/* --- home page ------------------------------------------------------------ */
 .hero {
   border-bottom: 1px solid #2c2a26;
 }
 
 .hero-image {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16/9;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   background: #1a1917;
   border-bottom: 1px solid #2c2a26;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Grenze Gotisch', serif;
+  font-family: "Grenze Gotisch", serif;
   font-size: 28px;
 }
 
@@ -368,7 +353,7 @@ button,
   min-width: 0;
 }
 .campaign-bar .name {
-  font-family: 'Grenze Gotisch', serif;
+  font-family: "Grenze Gotisch", serif;
   font-size: 16px;
   margin: 0 0 3px;
   color: #d9a927;
@@ -392,4 +377,4 @@ button,
   text-align: center;
   color: #a89f90;
   font-size: 13px;
-}
+}/*# sourceMappingURL=main.css.map */
