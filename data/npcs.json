@@ -1,32 +1,308 @@
 [
   {
+    "id": "player-bonkus",
+    "kind": "player",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Bonkus",
+    "role": "Ex Strongman",
+    "race": "Fire Goliath",
+    "class": "Barbarian",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "Grey red",
+    "image": "",
+    "text": "Bonkus once dwelled the circus grounds of Laughingmen entertainment, but a traumatic event led him to leave the grounds. Now he lives in the swamp area, and sometimes has a chat with fellow misfit Lou Baba"
+  },
+  {
+    "id": "player-lou-baba",
+    "kind": "player",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Lou Baba",
+    "role": "The Drugdealer",
+    "race": "Dwarf",
+    "class": "Bard",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "Leathery brown",
+    "image": "",
+    "text": "Lou Baba was too tall for his dwarf tribe, and too short for normal society. When he applied to the circus as a musician, he was only offered a freak role. Out of principle, he declined, and now lives as musician and drugdealer in the swamp district. He sometimes talks to Bonkus, and deals drugs to Frenzy"
+  },
+  {
+    "id": "player-frenzy",
+    "kind": "player",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Frenzy",
+    "role": "The crackfairy",
+    "race": "Fairy",
+    "class": "Cleric",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "pink",
+    "image": "",
+    "text": "Frenzy and Avani once worked for the same fey in the feywild, when a job gone wrong got them banished to the material plane. Both fey blame each other, but still live in the same city they arrived in. Frenzy has a fancy for drugs, and buys from Lou Baba"
+  },
+  {
+    "id": "player-avani",
+    "kind": "player",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Avani",
+    "role": "The bourgeoisie fairy",
+    "race": "Fairy",
+    "class": "Druid",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "Mintgreen",
+    "image": "",
+    "text": "Avani and Frenzy both blame each other for their banishment to Crescent Hills. She used to live in the feywild, but now she lives in the farmlands of the rich folk of the city. Recently she has noticed the large amount of rot in the farmfields, and wants to find out where it comes from."
+  },
+  {
+    "id": "player-adalin-darkfeather",
+    "kind": "player",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Adalin Darkfeather",
+    "role": "",
+    "race": "Kenku",
+    "class": "Ranger",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "Dark Purple",
+    "image": "",
+    "text": "Character still in progress"
+  },
+  {
     "id": "npc-silas-ravencroft",
     "kind": "npc",
-    "campaign": ["crescenthills"],
+    "campaign": [
+      "crescenthills"
+    ],
     "name": "Silas Ravencroft",
-    "role": "Count (dead)",
+    "role": "Count of Crescent Hills",
     "race": "Human",
     "class": "",
     "age": "",
     "aliveStatus": "dead",
     "residence": "Crescent Keep (ruins)",
-    "color": "#b23148",
+    "color": "Darkred",
     "image": "",
-    "text": "The first Count of Crescent Hills, used his own castle, Crescent Keep, as an asylum for the mentally unwell. Years later, after a visit from the king, the asylum burned down with everyone inside, including the count."
+    "text": "Silas Ravenscroft, the first Count of Crescent Hills, used his own Castle, Crescent Keep, as an asylum for the mentally unwell. Years later, after a visit from the at the time king, the asylum burned down with everyone inside, including the count."
   },
   {
-    "id": "player-example",
-    "kind": "player",
-    "campaign": ["openeyes", "crescenthills"],
-    "name": "",
-    "role": "Player character",
-    "race": "",
+    "id": "npc-robbert-blackwood",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Robbert Blackwood",
+    "role": "Watchmaster of Crescent Hills",
+    "race": "Human",
+    "class": "",
+    "age": "42",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "orange red",
+    "image": "",
+    "text": "Robert Blackwood is the charismatic head of the city watch, and reasonably wealthy. People are not sure of the man is very naive, working for someone, or has a plan of his own. But he sure as hell doesn't look after the city."
+  },
+  {
+    "id": "npc-addelard-nelson",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Addelard Nelson",
+    "role": "Lord in the Anchor Corporation",
+    "race": "Illithid/Mindflayer",
+    "class": "",
+    "age": "389",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "grey Blue",
+    "image": "",
+    "text": "Lord Nelson is a mindflayer, and uses this to communicate with a small security force of mind flayers inside of Harbour district. He works for the large global Anchor Corporation, and is focused on the company's goals."
+  },
+  {
+    "id": "npc-felix-lionheart",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Felix Lionheart",
+    "role": "Lighthouse Keeper",
+    "race": "Elf",
     "class": "",
     "age": "",
     "aliveStatus": "alive",
-    "residence": "",
-    "color": "#d9a927",
+    "residence": "Crescent Hills",
+    "color": "purplish grey",
     "image": "",
-    "text": ""
+    "text": "Felix Lionheart is a charming recluse and something of a lady killer. He oversees the lighthouse every night, though he is almost never alone while doing so. Despite his charming nature, there is something about Felix that seems to make all Mindflayers working for the Anchor Corporation avoid him."
+  },
+  {
+    "id": "npc-maximilian-faust",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Maximilian Faust",
+    "role": "Baron of Volcron Industries",
+    "race": "Tiefling",
+    "class": "",
+    "age": "68",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "Brown",
+    "image": "",
+    "text": "Baron Faust despises the factories he owns, and the workers fear whenever he enters their district. To them, he is their god, controlling their pay, housing, and very livelihoods. He is a cruel man, focused almost entirely on quotas and efficiency."
+  },
+  {
+    "id": "npc-arthur-marrow",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Arthur Marrow",
+    "role": "Head Priest of the Perfect Body",
+    "race": "Human",
+    "class": "",
+    "age": "35",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "Salmon",
+    "image": "",
+    "text": "Father Marrow is the head priest of the People's Church of the Perfect Body. Normally a calm and composed man, he transforms into a passionate preacher of pure belief whenever he delivers his sermons."
+  },
+  {
+    "id": "npc-mikah-crowe",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Mikah Crowe",
+    "role": "Head of House Crowe",
+    "race": "Human",
+    "class": "",
+    "age": "32",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "nearblack red",
+    "image": "",
+    "text": "Mikah Crowe is a mysterious man who dislikes people, public speaking, and attention. Despite this, the incredibly wealthy head of House Crowe is known to donate generously to libraries, museums, and orphanages throughout the city."
+  },
+  {
+    "id": "npc-julia-graveseal",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Julia Graveseal",
+    "role": "Librarian",
+    "race": "Elf",
+    "class": "",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "Green",
+    "image": "",
+    "text": "Julia Graveseal is the head librarian of the largest library in the city. She is a mysterious woman, not because she is shy, but because she is almost always busy archiving and organizing lore of an arcane and esoteric nature. She can often be found locked away in her office, surrounded by ancient knowledge."
+  },
+  {
+    "id": "npc-nikoleta-crowe",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Nikoleta Crowe",
+    "role": "Co-Owner of Laughingmen",
+    "race": "Human",
+    "class": "",
+    "age": "29",
+    "aliveStatus": "alive",
+    "residence": "Laughingmen Circus",
+    "color": "red",
+    "image": "",
+    "text": "Nikki Crowe was pronounced dead by her wealthy family, only to reappear years later in the city, married to Fierre Laughingman and running an entertainment organization. Despite her public life, her biological family continues to insist that she is dead."
+  },
+  {
+    "id": "npc-fierre-laughingman",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Fierre Laughingman",
+    "role": "Owner of Laughingmen",
+    "race": "Human",
+    "class": "",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Laughingmen Circus",
+    "color": "reddish grey",
+    "image": "",
+    "text": "Fierre Laughingman is a mysterious man whose past is almost entirely unknown. He appeared in the city alongside his wife, Nikki Crowe, and together they built a vast entertainment empire. Fierre is always smiling and seems to be an exceptionally happy man."
+  },
+  {
+    "id": "npc-jarred-amherst",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Jarred Amherst",
+    "role": "The Inspector",
+    "race": "Half Elf",
+    "class": "",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "Sickly green yellow",
+    "image": "",
+    "text": "The Inspector shows up, and everything goes wrong. Nobody knows what kind of inspector Jarred Amherst actually is, but wherever he goes, men have died and businesses have been destroyed. Whatever his purpose may be, everyone knows one thing: pray he does not introduce himself to you."
+  },
+  {
+    "id": "npc-ogura-bloodstone",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Ogura Bloodstone",
+    "role": "Knight of the Blue Rose",
+    "race": "Dark Elf",
+    "class": "",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "Dark blue",
+    "image": "",
+    "text": "Known as the Blue Hunter, Ogura Bloodstone is the head of the Blue Rose chapter in Crescent Hills. With a kill count most likely numbering in the thousands after his exceptionally long life, he is considered one of the most deadly people in the city. If you can afford his services, the job will get done."
+  },
+  {
+    "id": "npc-medio-gato",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Medio Gato",
+    "role": "Private Investigator",
+    "race": "Tabaxi",
+    "class": "",
+    "age": "29",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "light gray blue",
+    "image": "",
+    "text": "Medio Gato is one of the more important figures in Crescent Hills. A private investigator with knowledge of the coming end of the world, he seeks to help the party and their allies prevent it. Medio runs his own investigation office, which can serve as a home base for the party throughout their journey."
   }
 ]
