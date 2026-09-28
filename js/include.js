@@ -1,13 +1,16 @@
-// Loads shared HTML partials (header, footer) into every page, so the
-// nav/footer only need to be edited in one place. Requires the page to
-// be served over http(s) — fetch() of local files needs a dev server
-// (see README), it won't work opened directly via file://.
+// Loads shared HTML partials into every page, so the nav/footer/popups
+// only need to be edited in one place. Any element written as
+//   <div data-include="footer"></div>
+// is filled with partials/footer.html — so adding a new partial (a new
+// popup type, say) never requires touching this file.
+//
+// Requires the page to be served over http(s) — fetch() of local files
+// needs a dev server, it won't work opened directly via file://.
 
-async function loadPartial(url, targetSelector) {
-  const target = document.querySelector(targetSelector);
-  if (!target) return;
+async function loadPartial(url, target) {
   try {
     const res = await fetch(url);
+    if (!res.ok) throw new Error(`${url} responded ${res.status}`);
     target.innerHTML = await res.text();
   } catch (err) {
     console.error(`Could not load ${url}`, err);
@@ -37,11 +40,10 @@ function initHamburger() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  await Promise.all([
-    loadPartial('partials/header.html', '[data-include="header"]'),
-    loadPartial('partials/footer.html', '[data-include="footer"]'),
-    loadPartial('partials/popup-campaign.html', '[data-include="popup-campaign"]'),
-  ]);
+  const slots = document.querySelectorAll('[data-include]');
+  await Promise.all(
+    [...slots].map((slot) => loadPartial(`partials/${slot.dataset.include}.html`, slot))
+  );
   buildNavLists();
   initHamburger();
   if (typeof initPopup === 'function') initPopup();

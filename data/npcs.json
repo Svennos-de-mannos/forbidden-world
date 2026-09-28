@@ -304,5 +304,192 @@
     "color": "#9AAFC1",
     "image": "assets/images/characters/medio-gato.jpg",
     "text": "Medio Gato is one of the more important figures in Crescent Hills. A private investigator with knowledge of the coming end of the world, he seeks to help the party and their allies prevent it. Medio runs his own investigation office, which can serve as a home base for the party throughout their journey."
+  },
+  {
+    "id": "player-maxeridius",
+    "kind": "player",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Maxeridius",
+    "role": "Black Cloak Enforcer",
+    "race": "Human",
+    "class": "Paladin",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#4A2306",
+    "image": "assets/images/characters/Maxeridius.png",
+    "text": "Max is the cousin of Sigismund, and together with him works for the Order of the Black Cloak."
+  },
+  {
+    "id": "player-bippo",
+    "kind": "player",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Bippo",
+    "role": "The baby Hippo with big hammer",
+    "race": "Hippokin",
+    "class": "",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#F47330",
+    "image": "assets/images/characters/bippo.jpg",
+    "text": "Bippo the Baby Hippo. He doesn't remember a lot from his past, and is here for a big adventure!"
+  },
+  {
+    "id": "player-sigismund",
+    "kind": "player",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Sigismund",
+    "role": "Black Cloak Crusader",
+    "race": "Human",
+    "class": "paladin",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#d3d3d3",
+    "image": "assets/images/characters/sigismund.jpg",
+    "text": "Sigismund is the cousin of Max, and one of the crusaders in the Order of the Black Cloak."
+  },
+  {
+    "id": "player-ninos",
+    "kind": "player",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Ninos",
+    "role": "Unknown",
+    "race": "Changeling",
+    "class": "wizard",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#FF646D",
+    "image": "",
+    "text": "Rumours say that he can change into a lot of persona's but nobody really knows what his true face is like its an enigma"
+  },
+  {
+    "id": "player-alice",
+    "kind": "player",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Alice",
+    "role": "The Mentally disturbed one",
+    "race": "human",
+    "class": "warlock",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#67BB70",
+    "image": "assets/images/characters/alice.png",
+    "text": "Alice is often insulted as schizophrenic, for seeing a person called Hather who is not there. She also seems connected to the feywild, and to something else darker…"
+  },
+  {
+    "id": "player-jk",
+    "kind": "player",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "JK",
+    "role": "The weird one",
+    "race": "Human",
+    "class": "",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#ffffff",
+    "image": "assets/images/characters/jk.jpg",
+    "text": "JK is not his real name. His name and existence is a lot more real than one might think."
+  },
+  {
+    "id": "player-thalia-veil",
+    "kind": "player",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Thalia Veil",
+    "role": "The doctor",
+    "race": "Tiefling",
+    "class": "Cleric",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#EADCEA",
+    "image": "assets/images/characters/thalia-veil.png",
+    "text": "She is a doctor who became a tad bit disturbed after she lost a patient to something from beyond this realm."
+  },
+  {
+    "id": "npc-general-tzayad",
+    "kind": "npc",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "General Tzayad",
+    "role": "Representative of the order of The Black Cloaks",
+    "race": "Ash Elf",
+    "class": "Bloodhunter/paladin",
+    "age": "493",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#010924",
+    "image": "assets/images/characters/tzayad.jpg",
+    "text": "Tzayad was sent here shortly after Tower Fall, and is the general commanding officer of the Eagle's Hope Operation. He can not enter the zone himself."
+  },
+  {
+    "id": "npc-tyler-the-harp",
+    "kind": "npc",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Tyler the Harp",
+    "role": "Living Harp",
+    "race": "Fleshwarped",
+    "class": "none",
+    "age": "217",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#B1BE93",
+    "image": "assets/images/characters/tyler.png",
+    "text": "200 years ago, Tyler played for king Hameth as royal harpist. Before a rather large show, he broke his hand, and was sent to doctor Marrow to get his hand fixed. That is the last he remembers before becoming a harp, and playing for the pleasure of some sickly presence in the castle under eagle’s hope for 200 years. He was eventually rescued by the Explorers hired by the Black Cloak Order."
+  },
+  {
+    "id": "npc-the-ticketmen",
+    "kind": "npc",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "The ticketmen",
+    "role": "Ticket checkers at the chariot train",
+    "race": "Automaton",
+    "class": "Fighter",
+    "age": "250",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#BB4C0A",
+    "image": "assets/images/characters/ticketman.png",
+    "text": "These robots were found in the castle underneath Eagle’s Hope, guarding the black and white Chariot Trains. They appear to be fully clockwork, holding strange explosive weapons. They sell and check the tickets of passengers, and keep the order in the trains."
+  },
+  {
+    "id": "npc-jane-ursa",
+    "kind": "npc",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Jane Ursa",
+    "role": "Doctor/Scientist of magical zones",
+    "race": "Orc",
+    "class": "Artificer",
+    "age": "53",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#B1BE93",
+    "image": "assets/images/characters/jane-ursa.jpg",
+    "text": "Jane was hired to investigate the temporal effect in Eagle’s Hope. She dubbed this effect: the Sandwalker Effect."
   }
 ]

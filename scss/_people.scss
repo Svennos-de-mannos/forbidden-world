@@ -1,0 +1,182 @@
+// ==========================================================================
+// NPCs & Characters page: campaign dropdowns, person bars, NPC popup extras
+// ==========================================================================
+@use 'variables' as *;
+
+.people {
+  padding: 18px 14px 26px;
+}
+
+.page-title {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+
+// --- Dropdowns (<details>/<summary>) -----------------------------------------
+.group {
+  background: $color-bg-panel;
+  border: 1px solid $color-border;
+  border-left: 3px solid var(--accent, #{$color-gray});
+  margin-bottom: 12px;
+}
+
+.group__summary,
+.subgroup__summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  list-style: none;
+  font-family: $font-title; // list category titles use the gothic font
+  color: $color-offwhite;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::after {
+    content: '\203A';
+    font-family: $font-body;
+    color: $color-offwhite-dim;
+    transition: transform 0.15s;
+  }
+}
+
+details[open] > .group__summary::after,
+details[open] > .subgroup__summary::after {
+  transform: rotate(90deg);
+}
+
+.group__summary {
+  padding: 14px;
+  font-size: 19px;
+}
+
+.subgroup__summary {
+  padding: 10px 14px;
+  font-size: 16px;
+  border-top: 1px solid $color-border;
+}
+
+.group__title,
+.subgroup__title {
+  flex: 1;
+}
+
+.group__count,
+.subgroup__count {
+  font-family: $font-body;
+  font-size: 11px;
+  color: $color-offwhite-dim;
+}
+
+.group__body {
+  padding: 0;
+}
+
+.subgroup__body {
+  padding: 4px 10px 6px;
+}
+
+.group__empty {
+  margin: 6px 4px 10px;
+  font-size: 12px;
+  color: $color-offwhite-dim;
+}
+
+// --- Person bars ------------------------------------------------------------------
+.person-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: $color-bg-surface;
+  background: color-mix(in srgb, var(--accent, #{$color-gray}) 14%, #{$color-bg-surface});
+  border: 1px solid $color-border;
+  border-left: 3px solid var(--accent, #{$color-gray});
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+
+  // Dead and unknown ignore the card's own color and go gray.
+  &--dead {
+    --accent: #{$color-dead};
+  }
+
+  &--unknown {
+    --accent: #{$color-unknown};
+  }
+}
+
+.person-bar__main {
+  min-width: 0;
+}
+
+.person-bar__name {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 2px;
+  color: $color-offwhite;
+}
+
+.person-bar--dead .person-bar__name {
+  color: $color-offwhite-dim;
+}
+
+.person-bar__meta {
+  font-size: 11px;
+  color: $color-offwhite-dim;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.person-bar__status {
+  flex-shrink: 0;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $color-offwhite-dim;
+}
+
+// --- NPC popup extras (role line + facts grid) --------------------------------------
+// Names stay off-white so a very dark card color can't hide them;
+// the card's color still shows on the top border and the facts bar.
+.popup-title--plain {
+  color: $color-offwhite;
+}
+
+.popup-role {
+  font-size: 13px;
+  color: $color-offwhite;
+  margin: 0 0 14px;
+}
+
+.popup-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 14px;
+  margin: 0 0 16px;
+  padding: 12px;
+  background: $color-bg-panel;
+  border-left: 3px solid var(--accent, #{$color-gray});
+
+  dt {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $color-offwhite-dim;
+    margin: 0 0 2px;
+  }
+
+  dd {
+    font-size: 13px;
+    color: $color-offwhite;
+    margin: 0;
+  }
+}

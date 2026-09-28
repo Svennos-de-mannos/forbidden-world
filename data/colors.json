@@ -1,0 +1,74 @@
+{
+  "grey red": {
+    "main": "#a86f74",
+    "secondary": "#795054"
+  },
+  "leathery brown": {
+    "main": "#a98462",
+    "secondary": "#7a5f47"
+  },
+  "pink": {
+    "main": "#ec8fb8",
+    "secondary": "#aa6784"
+  },
+  "mintgreen": {
+    "main": "#86d6ae",
+    "secondary": "#609a7d"
+  },
+  "dark purple": {
+    "main": "#9569c9",
+    "secondary": "#6b4c91"
+  },
+  "darkred": {
+    "main": "#c2353d",
+    "secondary": "#8c262c"
+  },
+  "orange red": {
+    "main": "#e5643a",
+    "secondary": "#a5482a"
+  },
+  "grey blue": {
+    "main": "#7f97ad",
+    "secondary": "#5b6d7d"
+  },
+  "purplish grey": {
+    "main": "#9f92ae",
+    "secondary": "#72697d"
+  },
+  "brown": {
+    "main": "#b0703f",
+    "secondary": "#7f512d"
+  },
+  "salmon": {
+    "main": "#f28e7e",
+    "secondary": "#ae665b"
+  },
+  "nearblack red": {
+    "main": "#98313d",
+    "secondary": "#6d232c"
+  },
+  "green": {
+    "main": "#62b36e",
+    "secondary": "#47814f"
+  },
+  "red": {
+    "main": "#dc4653",
+    "secondary": "#9e323c"
+  },
+  "reddish grey": {
+    "main": "#a88a8c",
+    "secondary": "#796365"
+  },
+  "sickly green yellow": {
+    "main": "#b9c24a",
+    "secondary": "#858c35"
+  },
+  "dark blue": {
+    "main": "#5474c8",
+    "secondary": "#3c5490"
+  },
+  "light gray blue": {
+    "main": "#b0c2d0",
+    "secondary": "#7f8c96"
+  }
+}

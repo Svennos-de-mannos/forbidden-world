@@ -1,7 +1,10 @@
 // Generic popup show/hide engine. Type-specific files (e.g.
-// popup-campaign.js) provide their own "fill" function that writes a
-// card's data into the popup's fields, then call openPopup().
+// popup-campaign.js, popup-npc.js) provide their own "fill" function that
+// writes a card's data into the popup's fields, then call openPopup().
 // Only one popup exists per page — it's blanked and hidden again on close.
+//
+// To make a new popup blank itself correctly, give its extra text fields
+// a `data-field` attribute — everything marked that way is cleared on close.
 
 function openPopup() {
   const overlay = document.getElementById('popupOverlay');
@@ -23,11 +26,18 @@ function closePopup() {
   if (mystery) { mystery.textContent = ''; mystery.classList.remove('placeholder'); }
   if (text) { text.textContent = ''; text.classList.remove('placeholder'); }
   if (image) {
-    image.removeAttribute('src');
+    image.style.backgroundImage = '';
     image.classList.add('placeholder');
   }
+
   const popup = document.getElementById('popup');
-  if (popup) popup.style.removeProperty('--accent');
+  if (popup) {
+    popup.querySelectorAll('[data-field]').forEach((el) => {
+      el.textContent = '';
+      el.classList.remove('placeholder');
+    });
+    popup.style.removeProperty('--accent');
+  }
 }
 
 function initPopup() {
