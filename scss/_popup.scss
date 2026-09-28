@@ -58,6 +58,9 @@
   justify-content: center;
   font-family: $font-title;
   font-size: 28px;
+  &-square{
+    aspect-ratio: 1 / 1;
+  }
 }
 
 .popup-body {

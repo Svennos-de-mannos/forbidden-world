@@ -449,6 +449,9 @@ button,
   font-family: "Grenze Gotisch", serif;
   font-size: 28px;
 }
+.popup-image-square {
+  aspect-ratio: 1/1;
+}
 
 .popup-body {
   padding: 18px 16px 22px;
