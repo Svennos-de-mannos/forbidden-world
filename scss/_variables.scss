@@ -31,6 +31,8 @@ $font-body: 'Roboto', sans-serif;
 // On desktop the nav becomes a sidebar placed next to this column
 // instead of stretching the layout wider.
 $content-width: 360px;
+$sidebar-width: 360px;
+$layout-max-width: 1200px; // sidebar + content together, centered on desktop
 $header-height: 52px;
 $breakpoint-desktop: 768px;
 
