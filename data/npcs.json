@@ -98,7 +98,7 @@
     "aliveStatus": "dead",
     "residence": "Crescent Keep (ruins)",
     "color": "#8B1E2D",
-    "image": "",
+    "image": "assets/images/characters/silas-ravencroft.jpg",
     "text": "Silas Ravenscroft, the first Count of Crescent Hills, used his own Castle, Crescent Keep, as an asylum for the mentally unwell. Years later, after a visit from the at the time king, the asylum burned down with everyone inside, including the count."
   },
   {
@@ -115,7 +115,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#E4572E",
-    "image": "",
+    "image": "assets/images/characters/robbert-blackwood.jpg",
     "text": "Robert Blackwood is the charismatic head of the city watch, and reasonably wealthy. People are not sure of the man is very naive, working for someone, or has a plan of his own. But he sure as hell doesn't look after the city."
   },
   {
@@ -132,7 +132,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#667B8C",
-    "image": "",
+    "image": "assets/images/characters/addelard-nelson.jpg",
     "text": "Lord Nelson is a mindflayer, and uses this to communicate with a small security force of mind flayers inside of Harbour district. He works for the large global Anchor Corporation, and is focused on the company's goals."
   },
   {
@@ -149,7 +149,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#76677F",
-    "image": "",
+    "image": "assets/images/characters/felix-lionheart.jpg",
     "text": "Felix Lionheart is a charming recluse and something of a lady killer. He oversees the lighthouse every night, though he is almost never alone while doing so. Despite his charming nature, there is something about Felix that seems to make all Mindflayers working for the Anchor Corporation avoid him."
   },
   {
@@ -166,7 +166,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#795548",
-    "image": "",
+    "image": "assets/images/characters/maximilian-faust.jpg",
     "text": "Baron Faust despises the factories he owns, and the workers fear whenever he enters their district. To them, he is their god, controlling their pay, housing, and very livelihoods. He is a cruel man, focused almost entirely on quotas and efficiency."
   },
   {
@@ -183,7 +183,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#FA8072",
-    "image": "",
+    "image": "assets/images/characters/arthur-marrow.jpg",
     "text": "Father Marrow is the head priest of the People's Church of the Perfect Body. Normally a calm and composed man, he transforms into a passionate preacher of pure belief whenever he delivers his sermons."
   },
   {
@@ -200,7 +200,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#32151C",
-    "image": "",
+    "image": "assets/images/characters/mikah-crowe.jpg",
     "text": "Mikah Crowe is a mysterious man who dislikes people, public speaking, and attention. Despite this, the incredibly wealthy head of House Crowe is known to donate generously to libraries, museums, and orphanages throughout the city."
   },
   {
@@ -217,7 +217,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#4F8A4C",
-    "image": "",
+    "image": "assets/images/characters/julia-graveseal.jpg",
     "text": "Julia Graveseal is the head librarian of the largest library in the city. She is a mysterious woman, not because she is shy, but because she is almost always busy archiving and organizing lore of an arcane and esoteric nature. She can often be found locked away in her office, surrounded by ancient knowledge."
   },
   {
@@ -234,7 +234,7 @@
     "aliveStatus": "alive",
     "residence": "Laughingmen Circus",
     "color": "#C62828",
-    "image": "",
+    "image": "assets/images/characters/nikoleta-crowe.jpg",
     "text": "Nikki Crowe was pronounced dead by her wealthy family, only to reappear years later in the city, married to Fierre Laughingman and running an entertainment organization. Despite her public life, her biological family continues to insist that she is dead."
   },
   {
@@ -251,7 +251,7 @@
     "aliveStatus": "alive",
     "residence": "Laughingmen Circus",
     "color": "#7A5C5C",
-    "image": "",
+    "image": "assets/images/characters/fierre-laughingman.jpg",
     "text": "Fierre Laughingman is a mysterious man whose past is almost entirely unknown. He appeared in the city alongside his wife, Nikki Crowe, and together they built a vast entertainment empire. Fierre is always smiling and seems to be an exceptionally happy man."
   },
   {
@@ -268,7 +268,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#B5B84A",
-    "image": "",
+    "image": "assets/images/characters/jarred-amherst.jpg",
     "text": "The Inspector shows up, and everything goes wrong. Nobody knows what kind of inspector Jarred Amherst actually is, but wherever he goes, men have died and businesses have been destroyed. Whatever his purpose may be, everyone knows one thing: pray he does not introduce himself to you."
   },
   {
@@ -285,7 +285,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#243B6B",
-    "image": "",
+    "image": "assets/images/characters/ogura-bloodstone.jpg",
     "text": "Known as the Blue Hunter, Ogura Bloodstone is the head of the Blue Rose chapter in Crescent Hills. With a kill count most likely numbering in the thousands after his exceptionally long life, he is considered one of the most deadly people in the city. If you can afford his services, the job will get done."
   },
   {
@@ -302,7 +302,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#9AAFC1",
-    "image": "",
+    "image": "assets/images/characters/medio-gato.jpg",
     "text": "Medio Gato is one of the more important figures in Crescent Hills. A private investigator with knowledge of the coming end of the world, he seeks to help the party and their allies prevent it. Medio runs his own investigation office, which can serve as a home base for the party throughout their journey."
   }
 ]
