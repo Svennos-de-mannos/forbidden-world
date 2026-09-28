@@ -4,11 +4,13 @@
 function fillCampaignPopup(card) {
   const popup = document.getElementById('popup');
   const title = document.getElementById('popupTitle');
+  const mystery = document.getElementById('popupMystery');
   const text = document.getElementById('popupText');
   const image = document.getElementById('popupImage');
 
   if (popup) popup.style.setProperty('--accent', card.colorMain || '');
   if (title) title.textContent = card.title || '';
+  if (mystery) fillOrPlaceholder(mystery, card.mainMystery);
   if (text) fillOrPlaceholder(text, card.text);
 
   if (image) {

@@ -67,7 +67,29 @@
 .popup-title {
   font-size: 22px;
   color: var(--accent, #{$color-openeyes});
-  margin: 0 0 12px;
+  margin: 0 0 8px;
+}
+
+.popup-mystery {
+  border-left: 3px solid var(--accent, #{$color-openeyes});
+  background: $color-bg-panel;
+  padding: 10px 12px;
+  margin: 0 0 14px;
+}
+
+.popup-mystery__label {
+  font-size: 11px;
+  color: var(--accent, #{$color-openeyes});
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 4px;
+}
+
+.popup-mystery__text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: $color-offwhite;
+  margin: 0;
 }
 
 .popup-text {

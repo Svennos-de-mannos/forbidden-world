@@ -16,9 +16,11 @@ function closePopup() {
 
   // Blank every field so nothing lingers from the last card that was open.
   const title = document.getElementById('popupTitle');
+  const mystery = document.getElementById('popupMystery');
   const text = document.getElementById('popupText');
   const image = document.getElementById('popupImage');
   if (title) title.textContent = '';
+  if (mystery) { mystery.textContent = ''; mystery.classList.remove('placeholder'); }
   if (text) { text.textContent = ''; text.classList.remove('placeholder'); }
   if (image) {
     image.removeAttribute('src');
