@@ -276,6 +276,7 @@ button,
   justify-content: center;
   font-family: "Grenze Gotisch", serif;
   font-size: 28px;
+  background-size: 100%;
 }
 
 .hero-body {
