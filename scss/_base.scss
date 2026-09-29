@@ -47,6 +47,12 @@ button,
   font-family: $font-body; // buttons NEVER use the title font
 }
 
+// Wrap text in **double asterisks** in your card JSON to render it in
+// this brighter color instead of the field's normal (often dimmed) one.
+.bright {
+  color: $color-offwhite;
+}
+
 // Any card field that hasn't been filled in yet (missing image/text)
 // shows this placeholder instead of breaking the layout.
 .placeholder {

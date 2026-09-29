@@ -1,0 +1,92 @@
+// ==========================================================================
+// Locations page: per-campaign heading + recursively nested location tree
+// ==========================================================================
+@use 'variables' as *;
+
+.location-campaign {
+  margin-bottom: 22px;
+
+  .section-title {
+    color: var(--accent, #{$color-openeyes});
+    margin-bottom: 10px;
+  }
+}
+
+// A row is either a <div> (leaf, nothing to expand) or a <details>
+// (branch, has children) — both get the same left accent + indent.
+.location-row {
+  border-left: 3px solid var(--accent, #{$color-gray});
+  margin-left: calc(var(--depth, 0) * 14px);
+  margin-bottom: 6px;
+}
+
+.location-row--leaf {
+  padding: 0;
+}
+
+.location-row__summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  padding: 4px 10px;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::after {
+    content: '\203A';
+    margin-left: auto;
+    padding-left: 10px;
+    color: $color-offwhite-dim;
+    transition: transform 0.15s;
+  }
+}
+
+details[open] > .location-row__summary::after {
+  transform: rotate(90deg);
+}
+
+.location-row__children {
+  padding-top: 2px;
+}
+
+// The clickable name itself — a plain button styled to look like text,
+// so it can sit inside a <summary> without fighting its layout.
+.location-name {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  color: $color-offwhite;
+  background: $color-bg-surface;
+  border: none;
+  cursor: pointer;
+}
+
+.location-row--leaf .location-name {
+  width: calc(100% - 0px);
+}
+
+.location-row--branch .location-row__summary .location-name {
+  flex: 1;
+  background: none;
+  padding: 4px 0;
+}
+
+// --- Location popup extras -------------------------------------------------
+// Locations have no image, so the popup is shorter — no top image slot.
+.popup--compact .popup-body {
+  padding-top: 20px;
+}
+
+.popup-subtitle {
+  font-size: 12px;
+  color: $color-offwhite-dim;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
