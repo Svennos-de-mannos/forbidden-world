@@ -190,5 +190,85 @@
     "parent": "the-hills",
     "color": "#6D2231",
     "text": "A large estate, with clear signage and fencing marking its property. Anyone who trespasses is killed by the family security."
+  },
+  {
+    "id": "eagles-hope",
+    "campaign": "openeyes",
+    "title": "Eagle's Hope",
+    "parent": "self",
+    "color": "#1D3557",
+    "text": "Once an ordinary, prosperous town in Eagle's Hope County, it has become the central epicenter of a massive temporal anomaly known as the Sandwalker effect. On the eve of the Castle Fall anniversary, time completely froze within the settlement, trapping its residents on a permanent loop of September 3rd. Since the deliberate destruction of its central clocktower, the town has fractured, revealing an ancient abyss beneath the surface."
+  },
+  {
+    "id": "black-cloak-perimeter",
+    "campaign": "openeyes",
+    "title": "Black Cloak Perimeter",
+    "parent": "eagles-hope",
+    "color": "#122238",
+    "text": "Following the emergence of the temporal anomaly, the strict and efficient military order known as the Black Cloak Order swooped in to seize complete administrative control of the town. They have aggressively retrofitted the surrounding farmlands, open fields, and surviving structures, including a prominent local windmill, into heavily guarded barracks, barricades, and improvised military checkpoints. Under the watchful eye of the Black Cloak, this perimeter serves as the frontline containment zone to monitor the Castle, and Sandwalker effect, organize scouting expeditions, and manage the highly volatile anomalous activity bleeding from the depths."
+  },
+  {
+    "id": "the-clocktower",
+    "campaign": "openeyes",
+    "title": "The Clocktower",
+    "parent": "eagles-hope",
+    "color": "#122238",
+    "text": "Formerly the structural and social centerpiece of the town, the clocktower was identified as the anchoring focal point of the temporal Sandwalker anomaly. In a desperate bid to shatter the time loop, an investigating group of anomalies utilized a supply of guard-station dynamite to completely demolish the structure. The tower collapsed just after midnight, triggering a catastrophic and unintended chain reaction: the ground tore wide open, a mysterious levitating figure emerged to execute the town's informant Evan Glass with a crossbow, and a massive, bottomless subterranean chasm was exposed to the surface."
+  },
+  {
+    "id": "the-castle",
+    "campaign": "openeyes",
+    "title": "The Castle",
+    "parent": "eagles-hope",
+    "color": "#122238",
+    "text": "A colossal, ancient underground fortress that stretches down farther than the eye can see, fully exposed to the surface following the collapse of the clocktower. Accessible only via ropes, climbing pitons, and sheer nerve. The fortress functions as a highly active, multi-layered nexus of historical secrets, bound horrors, and lethal infrastructure."
+  },
+  {
+    "id": "volcron-station",
+    "campaign": "openeyes",
+    "title": "Volcron Station",
+    "parent": "the-castle",
+    "color": "#0A1424",
+    "text": "A massive subterranean train platform built directly into the stone architecture of the underground castle. Marked by a distinct and universal maze symbol, this station serves as a prominent piece of ancient infrastructure widely believed to have been engineered by the legendary architect, Norex Volcron. The platform is patrolled by clockwork automated toll-collecting constructs that demand immediate payment in silver currency, threatening passengers with swift and forceful removal from the station if valid day-long transit tickets are not produced."
+  },
+  {
+    "id": "the-chariot-trains",
+    "campaign": "openeyes",
+    "title": "The Chariot Trains",
+    "parent": "the-castle",
+    "color": "#0A1424",
+    "text": "A fully operational, high-speed subterranean transit network running directly through the heart of the underground castle infrastructure. The network is split into two primary operations: a Black Line and a White Line, with each train featuring distinct, imposing sphinxes painted onto the front carriages. While the wagons offer spacious transport for passengers, they are strictly monitored by automated refreshment drones and ruthless, masked \"enforcers\" who wield strange weapons capable of dealing devastating piercing wounds to anyone disrupting transit rules."
+  },
+  {
+    "id": "marrow-station",
+    "campaign": "openeyes",
+    "title": "Marrow Station",
+    "parent": "the-castle",
+    "color": "#0A1424",
+    "text": "A deeply disturbing, deeply anomalous terminus hidden at a stop of the Chariot Train lines, where the cold stone of the castle gives way to pure organic horror. The entire station exists as a living, breathing biological organism constructed from pulsating biomass, hemorrhaging corridors, and bleeding flesh walls that listen to the surroundings. The station shares its ominous name with Arthur Marrow, a notorious Priest of Flesh and Body from Crescent Hills."
+  },
+  {
+    "id": "peregrine",
+    "campaign": "openeyes",
+    "title": "Peregrine",
+    "parent": "self",
+    "color": "#3A86C8",
+    "text": "Located well outside the temporal containment zone of Eagle's Hope, the picturesque town of Peregrine is widely celebrated for the massive, towering windmills that dominate its sweeping skyline. Far more than just agricultural mills, these structures capture the powerful, driving currents of the region to generate localized industry. The town functions as the communication heartbeat of the surrounding territories, utilizing a magnificent, centrally located Tower of Air as a specialized avian communications center where highly trained messenger birds are coordinated, sorted, and dispatched across the kingdom."
+  },
+  {
+    "id": "tower-of-air",
+    "campaign": "openeyes",
+    "title": "Tower of Air",
+    "parent": "peregrine",
+    "color": "#255A8A",
+    "text": "A sweeping, architectural marvel rising from the dead center of Peregrine, designed to channel the localized gale winds of the region. The upper spires of this grand tower serve as the absolute nerve center for bird-based communications, housing thousands of specialized messenger avians, highly trained handlers, and an intricate, wind-assisted courier network. It is the primary facility responsible for intercepting, sorting, and delivering high-priority military and political correspondence across the county, acting as an indispensable information hub."
+  },
+  {
+    "id": "red-tail",
+    "campaign": "openeyes",
+    "title": "Red Tail",
+    "parent": "self",
+    "color": "#D90429",
+    "text": "A prestigious and highly populated town situated outside the boundaries of Eagle's Hope, widely renowned across the realm as a bastion of higher learning, research, and intellectual advancement. The town's economy, culture, and architecture are thoroughly defined by its expansive academic population, drawing scholars, researchers, and arcane students from every corner of the map. Its vibrant streets are constantly filled with ideological debates, bustling bookstores, and theoretical research, making it a critical strategic asset for any faction seeking historical, scientific, or magical data."
   }
 ]
