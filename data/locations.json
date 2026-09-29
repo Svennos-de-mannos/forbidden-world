@@ -1,18 +1,194 @@
 [
   {
-    "id": "oldetowne",
+    "id": "crescenthills",
     "campaign": "crescenthills",
-    "title": "Olde Towne",
+    "title": "Crescent Hills",
     "parent": "self",
-    "color": "#b23148",
+    "color": "#6F1D1B",
+    "text": "The town of Crescent Hills had always been prospering. But especially after the death of Hammeth II and his bloodline, the new king Cadmus Algar left the town well alone. This is why, since the year 890, the town had found itself in a unique situation. Trade and growth were at an all time high, and government involvement at an all time low. There were no tax collectors, and no trade enforcers, meaning that the city became a hotspot for illegal product trade, tax free banking, and artifact storage and trafficking. For nearly 50 years the town grew like weeds, until 948, when king Alexander the immortal finally remerged the now large city into his kingdom."
+  },
+  {
+    "id": "downtown",
+    "campaign": "crescenthills",
+    "title": "Downtown",
+    "parent": "crescenthills",
+    "color": "#BB9457",
+    "text": "Downtown is the heart and center of the city. From hotel like buildings to shopping centers, to redlight streets, it can be found here."
+  },
+  {
+    "id": "blue-rose-office",
+    "campaign": "crescenthills",
+    "title": "Blue Rose Office",
+    "parent": "downtown",
+    "color": "#91703B",
+    "text": "The office for hiring the mercenary knights from the country wide Order of the Blue Rose. They are expensive and effective. Their code is to uphold a contract or die trying."
+  },
+  {
+    "id": "silver-mist-theatre",
+    "campaign": "crescenthills",
+    "title": "Silver Mist Theatre",
+    "parent": "downtown",
+    "color": "#91703B",
+    "text": "Laughingmen’s premier theatre. It is one of the largest buildings in the city, where every night from Thursday to Sunday, events are hosted. Opera, theater, and concerts can all be found here, and sometimes even the odd gala or convention."
+  },
+  {
+    "id": "olde-town",
+    "campaign": "crescenthills",
+    "title": "Olde Town",
+    "parent": "crescenthills",
+    "color": "#965936",
     "text": "The historical center of the city, and the oldest part of town. These streets hold the most gothic buildings, and are said to be haunted at times."
+  },
+  {
+    "id": "chapel-of-the-bleeding-god",
+    "campaign": "crescenthills",
+    "title": "Chapel of the Bleeding God",
+    "parent": "olde-town",
+    "color": "#78472B",
+    "text": "The head cathedral of the People’s Church of the Perfect Body. Always open, like any church, with sermons on Monday mornings."
   },
   {
     "id": "graveseal-library",
     "campaign": "crescenthills",
     "title": "The Graveseal Library",
-    "parent": "oldetowne",
-    "color": "#b23148",
-    "text": "Part of the country-wide Graveseal Library organization. Crescent Hills' branch is located in the same building it started out in, and specialises in magical knowledge."
+    "parent": "olde-town",
+    "color": "#78472B",
+    "text": "Part of the country wide Graveseal Library organization, every large city has one. Crescent Hills’ Graveseal Library is located in the same building as it started out in since the beginning of the city, and specialises in magical knowledge."
+  },
+  {
+    "id": "the-goldfish",
+    "campaign": "crescenthills",
+    "title": "The Goldfish",
+    "parent": "olde-town",
+    "color": "#78472B",
+    "text": "The oldest tavern in the entire town, and the favorite place of Felix the Lighthouse Keeper. It serves good fish, and even better info if you know who to ask."
+  },
+  {
+    "id": "uptown",
+    "campaign": "crescenthills",
+    "title": "Uptown",
+    "parent": "crescenthills",
+    "color": "#188B7D",
+    "text": "Uptown is where the urban housing and offices are located. It is not a location for tourists or crime for that matter, and mostly holds large company towers."
+  },
+  {
+    "id": "the-volcron-office",
+    "campaign": "crescenthills",
+    "title": "The Volcron Office",
+    "parent": "uptown",
+    "color": "#12695F",
+    "text": "The main office of Volcron Industries in the city, and the place from which Baron Faust rules with an iron fist."
+  },
+  {
+    "id": "carsteen-street",
+    "campaign": "crescenthills",
+    "title": "Carsteen Street",
+    "parent": "uptown",
+    "color": "#12695F",
+    "text": "The street was burned down 3 months ago during a skirmish between the People’s Church and the city guard. No effort has been made to clean the street up or rebuild it, and it is still closed off to the public."
+  },
+  {
+    "id": "city-watch-precinct",
+    "campaign": "crescenthills",
+    "title": "City Watch Precinct",
+    "parent": "uptown",
+    "color": "#12695F",
+    "text": "The main office and station for the city watch police force. It is also where Robert Blackwood’s office is located, as well as the main jail holdings."
+  },
+  {
+    "id": "harbour-district",
+    "campaign": "crescenthills",
+    "title": "Harbour District",
+    "parent": "crescenthills",
+    "color": "#484C70",
+    "text": "The harbour district is perhaps the most important inner city district, for it is where the city’s export and import business is done. It is mostly privately owned and guarded by the Anchor Corporation."
+  },
+  {
+    "id": "the-chest",
+    "campaign": "crescenthills",
+    "title": "The Chest",
+    "parent": "harbour-district",
+    "color": "#2D3047",
+    "text": "A creepy warehouse, with strange artifacts stored. Some say there are monsters here. It's the most secretive and guarded warehouse of the Anchor Corporation."
+  },
+  {
+    "id": "nelsons-office",
+    "campaign": "crescenthills",
+    "title": "Nelson’s Office",
+    "parent": "harbour-district",
+    "color": "#2D3047",
+    "text": "The main Anchor Corp office, where Addelard Nelson is most often located, is a large building in the harbour district, close to the shores, with good observation over the harbour itself."
+  },
+  {
+    "id": "the-lighthouse",
+    "campaign": "crescenthills",
+    "title": "The Lighthouse",
+    "parent": "harbour-district",
+    "color": "#2D3047",
+    "text": "An older building, close to Olde Town. Its light shines far though the city and onto the sea."
+  },
+  {
+    "id": "the-casino-cruise",
+    "campaign": "crescenthills",
+    "title": "The Casino Cruise",
+    "parent": "harbour-district",
+    "color": "#2D3047",
+    "text": "A Laughingmen adult entertainment ship, the Casino Cruise is docked just outside city borders in order to avoid gambling laws and such, and is where the more freaky folk can gamble, drink, and be escorted by workers of all types."
+  },
+  {
+    "id": "industrial-district",
+    "campaign": "crescenthills",
+    "title": "Industrial District",
+    "parent": "crescenthills",
+    "color": "#564E58",
+    "text": "This is where the factories are, where the common man works and lives, and where your lungs are suffocated in smog and muck."
+  },
+  {
+    "id": "the-dread-factory",
+    "campaign": "crescenthills",
+    "title": "The Dread Factory",
+    "parent": "industrial-district",
+    "color": "#3F3A41",
+    "text": "A factory where no worker leaves alive. It is where you and your family are sent if you pissed off Baron Faust, and its secrecy is rivaled only by the Chest and the Crowe Mansion."
+  },
+  {
+    "id": "swamps",
+    "campaign": "crescenthills",
+    "title": "Swamps",
+    "parent": "crescenthills",
+    "color": "#586D4A",
+    "text": "The swamp district is where the scum and junkies live, as well as those poor unfortunates who are not granted housing and work in the city. It is also the location of the Circus, and the various Spice and Herb Farms."
+  },
+  {
+    "id": "the-laughingman-circus",
+    "campaign": "crescenthills",
+    "title": "The Laughingman Circus",
+    "parent": "swamps",
+    "color": "#313D29",
+    "text": "Joy and laughter, in this year round permanent circus. They have all the attractions a circus needs, with just a little bit more glamour and prestige, topped with a large ferris wheel that grants you an amazing view over the city and sea."
+  },
+  {
+    "id": "the-hills",
+    "campaign": "crescenthills",
+    "title": "The Hills",
+    "parent": "crescenthills",
+    "color": "#902D41",
+    "text": "This is the urban area of the rich and powerful. Those with personal protection and security, so that they need not bother with living inside the actual city. Instead they choose large gardens and rich neighbourhoods."
+  },
+  {
+    "id": "crescent-keep",
+    "campaign": "crescenthills",
+    "title": "Crescent Keep",
+    "parent": "the-hills",
+    "color": "#6D2231",
+    "text": "In 843, on the south coast of Eagle’s Hope County, The Ravencroft Asylum was founded by Count Silas Ravencroft. It was seen as a generous act by the time, for the asylums location was to be the counts own castle, Crescent Keep, that overlooked the newly built town of Crescent Hills. In the years following, from 844 till 889, many patients were admitted to Crescent Keep, watched by the Count, but in all of those years, no patient was ever released.\n\nThe Asylum during its lifetime had been the constant gossip of the growing town of crescent hills. The screams coming from the castle at night were heard throughout the town, and on multiple occasions the king of the land, Zohar Hammeth I, had sent clerics of the sun god to investigate the keep. It should have been a warning that these clerics reported back a positive account of the keep, and then were found dead days later.\n\nIn 889, Hemmeth I died, and his son, Hammeth II, made it a point to visit the most appropriate cities in his kingdom. When he visited Crescent hills in the summer of that year, something happened. Some say the king uncovered the true evil of the castle, others suggest the defences of the keep finally broke. Whatever the case, in the summer of 889, King Hammeth II and Count Silas Ravencroft, died in a fire that destroyed Crescent keep, and its patients and staff."
+  },
+  {
+    "id": "crowe-mansion",
+    "campaign": "crescenthills",
+    "title": "Crowe Mansion",
+    "parent": "the-hills",
+    "color": "#6D2231",
+    "text": "A large estate, with clear signage and fencing marking its property. Anyone who trespasses is killed by the family security."
   }
 ]
