@@ -1,0 +1,28 @@
+// ==========================================================================
+// Factions page: per-campaign flat button list (title only) + cross-campaign
+// ==========================================================================
+@use 'variables' as *;
+
+.faction-group {
+  margin-bottom: 20px;
+
+  .section-title {
+    margin-bottom: 10px;
+  }
+}
+
+.faction-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: $color-bg-surface;
+  border: 1px solid $color-border;
+  border-left: 3px solid var(--accent, #{$color-gray});
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  color: $color-offwhite;
+  cursor: pointer;
+}

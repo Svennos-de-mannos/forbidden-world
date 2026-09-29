@@ -839,4 +839,27 @@ details[open] > .location-row__summary::after {
 
 .status-bar--inactive .status-bar__meta {
   color: #a89f90;
+}
+
+.faction-group {
+  margin-bottom: 20px;
+}
+.faction-group .section-title {
+  margin-bottom: 10px;
+}
+
+.faction-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: #1a1917;
+  border: 1px solid #2c2a26;
+  border-left: 3px solid var(--accent, #4a463f);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  color: #efe6d8;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
