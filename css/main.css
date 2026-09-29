@@ -697,12 +697,14 @@ details[open] > .subgroup__summary::after {
   content: "›";
   margin-left: auto;
   padding-left: 10px;
-  color: #a89f90;
+  font-size: 20px;
+  color: white;
   transition: transform 0.15s;
 }
 
 details[open] > .location-row__summary::after {
   transform: rotate(90deg);
+  color: #a89f90;
 }
 
 .location-row__children {

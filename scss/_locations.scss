@@ -39,13 +39,15 @@
     content: '\203A';
     margin-left: auto;
     padding-left: 10px;
-    color: $color-offwhite-dim;
+    font-size: 20px;
+    color: white;
     transition: transform 0.15s;
   }
 }
 
 details[open] > .location-row__summary::after {
   transform: rotate(90deg);
+  color: $color-offwhite-dim;
 }
 
 .location-row__children {
