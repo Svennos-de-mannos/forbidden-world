@@ -742,4 +742,50 @@ details[open] > .location-row__summary::after {
   margin: 0 0 14px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.session-campaign {
+  margin-bottom: 22px;
+}
+.session-campaign .section-title {
+  color: var(--accent, #d9a927);
+  margin-bottom: 10px;
+}
+
+.session-bar {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: #1a1917;
+  border: 1px solid #2c2a26;
+  border-left: 3px solid var(--accent, #d9a927);
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.session-bar__number {
+  flex-shrink: 0;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent, #d9a927);
+}
+
+.session-bar__title {
+  font-size: 13px;
+  color: #efe6d8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popup-players {
+  font-size: 12px;
+  color: #a89f90;
+  margin: 0 0 14px;
 }/*# sourceMappingURL=main.css.map */
