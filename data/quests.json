@@ -1,22 +1,111 @@
 [
   {
-    "id": "quest-01",
+    "id": "quest-undo-sandwalker",
     "type": "quest",
-    "campaign": ["crescenthills"],
-    "title": "The Burning of Carsteen Street",
+    "campaign": [
+      "openeyes"
+    ],
+    "title": "MAIN! Undo the Sandwalker Effect",
     "status": "ongoing",
-    "color": "#b23148",
-    "description": "Find out who really torched Carsteen Street three months ago.",
-    "text": "The City Guard blamed the People's Church of the Perfect Body for trafficking illegal goods in their Chappell, but no proof was ever shown, and the church denies it. The street is still closed off and unrebuilt."
+    "color": "#FBB037",
+    "description": "Undo the timestop in Eagle’s Hope by venturing into the underground Castle",
+    "text": "The Sandwalker effect is the name for the timestop in the city of Eagle’s Hope. Your main goal should be undoing this time stop. We know that it has something to do with the underground that opened itself up during the earthquakes at Session 0’s Towerfall."
   },
   {
-    "id": "mystery-01",
-    "type": "mystery",
-    "campaign": ["openeyes", "crescenthills"],
-    "title": "The Watching Eyes",
+    "id": "quest-stop-end-world",
+    "type": "quest",
+    "campaign": [
+      "crescenthills"
+    ],
+    "title": "MAIN! Stop the end of the World",
     "status": "ongoing",
-    "color": "#d9a927",
-    "description": "Something is watching from between the walls in both cities.",
-    "text": ""
+    "color": "#B60B02",
+    "description": "We don’t how but the world is ending!",
+    "text": "Medio Gato has knowledge of the end of the world, as do other important figures in Crescent Hills. However it will happen, by whoever's hand, it will happen in this city."
+  },
+  {
+    "id": "quest-operation-star",
+    "type": "quest",
+    "campaign": [
+      "openeyes"
+    ],
+    "title": "Operation Star",
+    "status": "ongoing",
+    "color": "#FFD23F",
+    "description": "Explore the Golden Hallways",
+    "text": "The white sphinx train will bring you to where the dove familiar of doctor Jane Ursa described a golden hallway filled with statues of what could only be described as heroes. The station was called G. Hunter Station."
+  },
+  {
+    "id": "quest-operation-empress",
+    "type": "quest",
+    "campaign": [
+      "openeyes"
+    ],
+    "title": "Operation Empress",
+    "status": "ongoing",
+    "color": "#936269",
+    "description": "Explore the Flesh Halls",
+    "text": "Doctor Ursa let her dove familiar fly into the black train south, where it ended up back at Marrow Station, with its living walls and bone pillars. For this path, hazard masks shall be provided."
+  },
+  {
+    "id": "quest-operation-judgement",
+    "type": "quest",
+    "campaign": [
+      "openeyes"
+    ],
+    "title": "Operation Judgement",
+    "status": "ongoing",
+    "color": "#FF7F11",
+    "description": "Explore the first layer of the underground Castle",
+    "text": "When not engaging with the train at all, the dove familiar of doctor Ursa managed to find its way to a rather central hall, enforced with steel and copper. Heat levels rose drastically in the hall, thus If this hallway is chosen, heatsuits will be provided."
+  },
+  {
+    "id": "mystery-sandwalker",
+    "type": "mystery",
+    "campaign": [
+      "openeyes"
+    ],
+    "title": "How and why did Eagle’s Hope Freeze in time?",
+    "status": "ongoing",
+    "color": "#FBB037",
+    "description": "Why was the Sandwalker Effect created?",
+    "text": "The Timestop in Eagle’s Hope was dubbed the sandwalker effect by doctor Jane Ursa, and presumably created somewhere in the underground castle. We know a little of what it is, but why and how it was built remains a mystery."
+  },
+  {
+    "id": "mystery-world-end",
+    "type": "mystery",
+    "campaign": [
+      "crescenthills"
+    ],
+    "title": "How will the world end?",
+    "status": "ongoing",
+    "color": "#B60B02",
+    "description": "The world will end in Crescent Hills, but how and why?",
+    "text": "It is in the air off the city. The whole town is living towards the end, and the main factions are preparing. But why, what is going on? And why now?"
+  },
+  {
+    "id": "mystery-arthur-marrow",
+    "type": "mystery",
+    "campaign": [
+      "openeyes",
+      "crescenthills"
+    ],
+    "title": "Who is Arthur Marrow",
+    "status": "ongoing",
+    "color": "#9C0D38",
+    "description": "Who is the mysterious Arthur Marrow",
+    "text": "Arthur Marrow, the priest of the people’s church of the perfect body, lives in Crescent Hills as an important and humble figure. Meanwhile the reports from Eagle’s Hope state that his name was found in Castle Business from 200 years ago. Is it a distant family relation, or something else? Who is this man really?"
+  },
+  {
+    "id": "mystery-castle",
+    "type": "mystery",
+    "campaign": [
+      "openeyes"
+    ],
+    "title": "What The fuck is the Castle?",
+    "status": "ongoing",
+    "color": "#EFCB68",
+    "description": "What is the Castle under Eagle’s Hope?",
+    "text": "When the ground split open, it revealed a giant unknown castle under Eagle’s Hope. It has hallways and structures built by or named after mysterious figures, like Norex Volcron, Arthur Marrow, G. Hunter, and others. It might also very well be related to the old king Zohar Hammeth I, who died in 889, which was 200 Years Ago."
   }
 ]
