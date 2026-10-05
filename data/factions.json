@@ -1,18 +1,68 @@
-[
+
+ [
   {
-    "id": "anchor-corp",
-    "campaign": ["crescenthills"],
-    "title": "Anchor Corporation",
+    "id": "order-of-the-blue-rose",
+    "campaign": ["openeyes", "crescenthills"],
+    "title": "The Order of the Blue Rose",
     "image": "",
-    "color": "#7a8a94",
-    "text": "A powerhouse in the overseas shipping industry, owning most of the harbour district. Run by Lord Addelard Nelson, an Illithid who keeps the business on schedule through a hivemind of hired mindflayer security."
+    "color": "#91703B",
+    "text": "A country-wide organization of highly respected and code-honoring mercenaries and sell-swords. They are expensive and effective. Their strict professional code is to uphold a contract to the letter or die trying."
+  },
+  {
+    "id": "black-cloak-order",
+    "campaign": ["openeyes"],
+    "title": "The Order of the Black Cloak",
+    "image": "",
+    "color": "#122238",
+    "text": "An inland order of devout knights focused on the eradication of anomalies, psionics, and the unholy. They wear heavy black or white armor with signature black capes. They worship a central holy god who steers them to cleanse and smite."
+  },
+  {
+    "id": "peoples-church",
+    "campaign": ["openeyes", "crescenthills"],
+    "title": "The People's Church of the Perfect Body",
+    "image": "",
+    "color": "#78472B",
+    "text": "Spearheaded in 959 by Arthur Marrow, this rapidly growing church teaches that physical betterment and altering the body leads to salvation. Beneath sermons at the Chapel of the Bleeding God lies a dark reality of illegal trafficking and horrific biological flesh-warping."
   },
   {
     "id": "volcron-industries",
-    "campaign": ["crescenthills"],
+    "campaign": ["openeyes", "crescenthills"],
     "title": "Volcron Industries",
     "image": "",
-    "color": "#d94f8f",
-    "text": "Built an empire on architecture and magical machinery. Now a central location for factories and assembly lines, run by the feared Baron Maximilian Faust."
+    "color": "#12695F",
+    "text": "An empire built on architecture and magical machinery following Norex Volcron's construction of the old King's castle. Ruled from uptown with an iron fist by Baron Maximilian Faust, the company bribes officials to run magic tech factories, greenhouses, and terrifying sites like the Dread Factory."
+  },
+  {
+    "id": "anchor-corporation",
+    "campaign": ["crescenthills"],
+    "title": "The Anchor Corporation",
+    "image": "",
+    "color": "#2D3047",
+    "text": "A powerhouse in the overseas shipping industry that owns most of the harbour district. The high director, an Illithid named Lord Addelard Nelson, uses psionic powers and a psychic hivemind of Mindflayer security to control workers and safeguard secretive vaults like 'The Chest'."
+  },
+  {
+    "id": "crowe-family",
+    "campaign": ["crescenthills"],
+    "title": "The Crowe Family",
+    "image": "",
+    "color": "#6D2231",
+    "text": "An old, reclusive, and wealthy bloodline descended from the original Ravencroft asylum founders. Led publicly by Mikah Crowe, they fund esoteric operations, the Graveseal Library, and orphanages. Most people believe the family is cursed and their money is poisoned."
+  },
+  {
+    "id": "laughingmen-entertainment",
+    "campaign": ["crescenthills"],
+    "title": "Laughingmen Entertainment",
+    "image": "",
+    "color": "#586D4A",
+    "text": "An entertainment empire owned by Fierre Laughingman and Nikki Crowe, running a circus in the swamps, the Silvermist Theatre, and a casino cruise. While bringing joy, strange rumors persist of visitors being replaced by copies filled with feathers and stuffing."
+  },
+  {
+    "id": "crescent-hills-town-guard",
+    "campaign": ["crescenthills"],
+    "title": "Crescent Hills Town Guard",
+    "image": "",
+    "color": "#12695F",
+    "text": "The main defense and law force within the city, widely known as corrupt, cruel, and greedy. Enforcers rely on fear and intimidation over the common folk, while higher-up detectives and the charismatic Watchmaster Robbert Blackwood focus on securing cuts from illegal spice and herb shipments."
   }
 ]
+
