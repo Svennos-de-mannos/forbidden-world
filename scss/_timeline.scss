@@ -1,100 +1,113 @@
 // scss/_timeline.scss
-// Clean, expansion-proof theme styling for the shared world chronological timeline
+// Clean, intersection-proof theme styling for the crossing-axis shared timeline
 
 .timeline-section-wrapper {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
   padding: 2.5rem 1.5rem;
-  background-color: var(--bg-surface, #18181c); // Dark theme surface fallback
+  background-color: var(--bg-surface, #18181c);
   border: 1px solid var(--border-color, #2a2a32);
   border-radius: 6px;
   margin: 1.5rem 0;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
 
-  // 1. Horizontal Scroll-Track Assembly Row
-  .timeline-scroll-container {
-    display: flex;
-    align-items: center;
+  // 1. Layer Assembly Track Viewport
+  .timeline-scroll-axis-wrapper {
+    position: relative;
+    width: 100%;
     overflow-x: auto;
-    padding: 4.5rem 1rem 2rem 1rem; // Massive padding-top gives event bubbles breathing room
-    gap: 0;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+    padding: 6rem 1rem 3rem 1rem; // Plentiful breathing space for multi-line titles
     
-    // Custom scrollbar tracking matching classic modern wikis
-    &::-webkit-scrollbar {
-      height: 6px;
-    }
-    &::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 4px;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: var(--border-color, #3a3a45);
-      border-radius: 4px;
-      &:hover {
-        background: var(--text-muted, #626273);
-      }
-    }
+    &::-webkit-scrollbar { height: 6px; }
+    &::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); border-radius: 4px; }
+    &::-webkit-scrollbar-thumb { background: var(--border-color, #3a3a45); border-radius: 4px; }
   }
 
-  // 2. Vertical Date Boundary Slicers
-  .timeline-date-divider {
+  // 2. Continuous Background Gradient Line (Crossed over by date vectors)
+  .timeline-continuous-track {
+    position: absolute;
+    top: calc(6rem + 7px); // Math aligns line vector completely flat under center-dots axes
+    left: 110px; // Offsets matching spacing bounds precisely
+    right: 110px;
+    height: 4px;
+    z-index: 1;
+    opacity: 0.85;
+    border-radius: 2px;
+  }
+
+  // 3. Absolute Horizontal Node Layout Track
+  .timeline-scroll-container {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    justify-content:开;
+    gap: 160px; // Static horizontal buffer gap handles wide layout separations
+  }
+
+  // 4. Vertical Date Boundary Slicers (Positioned behind track)
+  .timeline-absolute-divider {
+    position: absolute;
+    top: -4.5rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    padding: 0 2rem;
-    flex-shrink: 0; // Essential: Keeps the column width static when scrolling
+    z-index: 0; // Sits neatly behind the node layer dots
+    pointer-events: none;
     
     .date-label {
-      position: absolute;
-      top: -3.8rem; // Floors text right over the top boundaries safely
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--accent-color, #d4af37); // Classic D&D Gold accent fallback
+      color: var(--accent-color, #d4af37);
       background-color: var(--bg-surface-alt, #22222b);
       padding: 0.35rem 0.75rem;
       border: 1px solid var(--border-color, #2a2a32);
       border-radius: 4px;
       white-space: nowrap;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+      margin-bottom: 0.5rem;
     }
 
     .vertical-line {
       width: 1px;
-      height: 80px;
-      border-left: 2px dashed var(--border-color, #3a3a45);
-      opacity: 0.6;
+      height: 140px; // Fully extends past the central gradient axes line bounds!
+      border-left: 2px dashed rgba(212, 175, 55, 0.35); // Styled gold hint matching header accents
     }
   }
 
-  // 3. Nodes & Elastic Gradient Vectors
-  .timeline-node {
+  // 5. Unwrapped Multi-Line Node Systems
+  .timeline-node-block {
+    position: relative;
+    width: 140px; // Preserves reliable column space sizes
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    flex-shrink: 0; // Guarantees dots won't squish horizontally
 
+    .node-interactive-anchor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    
     .node-title-bubble {
       position: absolute;
-      top: -2.8rem;
+      bottom: 24px; // Anchored cleanly directly above the timeline path lines
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-color, #e2e8f0);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 180px; // Absolute threshold: caps wide text strings smoothly
-      opacity: 0.5;
+      text-align: center;
+      width: 160px; // Broad text limits prevent premature clipping
+      white-space: normal; // Overrides clipping: forces clean multi-line wrapping strings naturally!
+      word-wrap: break-word;
+      line-height: 1.3;
+      opacity: 0.6;
       transform: translateY(0);
-      transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
-                  transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      pointer-events: none; // Disables visual hitbox interference
+      transition: opacity 0.2s ease, color 0.2s ease;
     }
 
     .node-dot {
@@ -115,13 +128,11 @@
       }
     }
 
-    // Active Highlight Configurations
     &.active {
       .node-title-bubble {
         opacity: 1;
-        font-weight: 700;
-        transform: translateY(-3px);
         color: #ffffff;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
       }
       .node-dot {
         transform: scale(1.5);
@@ -130,25 +141,15 @@
     }
   }
 
-  .timeline-connector-line {
-    height: 3px;
-    min-width: 140px; // Spacing block size: controls horizontal width between elements
-    flex-grow: 1;
-    z-index: 1;
-    opacity: 0.7;
-    border-radius: 2px;
-  }
-
-  // 4. Central Shifting Control Deck
+  // 6. Navigation Control Deck
   .timeline-navigation-deck {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin: 0.5rem 0;
+    padding: 1rem 0;
     border-top: 1px solid var(--border-color, #2a2a32);
     border-bottom: 1px solid var(--border-color, #2a2a32);
-    padding: 1rem 0;
 
     .nav-arrow {
       background-color: var(--bg-surface-alt, #22222b);
@@ -162,105 +163,65 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      transition: background-color 0.2s, color 0.2s;
 
       &:hover:not(:disabled) {
         background-color: var(--accent-color, #d4af37);
         color: #121214;
         border-color: var(--accent-color, #d4af37);
       }
-      
-      &:disabled {
-        opacity: 0.25;
-        cursor: not-allowed;
-      }
+      &:disabled { opacity: 0.2; cursor: not-allowed; }
     }
     
     .current-item-title {
-      font-family: var(--font-heading, serif); // Leverages your site's heading font standard
-      font-size: 1.4rem;
+      font-family: var(--font-heading, serif);
+      font-size: 1.3rem;
       color: #ffffff;
       margin: 0;
       text-align: center;
-      font-weight: 600;
 
       .order-tag {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         color: var(--text-muted, #626273);
-        margin-left: 0.5rem;
+        margin-left: 0.4rem;
         font-family: monospace;
       }
     }
   }
 
-  // 5. Card Description Context Panels
+  // 7. Bottom Detail Display Panel
   .timeline-detail-panel {
     background-color: var(--bg-surface-alt, #22222b);
     border-radius: 4px;
-    padding: 1.75rem;
-    border-left: 4px solid var(--border-color, #3a3a45);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
+    padding: 1.5rem;
+    border-left: 4px solid #4a5568;
 
     .badge {
       display: inline-block;
-      padding: 0.25rem 0.6rem;
+      padding: 0.25rem 0.5rem;
       font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
       border-radius: 3px;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
-
-    .summary-text {
-      line-height: 1.6;
-      color: var(--text-color, #e2e8f0);
-      margin: 0 0 1.25rem 0;
-      font-size: 0.95rem;
-      &:last-child { margin-bottom: 0; }
-    }
-
-    .recap-link-btn {
-      display: inline-block;
-      padding: 0.5rem 1.25rem;
-      background-color: transparent;
-      color: var(--accent-color, #d4af37);
-      border: 1px solid var(--accent-color, #d4af37);
-      border-radius: 4px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.2s ease, color 0.2s ease;
-
-      &:hover {
-        background-color: var(--accent-color, #d4af37);
-        color: #121214;
-      }
-    }
-
-    // Dynamic left accent colors mapped contextually by entry type
-    &:has(.recap-mode) { border-left-color: #3182ce; }
-    &:has(.discord-mode) { border-left-color: #5865F2; }
-    
     .recap-badge { background-color: rgba(49, 130, 206, 0.15); color: #63b3ed; border: 1px solid rgba(49, 130, 206, 0.3); }
     .discord-badge { background-color: rgba(88, 101, 242, 0.15); color: #9eb5ff; border: 1px solid rgba(88, 101, 242, 0.3); }
     .event-badge { background-color: rgba(229, 62, 62, 0.15); color: #fc8181; border: 1px solid rgba(229, 62, 62, 0.3); }
-  }
-}
 
-// Responsive layout scaling overrides
-@media (max-width: 768px) {
-  .timeline-section-wrapper {
-    padding: 1.5rem 1rem;
-    gap: 1.5rem;
-
-    .timeline-navigation-deck {
-      .current-item-title { font-size: 1.15rem; }
-    }
-    
-    .timeline-connector-line {
-      min-width: 90px; // Compact track sizing on mobile devices
+    .summary-text { line-height: 1.6; color: var(--text-color, #e2e8f0); margin-bottom: 1rem; }
+    .recap-link-btn {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: transparent;
+      color: var(--accent-color, #d4af37);
+      border: 1px solid var(--accent-color, #d4af37);
+      border-radius: 4px;
+      font-size: 0.8rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+      &:hover { background: var(--accent-color, #d4af37); color: #121214; }
     }
   }
 }
