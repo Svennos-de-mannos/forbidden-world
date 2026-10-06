@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Test - The Forbidden World</title>
+    <!-- Link to your main hand-compiled stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="timeline-test">
+
+    <!-- The template partial handles injecting header/nav wrappers here at runtime -->
+
+    <main class="main-content" style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Interactive Horizontal Timeline Block -->
+        <div class="timeline-section-wrapper">
+            
+            <!-- 1. The main horizontal dot track with gradient connect vectors -->
+            <div id="campaign-scroll-track" class="timeline-scroll-container"></div>
+            
+            <!-- 2. Interactive controller deck containing navigation arrows -->
+            <div id="timeline-navigation-ctrl" class="timeline-navigation-deck"></div>
+            
+            <!-- 3. Dedicated summary description and recap rendering panel -->
+            <div id="timeline-description-box" class="timeline-detail-panel"></div>
+            
+        </div>
+
+    </main>
+
+    <!-- The template partial handles injecting footer layout structures here at runtime -->
+
+    <!-- Core include scripts that match your existing Phase 1 configuration -->
+    <script src="js/nav-links.js"></script>
+    <script src="js/include.js"></script>
+
+    <!-- The custom timeline engine logic -->
+    <script src="js/timeline.js"></script>
+    <script>
+        // Instantiate and run the component using your timeline data source path
+        const timeline = new CampaignTimeline(
+            'campaign-scroll-track', 
+            'timeline-description-box', 
+            'timeline-navigation-ctrl'
+        );
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Adjust the path below if your mock data file has a different name
+            timeline.init('./data/timeline_events.json');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+// scss/_timeline.scss
+// Clean, expansion-proof theme styling for the shared world chronological timeline
+
+.timeline-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2.5rem 1.5rem;
+  background-color: var(--bg-surface, #18181c); // Dark theme surface fallback
+  border: 1px solid var(--border-color, #2a2a32);
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+
+  // 1. Horizontal Scroll-Track Assembly Row
+  .timeline-scroll-container {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding: 4.5rem 1rem 2rem 1rem; // Massive padding-top gives event bubbles breathing room
+    gap: 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    
+    // Custom scrollbar tracking matching classic modern wikis
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--border-color, #3a3a45);
+      border-radius: 4px;
+      &:hover {
+        background: var(--text-muted, #626273);
+      }
+    }
+  }
+
+  // 2. Vertical Date Boundary Slicers
+  .timeline-date-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0 2rem;
+    flex-shrink: 0; // Essential: Keeps the column width static when scrolling
+    
+    .date-label {
+      position: absolute;
+      top: -3.8rem; // Floors text right over the top boundaries safely
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent-color, #d4af37); // Classic D&D Gold accent fallback
+      background-color: var(--bg-surface-alt, #22222b);
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--border-color, #2a2a32);
+      border-radius: 4px;
+      white-space: nowrap;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .vertical-line {
+      width: 1px;
+      height: 80px;
+      border-left: 2px dashed var(--border-color, #3a3a45);
+      opacity: 0.6;
+    }
+  }
+
+  // 3. Nodes & Elastic Gradient Vectors
+  .timeline-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex-shrink: 0; // Guarantees dots won't squish horizontally
+
+    .node-title-bubble {
+      position: absolute;
+      top: -2.8rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-color, #e2e8f0);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 180px; // Absolute threshold: caps wide text strings smoothly
+      opacity: 0.5;
+      transform: translateY(0);
+      transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                  transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none; // Disables visual hitbox interference
+    }
+
+    .node-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: var(--dot-color);
+      border: 3px solid var(--bg-surface, #18181c);
+      cursor: pointer;
+      box-shadow: 0 0 0 2px var(--dot-color);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      z-index: 5;
+      padding: 0;
+
+      &:hover {
+        transform: scale(1.35);
+        box-shadow: 0 0 0 3px var(--bg-surface, #18181c), 0 0 10px var(--dot-color);
+      }
+    }
+
+    // Active Highlight Configurations
+    &.active {
+      .node-title-bubble {
+        opacity: 1;
+        font-weight: 700;
+        transform: translateY(-3px);
+        color: #ffffff;
+      }
+      .node-dot {
+        transform: scale(1.5);
+        box-shadow: 0 0 0 3px var(--bg-surface, #18181c), 0 0 14px var(--dot-color);
+      }
+    }
+  }
+
+  .timeline-connector-line {
+    height: 3px;
+    min-width: 140px; // Spacing block size: controls horizontal width between elements
+    flex-grow: 1;
+    z-index: 1;
+    opacity: 0.7;
+    border-radius: 2px;
+  }
+
+  // 4. Central Shifting Control Deck
+  .timeline-navigation-deck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 0.5rem 0;
+    border-top: 1px solid var(--border-color, #2a2a32);
+    border-bottom: 1px solid var(--border-color, #2a2a32);
+    padding: 1rem 0;
+
+    .nav-arrow {
+      background-color: var(--bg-surface-alt, #22222b);
+      color: var(--text-color, #e2e8f0);
+      border: 1px solid var(--border-color, #2a2a32);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+      &:hover:not(:disabled) {
+        background-color: var(--accent-color, #d4af37);
+        color: #121214;
+        border-color: var(--accent-color, #d4af37);
+      }
+      
+      &:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+    }
+    
+    .current-item-title {
+      font-family: var(--font-heading, serif); // Leverages your site's heading font standard
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin: 0;
+      text-align: center;
+      font-weight: 600;
+
+      .order-tag {
+        font-size: 0.85rem;
+        color: var(--text-muted, #626273);
+        margin-left: 0.5rem;
+        font-family: monospace;
+      }
+    }
+  }
+
+  // 5. Card Description Context Panels
+  .timeline-detail-panel {
+    background-color: var(--bg-surface-alt, #22222b);
+    border-radius: 4px;
+    padding: 1.75rem;
+    border-left: 4px solid var(--border-color, #3a3a45);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-radius: 3px;
+      margin-bottom: 1.25rem;
+    }
+
+    .summary-text {
+      line-height: 1.6;
+      color: var(--text-color, #e2e8f0);
+      margin: 0 0 1.25rem 0;
+      font-size: 0.95rem;
+      &:last-child { margin-bottom: 0; }
+    }
+
+    .recap-link-btn {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background-color: transparent;
+      color: var(--accent-color, #d4af37);
+      border: 1px solid var(--accent-color, #d4af37);
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+
+      &:hover {
+        background-color: var(--accent-color, #d4af37);
+        color: #121214;
+      }
+    }
+
+    // Dynamic left accent colors mapped contextually by entry type
+    &:has(.recap-mode) { border-left-color: #3182ce; }
+    &:has(.discord-mode) { border-left-color: #5865F2; }
+    
+    .recap-badge { background-color: rgba(49, 130, 206, 0.15); color: #63b3ed; border: 1px solid rgba(49, 130, 206, 0.3); }
+    .discord-badge { background-color: rgba(88, 101, 242, 0.15); color: #9eb5ff; border: 1px solid rgba(88, 101, 242, 0.3); }
+    .event-badge { background-color: rgba(229, 62, 62, 0.15); color: #fc8181; border: 1px solid rgba(229, 62, 62, 0.3); }
+  }
+}
+
+// Responsive layout scaling overrides
+@media (max-width: 768px) {
+  .timeline-section-wrapper {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+
+    .timeline-navigation-deck {
+      .current-item-title { font-size: 1.15rem; }
+    }
+    
+    .timeline-connector-line {
+      min-width: 90px; // Compact track sizing on mobile devices
+    }
+  }
+}
