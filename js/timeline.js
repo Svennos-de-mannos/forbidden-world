@@ -103,9 +103,9 @@ class CampaignTimeline {
         <div class="detail-card recap-mode">
           <span class="badge recap-badge">Session Recap</span>
           <p class="summary-text">${descriptionText}</p>
-          \${item.recap_id ? `<a href="/session-recaps.html?id=\${item.recap_id}" class="recap-link-btn">Read Full Chronicles</a>` : ''}
+          ${item.recap_id ? `<a href="/session-recaps.html?id=\${item.recap_id}" class="recap-link-btn">Read Full Chronicles</a>` : ''}
         </div>
-      `;
+      `; // Fixed the backslash right above in the template link string!
     } else if (item.type === "discord_vote") {
       this.detailContainer.innerHTML = `
         <div class="detail-card discord-mode">
@@ -122,4 +122,5 @@ class CampaignTimeline {
       `;
     }
   }
+
 }
