@@ -6,33 +6,55 @@
   flex-direction: column;
   gap: 2.5rem;
   padding: 2.5rem 1.5rem;
-  background-color: var(--bg-surface, #18181c);
+  background-color: var(--card-bg, #18181c); // Links directly with your repository surface variables
   border: 1px solid var(--border-color, #2a2a32);
   border-radius: 6px;
   margin: 1.5rem 0;
+  font-family: inherit;
 
   // 1. Layer Assembly Track Viewport
   .timeline-scroll-axis-wrapper {
     position: relative;
     width: 100%;
     overflow-x: auto;
-    padding: 6rem 1rem 3rem 1rem; // Plentiful breathing space for multi-line titles
+    padding: 6rem 3rem 3rem 3rem; // Added horizontal padding for starting/ending extensions
     
     &::-webkit-scrollbar { height: 6px; }
     &::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); border-radius: 4px; }
     &::-webkit-scrollbar-thumb { background: var(--border-color, #3a3a45); border-radius: 4px; }
   }
 
-  // 2. Continuous Background Gradient Line (Crossed over by date vectors)
+  // 2. Continuous Background Track (with clean outer gray edge extensions)
   .timeline-continuous-track {
     position: absolute;
-    top: calc(6rem + 7px); // Math aligns line vector completely flat under center-dots axes
-    left: 110px; // Offsets matching spacing bounds precisely
-    right: 110px;
+    top: calc(6rem + 7px); // Centers completely flat under center-dots axes
+    left: 3rem; 
+    right: 3rem;
     height: 4px;
     z-index: 1;
     opacity: 0.85;
     border-radius: 2px;
+
+    // Outer Gray Buffer Extensions before the first dot and after the last dot
+    &::before {
+      content: '';
+      position: absolute;
+      left: -80px;
+      width: 80px;
+      height: 4px;
+      background-color: #4a5568; // Solid muted gray track line
+      border-radius: 2px 0 0 2px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -80px;
+      width: 80px;
+      height: 4px;
+      background-color: #4a5568; // Solid muted gray track line
+      border-radius: 0 2px 2px 0;
+    }
   }
 
   // 3. Absolute Horizontal Node Layout Track
@@ -40,21 +62,21 @@
     display: flex;
     position: relative;
     z-index: 2;
-    width: 100%;
-    justify-content:开;
-    gap: 160px; // Static horizontal buffer gap handles wide layout separations
+    width: max-content; // Ensures container doesn't squeeze elements together
+    padding: 0 40px;
+    gap: 160px; // Spacing distance between individual dots
   }
 
-  // 4. Vertical Date Boundary Slicers (Positioned behind track)
+  // 4. Vertical Date Boundary Slicers (Centered in the preceding track segment)
   .timeline-absolute-divider {
     position: absolute;
     top: -4.5rem;
-    left: 50%;
+    left: -80px; // Fixed: Shifts backward exactly halfway into the 160px gap before this item!
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 0; // Sits neatly behind the node layer dots
+    z-index: 0;
     pointer-events: none;
     
     .date-label {
@@ -62,26 +84,27 @@
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--accent-color, #d4af37);
-      background-color: var(--bg-surface-alt, #22222b);
+      color: var(--accent-color, #ffeedd); // Pulls from your site's heading font standard
+      background-color: var(--body-bg, #22222b);
       padding: 0.35rem 0.75rem;
       border: 1px solid var(--border-color, #2a2a32);
       border-radius: 4px;
       white-space: nowrap;
       margin-bottom: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .vertical-line {
       width: 1px;
-      height: 140px; // Fully extends past the central gradient axes line bounds!
-      border-left: 2px dashed rgba(212, 175, 55, 0.35); // Styled gold hint matching header accents
+      height: 140px; // Seamlessly intersects right over the center track
+      border-left: 2px dashed var(--border-color, rgba(255, 255, 255, 0.25));
     }
   }
 
-  // 5. Unwrapped Multi-Line Node Systems
+  // 5. Multi-Line Node Blocks
   .timeline-node-block {
     position: relative;
-    width: 140px; // Preserves reliable column space sizes
+    width: 20px; // Minimal base width prevents grid shifting
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -96,17 +119,16 @@
     
     .node-title-bubble {
       position: absolute;
-      bottom: 24px; // Anchored cleanly directly above the timeline path lines
+      bottom: 24px;
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--text-color, #e2e8f0);
       text-align: center;
-      width: 160px; // Broad text limits prevent premature clipping
-      white-space: normal; // Overrides clipping: forces clean multi-line wrapping strings naturally!
+      width: 160px;
+      white-space: normal; 
       word-wrap: break-word;
       line-height: 1.3;
       opacity: 0.6;
-      transform: translateY(0);
       transition: opacity 0.2s ease, color 0.2s ease;
     }
 
@@ -115,7 +137,7 @@
       height: 14px;
       border-radius: 50%;
       background-color: var(--dot-color);
-      border: 3px solid var(--bg-surface, #18181c);
+      border: 3px solid var(--card-bg, #18181c);
       cursor: pointer;
       box-shadow: 0 0 0 2px var(--dot-color);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -124,7 +146,7 @@
 
       &:hover {
         transform: scale(1.35);
-        box-shadow: 0 0 0 3px var(--bg-surface, #18181c), 0 0 10px var(--dot-color);
+        box-shadow: 0 0 0 3px var(--card-bg, #18181c), 0 0 10px var(--dot-color);
       }
     }
 
@@ -132,11 +154,10 @@
       .node-title-bubble {
         opacity: 1;
         color: #ffffff;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
       }
       .node-dot {
         transform: scale(1.5);
-        box-shadow: 0 0 0 3px var(--bg-surface, #18181c), 0 0 14px var(--dot-color);
+        box-shadow: 0 0 0 3px var(--card-bg, #18181c), 0 0 14px var(--dot-color);
       }
     }
   }
@@ -152,7 +173,7 @@
     border-bottom: 1px solid var(--border-color, #2a2a32);
 
     .nav-arrow {
-      background-color: var(--bg-surface-alt, #22222b);
+      background-color: var(--body-bg, #22222b);
       color: var(--text-color, #e2e8f0);
       border: 1px solid var(--border-color, #2a2a32);
       width: 38px;
@@ -166,23 +187,24 @@
       transition: background-color 0.2s, color 0.2s;
 
       &:hover:not(:disabled) {
-        background-color: var(--accent-color, #d4af37);
-        color: #121214;
-        border-color: var(--accent-color, #d4af37);
+        background-color: var(--link-color, #3182ce);
+        color: #ffffff;
+        border-color: var(--link-color, #3182ce);
       }
       &:disabled { opacity: 0.2; cursor: not-allowed; }
     }
     
     .current-item-title {
-      font-family: var(--font-heading, serif);
+      font-family: inherit;
       font-size: 1.3rem;
       color: #ffffff;
       margin: 0;
       text-align: center;
+      font-weight: 700;
 
       .order-tag {
         font-size: 0.8rem;
-        color: var(--text-muted, #626273);
+        color: rgba(255, 255, 255, 0.4);
         margin-left: 0.4rem;
         font-family: monospace;
       }
@@ -191,7 +213,7 @@
 
   // 7. Bottom Detail Display Panel
   .timeline-detail-panel {
-    background-color: var(--bg-surface-alt, #22222b);
+    background-color: var(--body-bg, #22222b);
     border-radius: 4px;
     padding: 1.5rem;
     border-left: 4px solid #4a5568;
@@ -214,14 +236,14 @@
       display: inline-block;
       padding: 0.4rem 1rem;
       background: transparent;
-      color: var(--accent-color, #d4af37);
-      border: 1px solid var(--accent-color, #d4af37);
+      color: var(--link-color, #3182ce);
+      border: 1px solid var(--link-color, #3182ce);
       border-radius: 4px;
       font-size: 0.8rem;
       text-decoration: none;
       font-weight: 600;
       transition: background 0.2s, color 0.2s;
-      &:hover { background: var(--accent-color, #d4af37); color: #121214; }
+      &:hover { background: var(--link-color, #3182ce); color: #ffffff; }
     }
   }
 }
