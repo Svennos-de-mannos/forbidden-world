@@ -1,4 +1,4 @@
-// js/timeline.js - Sequential Timeline Engine Supporting Decimals & Global Dynamic Execution
+// js/timeline.js
 class CampaignTimeline {
   constructor(containerId, trackId, detailId, titleNavId) {
     this.container = document.getElementById(containerId);
@@ -13,7 +13,6 @@ class CampaignTimeline {
     try {
       const response = await fetch(jsonPath);
       const data = await response.json();
-      
       this.timelineData = data.sort((a, b) => Number(a.timeline_order) - Number(b.timeline_order));
       
       if (this.timelineData.length > 0) {
@@ -27,20 +26,16 @@ class CampaignTimeline {
 
   renderTimeline() {
     this.container.innerHTML = "";
-    
-    // Create an explicit background array to stitch together linear track segments color blending smoothly
     const gradientStops = [];
 
     this.timelineData.forEach((item, index) => {
       const dotColor = item.color || '#94a3b8';
       gradientStops.push(dotColor);
 
-      // Create interactive node component wrappers
       const nodeWrapper = document.createElement("div");
       nodeWrapper.className = `timeline-node-block`;
       nodeWrapper.id = `node-${index}`;
       
-      // If a custom date marker is flagged, embed it alongside the column divider rule cleanly
       let dateDividerHtml = '';
       if (item.date_marker && item.date_marker.trim() !== "") {
         dateDividerHtml = `
@@ -61,7 +56,7 @@ class CampaignTimeline {
       this.container.appendChild(nodeWrapper);
     });
 
-    // Build the master track color flow using your exact node list sizes
+    // Color gradient generation across the inner line track
     if (gradientStops.length > 1) {
       const segmentPercentage = 100 / (gradientStops.length - 1);
       const gradientString = gradientStops.map((color, idx) => `${color} ${idx * segmentPercentage}%`).join(', ');
@@ -82,7 +77,6 @@ class CampaignTimeline {
 
     const item = this.timelineData[index];
     
-    // Mount arrow states safely to window execution hooks
     this.titleContainer.innerHTML = `
       <button class="nav-arrow left" onclick="window.timeline.selectItem(${index - 1})" ${index === 0 ? 'disabled' : ''}>&larr;</button>
       <h2 class="current-item-title">${item.title} <span class="order-tag">[#${item.timeline_order}]</span></h2>
@@ -98,7 +92,6 @@ class CampaignTimeline {
 
   renderDetails(item) {
     const descriptionText = item.description || "No description logged for this event.";
-    
     if (item.type === "recap") {
       this.detailContainer.innerHTML = `
         <div class="detail-card recap-mode">

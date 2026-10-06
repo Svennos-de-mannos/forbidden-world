@@ -919,13 +919,11 @@ details[open] > .location-row__summary::after {
   border: 1px solid var(--border-color, #2a2a32);
   border-radius: 6px;
   margin: 1.5rem 0;
-  font-family: inherit;
 }
 .timeline-section-wrapper .timeline-scroll-axis-wrapper {
-  position: relative;
   width: 100%;
   overflow-x: auto;
-  padding: 6rem 3rem 3rem 3rem;
+  padding: 5rem 0 2rem 0;
 }
 .timeline-section-wrapper .timeline-scroll-axis-wrapper::-webkit-scrollbar {
   height: 6px;
@@ -938,14 +936,20 @@ details[open] > .location-row__summary::after {
   background: var(--border-color, #3a3a45);
   border-radius: 4px;
 }
+.timeline-section-wrapper .timeline-scroll-container {
+  display: block;
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0 120px;
+}
 .timeline-section-wrapper .timeline-continuous-track {
   position: absolute;
-  top: calc(6rem + 7px);
-  left: 3rem;
-  right: 3rem;
+  top: 7px;
+  left: 120px;
+  right: 120px;
   height: 4px;
   z-index: 1;
-  opacity: 0.85;
   border-radius: 2px;
 }
 .timeline-section-wrapper .timeline-continuous-track::before {
@@ -955,7 +959,6 @@ details[open] > .location-row__summary::after {
   width: 80px;
   height: 4px;
   background-color: #4a5568;
-  border-radius: 2px 0 0 2px;
 }
 .timeline-section-wrapper .timeline-continuous-track::after {
   content: "";
@@ -964,60 +967,24 @@ details[open] > .location-row__summary::after {
   width: 80px;
   height: 4px;
   background-color: #4a5568;
-  border-radius: 0 2px 2px 0;
 }
-.timeline-section-wrapper .timeline-scroll-container {
+.timeline-section-wrapper .timeline-nodes-track {
   display: flex;
   position: relative;
   z-index: 2;
-  width: -moz-max-content;
-  width: max-content;
-  padding: 0 40px;
-  gap: 160px;
-}
-.timeline-section-wrapper .timeline-absolute-divider {
-  position: absolute;
-  top: -4.5rem;
-  left: -80px;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 0;
-  pointer-events: none;
-}
-.timeline-section-wrapper .timeline-absolute-divider .date-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--accent-color, #ffeedd);
-  background-color: var(--body-bg, #22222b);
-  padding: 0.35rem 0.75rem;
-  border: 1px solid var(--border-color, #2a2a32);
-  border-radius: 4px;
-  white-space: nowrap;
-  margin-bottom: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-.timeline-section-wrapper .timeline-absolute-divider .vertical-line {
-  width: 1px;
-  height: 140px;
-  border-left: 2px dashed var(--border-color, rgba(255, 255, 255, 0.25));
+  gap: 180px;
 }
 .timeline-section-wrapper .timeline-node-block {
   position: relative;
-  width: 20px;
+  width: 14px;
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .timeline-section-wrapper .timeline-node-block .node-interactive-anchor {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 .timeline-section-wrapper .timeline-node-block .node-title-bubble {
   position: absolute;
@@ -1031,7 +998,6 @@ details[open] > .location-row__summary::after {
   word-wrap: break-word;
   line-height: 1.3;
   opacity: 0.6;
-  transition: opacity 0.2s ease, color 0.2s ease;
 }
 .timeline-section-wrapper .timeline-node-block .node-dot {
   width: 14px;
@@ -1041,21 +1007,48 @@ details[open] > .location-row__summary::after {
   border: 3px solid var(--card-bg, #18181c);
   cursor: pointer;
   box-shadow: 0 0 0 2px var(--dot-color);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  z-index: 5;
   padding: 0;
+  transition: transform 0.2s;
 }
 .timeline-section-wrapper .timeline-node-block .node-dot:hover {
-  transform: scale(1.35);
-  box-shadow: 0 0 0 3px var(--card-bg, #18181c), 0 0 10px var(--dot-color);
+  transform: scale(1.3);
 }
 .timeline-section-wrapper .timeline-node-block.active .node-title-bubble {
   opacity: 1;
   color: #ffffff;
 }
 .timeline-section-wrapper .timeline-node-block.active .node-dot {
-  transform: scale(1.5);
-  box-shadow: 0 0 0 3px var(--card-bg, #18181c), 0 0 14px var(--dot-color);
+  transform: scale(1.4);
+  box-shadow: 0 0 0 3px var(--card-bg, #18181c), 0 0 12px var(--dot-color);
+}
+.timeline-section-wrapper .timeline-absolute-divider {
+  position: absolute;
+  bottom: -7px;
+  left: -90px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  width: -moz-max-content;
+  width: max-content;
+}
+.timeline-section-wrapper .timeline-absolute-divider .date-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-color, #ffeedd);
+  background-color: var(--body-bg, #22222b);
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border-color, #2a2a32);
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.timeline-section-wrapper .timeline-absolute-divider .vertical-line {
+  width: 1px;
+  height: 120px;
+  border-left: 2px dashed rgba(255, 255, 255, 0.2);
 }
 .timeline-section-wrapper .timeline-navigation-deck {
   display: flex;
@@ -1073,12 +1066,10 @@ details[open] > .location-row__summary::after {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  font-size: 1.1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s, color 0.2s;
 }
 .timeline-section-wrapper .timeline-navigation-deck .nav-arrow:hover:not(:disabled) {
   background-color: var(--link-color, #3182ce);
@@ -1090,7 +1081,6 @@ details[open] > .location-row__summary::after {
   cursor: not-allowed;
 }
 .timeline-section-wrapper .timeline-navigation-deck .current-item-title {
-  font-family: inherit;
   font-size: 1.3rem;
   color: #ffffff;
   margin: 0;
@@ -1101,7 +1091,6 @@ details[open] > .location-row__summary::after {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.4);
   margin-left: 0.4rem;
-  font-family: monospace;
 }
 .timeline-section-wrapper .timeline-detail-panel {
   background-color: var(--body-bg, #22222b);
@@ -1148,7 +1137,6 @@ details[open] > .location-row__summary::after {
   font-size: 0.8rem;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.2s, color 0.2s;
 }
 .timeline-section-wrapper .timeline-detail-panel .recap-link-btn:hover {
   background: var(--link-color, #3182ce);

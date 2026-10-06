@@ -4,50 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timeline Test - The Forbidden World</title>
-    
-    <!-- Link to your main hand-compiled stylesheet -->
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body data-page="timeline-test">
 
-    <!-- Fixed: Using your repository's exact Phase 1 structural placeholder IDs -->
     <div id="nav-placeholder"></div>
 
     <main class="main-content" style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
         
-        <!-- Interactive Horizontal Timeline Block -->
         <div class="timeline-section-wrapper">
             
-            <!-- Continuous track viewport container -->
+            <!-- This container handles the horizontal scrolling -->
             <div class="timeline-scroll-axis-wrapper">
-                <!-- The continuous gradient track vector background layer -->
-                <div id="timeline-gradient-track" class="timeline-continuous-track"></div>
-                
-                <!-- The interactive absolute interactive dot layer -->
-                <div id="campaign-scroll-track" class="timeline-scroll-container"></div>
+                <div class="timeline-scroll-container">
+                    <!-- The line now sits inside, perfectly matching the dots -->
+                    <div id="timeline-gradient-track" class="timeline-continuous-track"></div>
+                    <!-- This container holds our dynamically generated node blocks -->
+                    <div id="campaign-scroll-track" class="timeline-nodes-track"></div>
+                </div>
             </div>
             
-            <!-- Interactive controller deck containing navigation arrows -->
             <div id="timeline-navigation-ctrl" class="timeline-navigation-deck"></div>
-            
-            <!-- Dedicated summary description and recap rendering panel -->
             <div id="timeline-description-box" class="timeline-detail-panel"></div>
             
         </div>
 
     </main>
 
-    <!-- Fixed: Using your repository's exact Phase 1 structural placeholder IDs -->
     <div id="footer-placeholder"></div>
 
-    <!-- Core include scripts that match your existing Phase 1 configuration -->
     <script src="js/nav-links.js"></script>
     <script src="js/include.js"></script>
-
-    <!-- The custom timeline engine logic -->
     <script src="js/timeline.js"></script>
     <script>
-        // Mount to window object instantly to guarantee global inline attribute execution
         window.timeline = new CampaignTimeline(
             'campaign-scroll-track',
             'timeline-gradient-track',
