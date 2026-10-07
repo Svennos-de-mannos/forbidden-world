@@ -1,205 +1,208 @@
-// scss/_timeline.scss
+// ==========================================================================
+// Timeline page
+// ==========================================================================
+@use 'variables' as *;
 
-.timeline-section-wrapper {
+$tl-title-h: 34px; // fixed title area so dots align regardless of wrap
+$tl-dot-row-h: 20px;
+$tl-item-w: 130px;
+$tl-segment-w: 36px;
+
+.tl-track-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid $color-border;
+  background: $color-bg-panel;
+  margin-bottom: 18px;
+  padding: 14px 10px 10px;
+}
+
+.tl-track {
+  display: flex;
+  align-items: flex-start;
+  width: max-content;
+}
+
+// --- Item column (title + dot) ---------------------------------------------
+.tl-item {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  padding: 2.5rem 1.5rem;
-  background-color: var(--card-bg, #18181c);
-  border: 1px solid var(--border-color, #2a2a32);
-  border-radius: 6px;
-  margin: 1.5rem 0;
+  align-items: center;
+  width: $tl-item-w;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
 
-  .timeline-scroll-axis-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    padding: 5rem 0 2rem 0; // Gives top bubbles comfortable space
-    
-    &::-webkit-scrollbar { height: 6px; }
-    &::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); border-radius: 4px; }
-    &::-webkit-scrollbar-thumb { background: var(--border-color, #3a3a45); border-radius: 4px; }
-  }
+.tl-item__title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: $tl-title-h;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  color: $color-offwhite-dim;
+  overflow: hidden;
+  padding: 0 4px 6px;
+}
 
-  // The relative wrapper containing both the line and the nodes together
-  .timeline-scroll-container {
-    display: block;
-    position: relative;
-    width: max-content;
-    padding: 0 120px; // Gives the start/end dots room for extensions
-  }
+.tl-item.is-selected .tl-item__title {
+  color: $color-offwhite;
+  font-weight: 700;
+}
 
-  // The colored line track
-  .timeline-continuous-track {
+.tl-item__dotwrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $tl-dot-row-h;
+}
+
+.tl-item__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent, #{$color-gray});
+  border: 2px solid $color-bg-panel;
+  box-shadow: 0 0 0 1px var(--accent, #{$color-gray});
+}
+
+.tl-item.is-selected .tl-item__dot {
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 0 0 1px var(--accent, #{$color-gray}), 0 0 8px var(--accent, #{$color-gray});
+}
+
+// --- Connecting gradient segment --------------------------------------------
+.tl-segment {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: $tl-segment-w;
+  flex-shrink: 0;
+}
+
+.tl-segment__bar {
+  height: 2px;
+  width: 100%;
+  margin-top: calc(#{$tl-title-h} + #{$tl-dot-row-h} / 2 - 1px);
+}
+
+// --- Date dividers -----------------------------------------------------------
+// Overlaid on top of a segment (or standalone before the very first item)
+// so the gradient line itself stays unbroken underneath.
+.tl-divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  pointer-events: none;
+}
+
+.tl-divider--leading {
+  position: relative;
+  width: 16px;
+  flex-shrink: 0;
+  margin-right: -6px;
+
+  .tl-divider__date {
     position: absolute;
-    top: 7px; // Centers vertically with the 14px dots
-    left: 120px;
-    right: 120px;
-    height: 4px;
-    z-index: 1;
-    border-radius: 2px;
-
-    // Gray buffer extension lines before the first dot and after the last dot
-    &::before {
-      content: '';
-      position: absolute;
-      left: -80px;
-      width: 80px;
-      height: 4px;
-      background-color: #4a5568;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      right: -80px;
-      width: 80px;
-      height: 4px;
-      background-color: #4a5568;
-    }
+    top: 0;
+    right: 6px; // anchor near the dashed line itself
+    text-align: right;
   }
+}
 
-  // The nodes track sitting cleanly directly on top of the line track
-  .timeline-nodes-track {
-    display: flex;
-    position: relative;
-    z-index: 2;
-    gap: 180px; // Distance from dot center to dot center
+.tl-divider__date {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $color-offwhite-dim;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+
+.tl-divider__line {
+  flex: 1;
+  width: 0;
+  border-left: 1px dashed $color-border;
+}
+
+// --- Selector row (title + prev/next, an alternative to scrolling) ---------
+.tl-selector {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+  margin-bottom: 18px;
+}
+
+.tl-arrow {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border: 1px solid $color-border;
+  background: $color-bg-surface;
+  color: $color-offwhite;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
   }
+}
 
-  .timeline-node-block {
-    position: relative;
-    width: 14px; // Matches the exact size of the dot to ensure perfect centering!
-    flex-shrink: 0;
+.tl-selector__title {
+  flex: 1;
+  margin: 0;
+  text-align: center;
+  font-family: $font-title;
+  font-size: 17px;
+  color: $color-offwhite;
+  min-width: 0;
+}
 
-    .node-interactive-anchor {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      width: 100%;
-    }
-    
-    .node-title-bubble {
-      position: absolute;
-      bottom: 24px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-color, #e2e8f0);
-      text-align: center;
-      width: 160px;
-      white-space: normal;
-      word-wrap: break-word;
-      line-height: 1.3;
-      opacity: 0.6;
-    }
+.tl-selector__index {
+  font-family: $font-body;
+  font-size: 11px;
+  color: $color-offwhite-dim;
+  margin-left: 4px;
+}
 
-    .node-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background-color: var(--dot-color);
-      border: 3px solid var(--card-bg, #18181c);
-      cursor: pointer;
-      box-shadow: 0 0 0 2px var(--dot-color);
-      padding: 0;
-      transition: transform 0.2s;
+// --- Detail panel ------------------------------------------------------------
+.tl-detail {
+  padding: 16px 14px;
+  background: $color-bg-surface;
+  border: 1px solid $color-border;
+  border-left: 3px solid $color-gray;
+}
 
-      &:hover {
-        transform: scale(1.3);
-      }
-    }
+.tl-detail__tag {
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  margin-bottom: 12px;
+  border: 1px solid $color-offwhite-dim;
+  color: $color-offwhite-dim;
+}
 
-    &.active {
-      .node-title-bubble { opacity: 1; color: #ffffff; }
-      .node-dot { transform: scale(1.4); box-shadow: 0 0 0 3px var(--card-bg, #18181c), 0 0 12px var(--dot-color); }
-    }
-  }
-
-  // Vertical Date Boundary Slicers centered exactly in the middle of the preceding segment
-  .timeline-absolute-divider {
-    position: absolute;
-    bottom: -7px; // Syncs vertically with the dot tracking axis
-    left: -90px; // Halfway point of the 180px gap before this node!
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    pointer-events: none;
-    width: max-content;
-    
-    .date-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--accent-color, #ffeedd);
-      background-color: var(--body-bg, #22222b);
-      padding: 0.35rem 0.75rem;
-      border: 1px solid var(--border-color, #2a2a32);
-      border-radius: 4px;
-      margin-bottom: 0.75rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .vertical-line {
-      width: 1px;
-      height: 120px;
-      border-left: 2px dashed rgba(255, 255, 255, 0.2);
-    }
-  }
-
-  // Controls Navigation Deck
-  .timeline-navigation-deck {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 1rem 0;
-    border-top: 1px solid var(--border-color, #2a2a32);
-    border-bottom: 1px solid var(--border-color, #2a2a32);
-
-    .nav-arrow {
-      background-color: var(--body-bg, #22222b);
-      color: var(--text-color, #e2e8f0);
-      border: 1px solid var(--border-color, #2a2a32);
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &:hover:not(:disabled) {
-        background-color: var(--link-color, #3182ce);
-        color: #ffffff;
-        border-color: var(--link-color, #3182ce);
-      }
-      &:disabled { opacity: 0.2; cursor: not-allowed; }
-    }
-    
-    .current-item-title {
-      font-size: 1.3rem;
-      color: #ffffff;
-      margin: 0;
-      text-align: center;
-      font-weight: 700;
-      .order-tag { font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-left: 0.4rem; }
-    }
-  }
-
-  // Details Display Panel
-  .timeline-detail-panel {
-    background-color: var(--body-bg, #22222b);
-    border-radius: 4px;
-    padding: 1.5rem;
-    border-left: 4px solid #4a5568;
-    .badge { display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: 3px; margin-bottom: 1rem; }
-    .recap-badge { background-color: rgba(49, 130, 206, 0.15); color: #63b3ed; border: 1px solid rgba(49, 130, 206, 0.3); }
-    .discord-badge { background-color: rgba(88, 101, 242, 0.15); color: #9eb5ff; border: 1px solid rgba(88, 101, 242, 0.3); }
-    .event-badge { background-color: rgba(229, 62, 62, 0.15); color: #fc8181; border: 1px solid rgba(229, 62, 62, 0.3); }
-    .summary-text { line-height: 1.6; color: var(--text-color, #e2e8f0); margin-bottom: 1rem; }
-    .recap-link-btn {
-      display: inline-block; padding: 0.4rem 1rem; background: transparent; color: var(--link-color, #3182ce); border: 1px solid var(--link-color, #3182ce); border-radius: 4px; font-size: 0.8rem; text-decoration: none; font-weight: 600;
-      &:hover { background: var(--link-color, #3182ce); color: #ffffff; }
-    }
-  }
+.tl-detail__text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: $color-offwhite;
+  margin: 0;
+  white-space: pre-line;
 }

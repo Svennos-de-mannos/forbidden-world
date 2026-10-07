@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Timeline — The Forbidden World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="timeline">
+
+<div class="page">
+
+  <div data-include="header"></div>
+
+  <main>
+    <section class="people">
+      <h1 class="page-title">Timeline</h1>
+
+      <div class="tl-track-wrap">
+        <div class="tl-track" id="timelineTrack"></div>
+      </div>
+
+      <div class="tl-selector">
+        <button type="button" class="tl-arrow" id="timelinePrev" aria-label="Previous">&larr;</button>
+        <p class="tl-selector__title">
+          <span id="timelineSelectedTitle" data-field></span>
+          <span class="tl-selector__index" id="timelineSelectedIndex"></span>
+        </p>
+        <button type="button" class="tl-arrow" id="timelineNext" aria-label="Next">&rarr;</button>
+      </div>
+
+      <div class="tl-detail">
+        <span class="tl-detail__tag" id="timelineTag" data-field></span>
+        <p class="tl-detail__text" id="timelineText" data-field></p>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+</div>
+
+<script src="js/nav-links.js"></script>
+<script src="js/include.js"></script>
+<script src="js/card-loader.js"></script>
+<script src="js/colors.js"></script>
+<script src="js/timeline-page.js"></script>
+</body>
+</html>

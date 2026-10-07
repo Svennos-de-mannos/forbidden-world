@@ -1,0 +1,37 @@
+[
+  {
+    "order": 1,
+    "type": "event",
+    "title": "The Fall of the Clocktower",
+    "text": "The clocktower of Eagle's Hope is destroyed on the eve of the anniversary, and falls after midnight. The ground beneath it splits open, revealing a castle stretching down into the dark.",
+    "tag": "World Event",
+    "color": "#d9435a",
+    "date": "Eve of the Castle Fall anniversary"
+  },
+  {
+    "order": 2,
+    "type": "session",
+    "sessionId": "session-openeyes-0",
+    "tag": "",
+    "color": "#8a4fd9",
+    "date": ""
+  },
+  {
+    "order": 3,
+    "type": "event",
+    "title": "The Black Cloak Perimeter",
+    "text": "The Black Cloak Order seals off the Sandwalker zone, taking control of the city in the days that follow.",
+    "tag": "World Event",
+    "color": "#3d8fd9",
+    "date": "Three days later"
+  },
+  {
+    "order": 4,
+    "type": "event",
+    "title": "Council Action: Quarantine the Reach",
+    "text": "The council votes to formally quarantine the affected district until the anomaly can be understood.",
+    "tag": "Council Vote",
+    "color": "#d99a3d",
+    "date": ""
+  }
+]

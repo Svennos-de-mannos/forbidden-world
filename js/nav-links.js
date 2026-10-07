@@ -10,4 +10,5 @@ const NAV_LINKS = [
   { label: 'Factions',              page: 'factions',        href: 'factions.html' },
   { label: 'Campaigns',             page: 'campaigns',       href: 'campaigns.html' },
   { label: 'Search',                 page: 'search',          href: 'search.html' },
+  { label: 'Timeline',               page: 'timeline',        href: 'timeline.html' },
 ];
