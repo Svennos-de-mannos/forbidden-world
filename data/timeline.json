@@ -14,7 +14,7 @@
     "title": "Construction of Castle Hemmeth Begins",
     "text": "The visionary architect Norex Volcron begins the massive architectural undertaking of building the castle of King Hemmeth I.",
     "tag": "World Event",
-    "color": "#12695f",
+    "color": "#97fcfc",
     "date": "877"
   },
   {
@@ -23,7 +23,7 @@
     "title": "Construction of Castle Hemmeth Finished",
     "text": "Norex Volcron completes the construction of Castle Hemmeth, plunging the country into massive debt to the Volcron family.",
     "tag": "World Event",
-    "color": "#12695f",
+    "color": "#97fcfc",
     "date": "888"
   },
   {
@@ -69,7 +69,7 @@
     "title": "Creation of the Anchor Corporation",
     "text": "The Anchor Corporation is founded, quickly establishing a shipping powerhouse and seizing control of the Harbour District.",
     "tag": "World Event",
-    "color": "#12695f",
+    "color": "#97fcfc",
     "date": ""
   },
   {
@@ -141,7 +141,7 @@
     "title": "The Murder of Mayor Zachery Marigold",
     "text": "Mayor Zachery Marigold of Eagle's Hope mysteriously dies after receiving a prophetic warning message from Evan Glass.",
     "tag": "World Event",
-    "color": "#F4F1EA",
+    "color": "#ff7300",
     "date": "2 September"
   },
   {
