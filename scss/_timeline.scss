@@ -3,10 +3,14 @@
 // ==========================================================================
 @use 'variables' as *;
 
-$tl-title-h: 34px; // fixed title area so dots align regardless of wrap
+$tl-label-h: 28px;  // dedicated row for divider date labels — keeps them
+                     // clear of the titles instead of overlapping them
+$tl-title-h: 52px;  // fixed title area (fits 3 lines) so dots align regardless of wrap
 $tl-dot-row-h: 20px;
 $tl-item-w: 130px;
 $tl-segment-w: 36px;
+$tl-end-fade-w: 48px; // the gray fade-out stubs before the first/after the last dot
+$tl-col-h: $tl-label-h + $tl-title-h + $tl-dot-row-h;
 
 .tl-track-wrap {
   overflow-x: auto;
@@ -14,17 +18,28 @@ $tl-segment-w: 36px;
   border: 1px solid $color-border;
   background: $color-bg-panel;
   margin-bottom: 18px;
-  padding: 14px 10px 10px;
+  padding: 28px 28px 26px; // more vertical + horizontal breathing room
+  --tl-gray: #{$color-dead}; // what the line fades to at both ends
+  cursor: grab;
+  touch-action: pan-y; // let the browser keep vertical page scroll;
+                        // horizontal drag is handled manually in JS
+
+  &.is-dragging {
+    cursor: grabbing;
+  }
 }
 
 .tl-track {
   display: flex;
   align-items: flex-start;
   width: max-content;
+  user-select: none; // avoid text-selection while dragging
 }
 
-// --- Item column (title + dot) ---------------------------------------------
+// --- Item column (title + dot) ----------------------------------------------
 .tl-item {
+  position: relative;
+  z-index: 2; // dots always paint above the connecting bars
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,6 +50,10 @@ $tl-segment-w: 36px;
   font: inherit;
   cursor: pointer;
   padding: 0;
+}
+
+.tl-item__labelspacer {
+  height: $tl-label-h;
 }
 
 .tl-item__title {
@@ -49,6 +68,15 @@ $tl-segment-w: 36px;
   color: $color-offwhite-dim;
   overflow: hidden;
   padding: 0 4px 6px;
+}
+
+// Clamp very long titles to 3 lines with an ellipsis rather than
+// letting the top line get cut off.
+.tl-item__titletext {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .tl-item.is-selected .tl-item__title {
@@ -78,65 +106,87 @@ $tl-segment-w: 36px;
   box-shadow: 0 0 0 1px var(--accent, #{$color-gray}), 0 0 8px var(--accent, #{$color-gray});
 }
 
-// --- Connecting gradient segment --------------------------------------------
+// --- Connecting gradient segment ---------------------------------------------
+// The bar is absolutely positioned and extends into both neighboring
+// item columns (half an item-width each side), so it visually reaches
+// the center of each dot instead of leaving a gap.
 .tl-segment {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  z-index: 1;
   width: $tl-segment-w;
+  height: $tl-col-h;
   flex-shrink: 0;
 }
 
 .tl-segment__bar {
+  position: absolute;
+  top: calc(#{$tl-label-h} + #{$tl-title-h} + #{$tl-dot-row-h} / 2 - 1px);
+  left: calc(-1 * #{$tl-item-w} / 2);
+  right: calc(-1 * #{$tl-item-w} / 2);
   height: 2px;
-  width: 100%;
-  margin-top: calc(#{$tl-title-h} + #{$tl-dot-row-h} / 2 - 1px);
 }
 
-// --- Date dividers -----------------------------------------------------------
-// Overlaid on top of a segment (or standalone before the very first item)
-// so the gradient line itself stays unbroken underneath.
+// Decorative fades before the first dot and after the last — the line
+// trails off to gray rather than starting/ending abruptly.
+.tl-end-fade {
+  position: relative;
+  z-index: 1;
+  width: $tl-end-fade-w;
+  height: $tl-col-h;
+  flex-shrink: 0;
+}
+
+.tl-end-fade__bar {
+  position: absolute;
+  top: calc(#{$tl-label-h} + #{$tl-title-h} + #{$tl-dot-row-h} / 2 - 1px);
+  left: 0;
+  right: calc(-1 * #{$tl-item-w} / 2);
+  height: 2px;
+}
+
+.tl-end-fade--out .tl-end-fade__bar {
+  left: calc(-1 * #{$tl-item-w} / 2);
+  right: 0;
+}
+
+// --- Date dividers -------------------------------------------------------------
+// A dashed vertical line overlaid on the segment leading into a dated
+// entry (or, for the very first entry, on the lead-in fade). The date
+// label sits in its own row above the titles and runs to the RIGHT of
+// the line, so it never gets clipped at the left edge or collides with
+// a title.
 .tl-divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  height: 100%;
+  border-left: 1px dashed $color-gray;
+  pointer-events: none;
+}
+
+// Lead-in fade is wider than a segment: put the line the same distance
+// before the first dot as segment dividers sit before theirs.
+.tl-end-fade .tl-divider {
+  left: calc(100% - #{$tl-segment-w} / 2);
+}
+
+.tl-divider__date {
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  height: 100%;
-  pointer-events: none;
-}
-
-.tl-divider--leading {
-  position: relative;
-  width: 16px;
-  flex-shrink: 0;
-  margin-right: -6px;
-
-  .tl-divider__date {
-    position: absolute;
-    top: 0;
-    right: 6px; // anchor near the dashed line itself
-    text-align: right;
-  }
-}
-
-.tl-divider__date {
+  height: $tl-label-h;
+  padding-left: 6px;
   font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: $color-offwhite-dim;
   white-space: nowrap;
-  margin-bottom: 2px;
 }
 
-.tl-divider__line {
-  flex: 1;
-  width: 0;
-  border-left: 1px dashed $color-border;
-}
-
-// --- Selector row (title + prev/next, an alternative to scrolling) ---------
+// --- Selector row (title + prev/next, an alternative to scrolling) ------------
 .tl-selector {
   display: flex;
   align-items: center;
@@ -148,17 +198,21 @@ $tl-segment-w: 36px;
 }
 
 .tl-arrow {
-  width: 30px;
-  height: 30px;
   flex-shrink: 0;
-  border: 1px solid $color-border;
-  background: $color-bg-surface;
-  color: $color-offwhite;
-  font-size: 14px;
+  border: none;
+  background: none;
+  color: $color-offwhite-dim;
+  font-size: 18px;
+  line-height: 1;
+  padding: 6px 10px;
   cursor: pointer;
 
+  &:hover:not(:disabled) {
+    color: $color-offwhite;
+  }
+
   &:disabled {
-    opacity: 0.35;
+    opacity: 0.25;
     cursor: default;
   }
 }
@@ -180,7 +234,7 @@ $tl-segment-w: 36px;
   margin-left: 4px;
 }
 
-// --- Detail panel ------------------------------------------------------------
+// --- Detail panel ----------------------------------------------------------------
 .tl-detail {
   padding: 16px 14px;
   background: $color-bg-surface;

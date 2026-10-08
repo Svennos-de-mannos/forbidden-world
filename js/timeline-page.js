@@ -62,7 +62,14 @@ async function resolveTimelineItems() {
     });
 }
 
-function buildTrack(track, items, onSelect) {
+function buildTrack(track, items, onSelect, wasDragged) {
+  // Fades from neutral gray into the first dot's color.
+  const leadIn = makeEl('div', 'tl-end-fade');
+  const leadInBar = makeEl('div', 'tl-end-fade__bar');
+  leadInBar.style.background = `linear-gradient(to right, var(--tl-gray), ${items[0].color})`;
+  leadIn.appendChild(leadInBar);
+  track.appendChild(leadIn);
+
   items.forEach((item, i) => {
     // The connecting segment must exist BEFORE we try to overlay a
     // divider onto it — build it first.
@@ -77,37 +84,90 @@ function buildTrack(track, items, onSelect) {
     }
 
     if (item.date) {
-      const leading = i === 0;
-      const divider = makeEl(leading ? 'div' : 'span', `tl-divider${leading ? ' tl-divider--leading' : ''}`);
-      const label = makeEl('span', 'tl-divider__date', item.date);
-      const line = makeEl('span', 'tl-divider__line');
-      divider.appendChild(label);
-      divider.appendChild(line);
-
-      if (segment) {
-        // Overlay on the segment leading into this item, so the
-        // gradient line itself stays unbroken underneath it.
-        segment.appendChild(divider);
-      } else {
-        // No segment before the very first item — insert standalone.
-        track.appendChild(divider);
-      }
+      // Overlaid on the segment leading into this entry — or, for the
+      // very first entry, on the lead-in fade — so the gradient line
+      // stays unbroken underneath.
+      const divider = makeEl('span', 'tl-divider');
+      divider.appendChild(makeEl('span', 'tl-divider__date', item.date));
+      (segment || leadIn).appendChild(divider);
     }
 
     const col = makeEl('button', 'tl-item');
     col.type = 'button';
     col.dataset.index = String(i);
+    col.appendChild(makeEl('span', 'tl-item__labelspacer'));
     const title = makeEl('span', 'tl-item__title');
-    fillOrPlaceholder(title, item.title);
+    const titleText = makeEl('span', 'tl-item__titletext');
+    fillOrPlaceholder(titleText, item.title);
+    title.appendChild(titleText);
     const dotWrap = makeEl('span', 'tl-item__dotwrap');
     const dot = makeEl('span', 'tl-item__dot');
     dot.style.setProperty('--accent', item.color);
     dotWrap.appendChild(dot);
     col.appendChild(title);
     col.appendChild(dotWrap);
-    col.addEventListener('click', () => onSelect(i));
+    // Dragging the track shouldn't also fire a selection — only treat
+    // this as a real click if the pointer never moved meaningfully.
+    col.addEventListener('click', () => {
+      if (wasDragged()) return;
+      onSelect(i);
+    });
     track.appendChild(col);
   });
+
+  // Fades from the last dot's color back to neutral gray.
+  const leadOut = makeEl('div', 'tl-end-fade tl-end-fade--out');
+  const leadOutBar = makeEl('div', 'tl-end-fade__bar');
+  leadOutBar.style.background = `linear-gradient(to right, ${items[items.length - 1].color}, var(--tl-gray))`;
+  leadOut.appendChild(leadOutBar);
+  track.appendChild(leadOut);
+}
+
+// Click-and-drag (mouse) and touch-drag (finger) scrolling for the
+// track. Uses the Pointer Events API so one set of handlers covers
+// both. Returns a `wasDragged()` getter so click handlers can ignore
+// clicks that were actually the end of a drag gesture.
+function initDragToScroll(wrap) {
+  let isDown = false;
+  let dragging = false;
+  let startX = 0;
+  let startScroll = 0;
+  let dragged = false;
+
+  wrap.addEventListener('pointerdown', (e) => {
+    isDown = true;
+    dragging = false;
+    dragged = false;
+    startX = e.clientX;
+    startScroll = wrap.scrollLeft;
+    // NOTE: no pointer capture yet. Capturing on pointerdown would
+    // redirect the follow-up click to the wrapper and break clicking
+    // the dots. We only capture once it's clearly a drag.
+  });
+
+  wrap.addEventListener('pointermove', (e) => {
+    if (!isDown) return;
+    const dx = e.clientX - startX;
+    if (!dragging && Math.abs(dx) > 4) {
+      dragging = true;
+      dragged = true;
+      wrap.setPointerCapture(e.pointerId);
+      wrap.classList.add('is-dragging');
+    }
+    if (dragging) wrap.scrollLeft = startScroll - dx;
+  });
+
+  function stop() {
+    isDown = false;
+    dragging = false;
+    wrap.classList.remove('is-dragging');
+  }
+  wrap.addEventListener('pointerup', stop);
+  wrap.addEventListener('pointercancel', stop);
+
+  // `dragged` stays true until the NEXT pointerdown, so a click event
+  // that fires right after a drag ends can still see it and bail out.
+  return () => dragged;
 }
 
 async function initTimeline() {
@@ -119,6 +179,9 @@ async function initTimeline() {
     track.parentElement.appendChild(makeEl('p', 'group__empty', 'Nothing on the timeline yet.'));
     return;
   }
+
+  const wrap = track.parentElement;
+  const wasDragged = initDragToScroll(wrap);
 
   const prevBtn = document.getElementById('timelinePrev');
   const nextBtn = document.getElementById('timelineNext');
@@ -149,7 +212,7 @@ async function initTimeline() {
     if (el) el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   }
 
-  buildTrack(track, items, select);
+  buildTrack(track, items, select, wasDragged);
 
   prevBtn.addEventListener('click', () => select(current - 1));
   nextBtn.addEventListener('click', () => select(current + 1));
