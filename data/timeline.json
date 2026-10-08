@@ -2,36 +2,177 @@
   {
     "order": 1,
     "type": "event",
-    "title": "The Fall of the Clocktower",
-    "text": "The clocktower of Eagle's Hope is destroyed on the eve of the anniversary, and falls after midnight. The ground beneath it splits open, revealing a castle stretching down into the dark.",
+    "title": "Creation of Ravenscroft Asylum",
+    "text": "The Ravenscroft Asylum is founded by Count Silas Ravencroft in Crescent Keep, overlooking the town of Crescent Hills.",
     "tag": "World Event",
-    "color": "#d9435a",
-    "date": "Eve of the Castle Fall anniversary"
+    "color": "#c42847",
+    "date": "843"
   },
   {
     "order": 2,
-    "type": "session",
-    "sessionId": "session-openeyes-0",
-    "tag": "",
-    "color": "#8a4fd9",
-    "date": ""
+    "type": "event",
+    "title": "Construction of Castle Hemmeth Begins",
+    "text": "The visionary architect Norex Volcron begins the massive architectural undertaking of building the castle of King Hemmeth I.",
+    "tag": "World Event",
+    "color": "#12695f",
+    "date": "877"
   },
   {
     "order": 3,
     "type": "event",
-    "title": "The Black Cloak Perimeter",
-    "text": "The Black Cloak Order seals off the Sandwalker zone, taking control of the city in the days that follow.",
+    "title": "Construction of Castle Hemmeth Finished",
+    "text": "Norex Volcron completes the construction of Castle Hemmeth, plunging the country into massive debt to the Volcron family.",
     "tag": "World Event",
-    "color": "#3d8fd9",
-    "date": "Three days later"
+    "color": "#12695f",
+    "date": "888"
   },
   {
     "order": 4,
     "type": "event",
-    "title": "Council Action: Quarantine the Reach",
-    "text": "The council votes to formally quarantine the affected district until the anomaly can be understood.",
-    "tag": "Council Vote",
-    "color": "#d99a3d",
+    "title": "Castlefall & Fall of Hemmeth Empire",
+    "text": "King Hemmeth I's Castle is mysteriously swallowed by unknown forces, killing the king and collapsing his empire.",
+    "tag": "World Event",
+    "color": "#d9a927",
+    "date": "889"
+  },
+
+  {
+    "order": 5,
+    "type": "event",
+    "title": "The Fire of Crescent Keep",
+    "text": "Crescent Keep is entirely destroyed by a catastrophic fire. King Hammeth II, Count Silas Ravencroft, and all staff and patients perish.",
+    "tag": "World Event",
+    "color": "#c42847",
+    "date": ""
+  },
+  {
+    "order": 5.5,
+    "type": "event",
+    "title": "Collapse of the Hemmeth Succession",
+    "text": "Following the sudden death of King Hemmeth II without a clear heir to the throne, the historic Hemmeth Empire officially collapses, plunging the entire country into a dark period of deep political unrest and instability, leading to a civil war.",
+    "tag": "World Event",
+    "color": "#d9a927",
+    "date": ""
+  },
+  {
+    "order": 6,
+    "type": "event",
+    "title": "Independence of Crescent Hills",
+    "text": "Following the sudden collapse of the Hemmeth Empire, the town of Crescent Hills gains unique autonomous independence.",
+    "tag": "World Event",
+    "color": "#c42847",
+    "date": "890"
+  },
+  {
+    "order": 7,
+    "type": "event",
+    "title": "Creation of the Anchor Corporation",
+    "text": "The Anchor Corporation is founded, quickly establishing a shipping powerhouse and seizing control of the Harbour District.",
+    "tag": "World Event",
+    "color": "#12695f",
+    "date": ""
+  },
+  {
+    "order": 8,
+    "type": "event",
+    "title": "Coronation of King Alexander Algar",
+    "text": "King Alexander Algar 'the Immortal' is officially crowned, shifting the political alignments of the kingdom, and ending the long civil war.",
+    "tag": "World Event",
+    "color": "#F4F1EA",
+    "date": "932"
+  },
+  {
+    "order": 9,
+    "type": "event",
+    "title": "Siege of Crescent Hills",
+    "text": "King Alexander conducts a successful military siege of Crescent Hills, forcefully absorbing the prosperous city into the new Algaros kingdom.",
+    "tag": "World Event",
+    "color": "#c42847",
+    "date": "948"
+  },
+  {
+    "order": 10,
+    "type": "event",
+    "title": "The Burial of Nikoleta Crowe",
+    "text": "Nikoleta Angela Crowe is buried at the age of 18. Her family publicly claims that she is deceased.",
+    "tag": "World Event",
+    "color": "#c42847",
+    "date": "1081"
+  },
+  {
+    "order": 11,
+    "type": "event",
+    "title": "Arrival of Laughingmen Entertainment",
+    "text": "Laughingmen Entertainment makes its dramatic debut in Crescent Hills, building an expansive presence outside town borders.",
+    "tag": "World Event",
+    "color": "#c42847",
+    "date": "1086"
+  },
+  {
+    "order": 12,
+    "type": "event",
+    "title": "Reappearance of Nikoleta Crowe",
+    "text": "Nikoleta Crowe dramatically resurfaces as the bright and joyful co-owner of Laughingmen Entertainment, despite family claims of her death.",
+    "tag": "World Event",
+    "color": "#c42847",
+    "date": ""
+  },
+  {
+    "order": 13,
+    "type": "event",
+    "title": "Creation of the People's Church",
+    "text": "Arthur Marrow spearheads the People's Church of the Perfect Body, gathering rapid following inside the city.",
+    "tag": "World Event",
+    "color": "#c42847",
+    "date": "1087"
+  },
+  {
+    "order": 14,
+    "type": "event",
+    "title": "The Burning of Carsteen Street",
+    "text": "The city guard sets fire to the church chapel on Carsteen Street under smuggling allegations, burning down a massive portion of uptown.",
+    "tag": "World Event",
+    "color": "#c42847",
+    "date": "1089"
+  },
+  {
+    "order": 15,
+    "type": "event",
+    "title": "The Murder of Mayor Zachery Marigold",
+    "text": "Mayor Zachery Marigold of Eagle's Hope mysteriously dies after receiving a prophetic warning message from Evan Glass.",
+    "tag": "World Event",
+    "color": "#F4F1EA",
+    "date": "2 September"
+  },
+  {
+    "order": 16,
+    "type": "session",
+    "sessionId": "session-openeyes-0",
+    "title": "The Tower (Session 0)",
+    "text": "On the eve of the anniversary, time stops via the Sandwalker effect. A group of anomalies meets Evan Glass and destroys the clocktower, tearing the ground open.",
+    "tag": "Session Log",
+    "color": "#d9a927",
+    "date": "3 September"
+  },
+  {
+    "order": 17,
+    "type": "event",
+    "title": "The Black Cloak Perimeter",
+    "text": "The Order of the Black Cloak swoops into the farmlands of Eagle's Hope, setting up heavily armed perimeter checkpoints to contain the abyss.",
+    "tag": "World Event",
+    "color": "#d9a927",
+    "date": "October"
+  },
+  {
+    "order": 18,
+    "type": "session",
+    "sessionId": "session-openeyes-1",
+    "title": "The Chariot (Session 1)",
+    "text": "The anomalies descend into the newly formed chasm, braving Volcron infrastructure, automated trains, and organic horrors to rescue Tyler the Flesh Harp.",
+    "tag": "Session Log",
+    "color": "#d9a927",
     "date": ""
   }
 ]
+
+
