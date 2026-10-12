@@ -173,6 +173,15 @@
     "color": "#d9a927",
     "date": ""
   },
+  {
+    "order": 18.5,
+    "type": "event",
+    "title": "Royal Commendation for Dr. Thalia Veil",
+    "text": "King Alexander's Council formally decides to honor Black Cloak agent Dr. Thalia Veil, issuing a prestigious reward for her exceptional bravery and medical expertise demonstrated during the subterranean rescue of Tyler the Harp.",
+    "tag": "World Event",
+    "color": "#d9a927",
+    "date": "October"
+  },
     {
     "order": 19,
     "type": "session",
@@ -180,7 +189,7 @@
     "title": "A Fire in the Hills (Session 1)",
     "text": "A mysterious man in a fedora rots the farmlands, sparking a devastating fire in the Hill District. Amidst city-wide chaos and looting, a newly formed crew clashes over a house robbery, gets arrested, and cuts a deal with investigator Medio Gato.",
     "tag": "Session Log",
-    "color": "#8a4fd9",
+    "color": "#c42847",
     "date": "November"
   }
 ]
