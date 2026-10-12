@@ -172,6 +172,16 @@
     "tag": "Session Log",
     "color": "#d9a927",
     "date": ""
+  },
+    {
+    "order": 19,
+    "type": "session",
+    "sessionId": "session-cresthills-01",
+    "title": "A Fire in the Hills (Session 1)",
+    "text": "A mysterious man in a fedora rots the farmlands, sparking a devastating fire in the Hill District. Amidst city-wide chaos and looting, a newly formed crew clashes over a house robbery, gets arrested, and cuts a deal with investigator Medio Gato.",
+    "tag": "Session Log",
+    "color": "#8a4fd9",
+    "date": "November"
   }
 ]
 

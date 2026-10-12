@@ -107,5 +107,45 @@
     "color": "#EFCB68",
     "description": "What is the Castle under Eagle’s Hope?",
     "text": "When the ground split open, it revealed a giant unknown castle under Eagle’s Hope. It has hallways and structures built by or named after mysterious figures, like Norex Volcron, Arthur Marrow, G. Hunter, and others. It might also very well be related to the old king Zohar Hammeth I, who died in 889, which was 200 Years Ago."
+  },
+   {
+    "id": "quest-kill-dave",
+    "type": "quest",
+    "campaign": ["crescenthills"],
+    "title": "Kill Dave the Mushroom",
+    "status": "ongoing",
+    "color": "#B60B02",
+    "description": "Eliminate the thief Dave at his industrial workplace.",
+    "text": "Following the robbery of Adalin's home, the party accepted a 53 gold piece bounty from private investigator Medio Gato to hunt down Dave the mushroom. The plan is to ambush and execute him at his job in the industrial district."
+  },
+  {
+    "id": "quest-steal-laughingmen-documents",
+    "type": "quest",
+    "campaign": ["crescenthills"],
+    "title": "Steal Laughingmen Financial Documents",
+    "status": "ongoing",
+    "color": "#4F8A4C",
+    "description": "Infiltrate the Circus or Casino while the owners are away.",
+    "text": "The party intends to heist the inner offices of Laughingmen Entertainment at night to secure their financial records and paperwork. The operation is scheduled to take place while owners Fierre and Nikki are attending a premier play at the Silvermist Theatre."
+  },
+  {
+    "id": "mystery-laughingmen-property",
+    "type": "mystery",
+    "campaign": ["crescenthills"],
+    "title": "What property did the Laughingmen buy?",
+    "status": "ongoing",
+    "color": "#EFCB68",
+    "description": "Uncover the newest secret purchase made by Laughingmen Entertainment.",
+    "text": "Medio Gato has offered a 50 gold piece per person reward to figure out exactly what new sector of real estate or land the Laughingmen company has acquired, deeming the massive transactional secrecy highly suspicious."
+  },
+  {
+    "id": "mystery-man-fedora",
+    "type": "mystery",
+    "campaign": ["crescenthills"],
+    "title": "Who is the man in the fedora hat?",
+    "status": "ongoing",
+    "color": "#76677F",
+    "description": "Identify the decaying figure seen in Avani's vision.",
+    "text": "At the start of November, Avani witnessed a strange, terrifying entity wearing a fedora hat walking directly through the Hill District's farmlands, actively rotting and burning the crop fields with every step he took right before the great fire erupted."
   }
 ]

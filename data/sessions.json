@@ -1,14 +1,14 @@
 [
-  {
-    "id": "session-cresthills-01",
-    "campaign": "crescenthills",
-    "oneShot": false,
-    "sessionNumber": "1",
-    "title": "",
-    "coverImage": "",
-    "text": "",
-    "players": []
-  },
+{
+  "id": "session-cresthills-01",
+  "campaign": "crescenthills",
+  "oneShot": false,
+  "sessionNumber": "1",
+  "title": "The Fuckery begins",
+  "coverImage": "",
+  "text": "The session started out with Avani in the hill district, waking up to the strange man with the fedora walking through the farmlands, rotting and burning it with each step.\n\na large fire then broke out, and the hill district fell into chaos with people getting in and out of the city, and lootings starting.\n\nIt is at this point thas Adalin nearly got robbed by a guard, but a passing by Avani saved her by turning into a dog an falling on the guards head.\n\nwhen Avani and Adalin got to Adalin's home, they found it robbed blind by a mushroom guy named Dave.\n\nDave himself had ran towards the swamps looking to buy drugs with the goods he had just stolen, and went to the fairy frenzy to acomplish this goal. in exchange for a gold heart necklace, frenzy showed him to her drug dealer lou baba.\n\ntogether they went to Lou Baba, where dave bought cheap drugs, and then went back to Adalin's house in order to rob more for more drugs.\n\nlou, frenzy and bonkus followed dave, and long story short, they all got into a bit of a tussle, and got arrested by the town guards.\n\nbonkus however, was a little to big for the guards to actually arrest him, so he knocked 2 guards down, saved the others, and followed lu baba as he ran to the office of a guy he knows\n\nthe guy turned out to be Medio Gato, who offered to pay their lawyer costs, if they did a few jobs for him.\n\nhe explained that he thought the world was ending, and the importants people in the city had somethig to do with it. he also offered up a 53 gold piece bounty on Dave., and then a 50 per person reward for figuring out what property the laughinmen entertainment company had just bought, cause he thought this was very suspicious.\n\nthe party accepted, and decided to wait for dave at his job in the industrial district, kill him, and then go to the casino or circus at night when both laughingmen owners are attending a play in the theathre, and thus not near their paperwork.",
+  "players": ["Avani", "Adalin", "Frenzy", "Lou Baba", "Bonkus"]
+},
   {
     "id": "oneshot-01",
     "campaign": null,

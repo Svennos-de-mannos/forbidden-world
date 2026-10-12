@@ -47,7 +47,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#E88BB5",
-    "image": "",
+    "image": "assets/images/characters/frenzi.jpg",
     "text": "Frenzy and Avani once worked for the same fey in the feywild, when a job gone wrong got them banished to the material plane. Both fey blame each other, but still live in the same city they arrived in. Frenzy has a fancy for drugs, and buys from Lou Baba"
   },
   {
@@ -64,7 +64,7 @@
     "aliveStatus": "alive",
     "residence": "Crescent Hills",
     "color": "#98D8C8",
-    "image": "",
+    "image": "assets/images/characters/avani.jpg",
     "text": "Avani and Frenzy both blame each other for their banishment to Crescent Hills. She used to live in the feywild, but now she lives in the farmlands of the rich folk of the city. Recently she has noticed the large amount of rot in the farmfields, and wants to find out where it comes from."
   },
   {
@@ -491,5 +491,22 @@
     "color": "#B1BE93",
     "image": "assets/images/characters/jane-ursa.jpg",
     "text": "Jane was hired to investigate the temporal effect in Eagle’s Hope. She dubbed this effect: the Sandwalker Effect."
+  },
+   {
+    "id": "npc-dave-the-mushroom",
+    "kind": "npc",
+    "campaign": [
+      "crescenthills"
+    ],
+    "name": "Dave the Mushroom",
+    "role": "Thief / Factory Worker",
+    "race": "Mushroom-kin",
+    "class": "commoner",
+    "age": "16",
+    "aliveStatus": "alive",
+    "residence": "Crescent Hills",
+    "color": "#4A6B53",
+    "image": "assets/images/characters/dave.jpg",
+    "text": "Dave is a problematic mushroom guy who works a day job down in the industrial district. He completely cleaned out Adalin Darkfeather's home and immediately fled into the swamp district to trade the stolen valuables—including a gold heart necklace—to Fairy Frenzy and drug dealer Lou Baba in exchange for cheap narcotics. He is currently targeted by a bounty."
   }
 ]

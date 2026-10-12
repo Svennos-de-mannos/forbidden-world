@@ -10,18 +10,30 @@
 
 let loadedPopupType = null;
 
-async function ensurePopupType(type) {
-  if (loadedPopupType === type) return;
+// `name` is the popup partial to load (partials/popup-<name>.html).
+// Returns true if that popup is ready, false if it couldn't be loaded —
+// in which case nothing is injected into the page.
+async function ensurePopupType(name) {
+  if (loadedPopupType === name) return true;
   const slot = document.getElementById('popupSlot');
-  const res = await fetch(`partials/popup-${type}.html`);
-  slot.innerHTML = await res.text();
-  loadedPopupType = type;
+  try {
+    const res = await fetch(`partials/popup-${name}.html`);
+    if (!res.ok) throw new Error(`responded ${res.status}`);
+    slot.innerHTML = await res.text();
+  } catch (err) {
+    console.error(`Could not load popup "${name}" — does partials/popup-${name}.html exist?`, err);
+    return false;
+  }
+  loadedPopupType = name;
   initPopup(); // re-bind close/backdrop/escape handlers to the fresh nodes
+  return true;
 }
 
 // One entry per searchable type. `dataFile`s that repeat (npcs.json for
 // both npc/player, quests.json for both quest/mystery) are only fetched
 // once — see dataFor() below.
+// `popup` names which popup partial a type opens, when it differs from
+// its own key: mysteries reuse the quest popup, players reuse the NPC one.
 const SEARCH_TYPES = [
   {
     key: 'campaign', label: 'Campaigns', dataFile: 'data/campaigns.json',
@@ -42,6 +54,7 @@ const SEARCH_TYPES = [
   },
   {
     key: 'mystery', label: 'Mysteries', dataFile: 'data/quests.json',
+    popup: 'quest',
     filter: (i) => i.type === 'mystery',
     getTitle: (i) => i.title,
     getAccent: (i, ctx) => resolveColor(i.color, ctx.palette),
@@ -73,6 +86,7 @@ const SEARCH_TYPES = [
   },
   {
     key: 'player', label: 'Players', dataFile: 'data/npcs.json',
+    popup: 'npc',
     filter: (p) => p.kind === 'player',
     getTitle: (p) => p.name,
     getAccent: (p, ctx) => resolveColor(p.color, ctx.palette),
@@ -144,8 +158,7 @@ async function initSearch() {
         btn.style.setProperty('--accent', accent || '');
         fillOrPlaceholder(btn, t.getTitle(item));
         btn.addEventListener('click', async () => {
-          await ensurePopupType(t.key);
-          t.open(item, ctx, accent);
+          if (await ensurePopupType(t.popup || t.key)) t.open(item, ctx, accent);
         });
         section.appendChild(btn);
       });
