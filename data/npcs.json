@@ -508,5 +508,73 @@
     "color": "#4A6B53",
     "image": "assets/images/characters/dave.jpg",
     "text": "Dave is a problematic mushroom guy who works a day job down in the industrial district. He completely cleaned out Adalin Darkfeather's home and immediately fled into the swamp district to trade the stolen valuables—including a gold heart necklace—to Fairy Frenzy and drug dealer Lou Baba in exchange for cheap narcotics. He is currently targeted by a bounty."
+  },
+   {
+    "id": "npc-roghar",
+    "kind": "npc",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Roghar",
+    "role": "Head Forgemaster / Restaurant Owner",
+    "race": "Green Dragonborn",
+    "class": "Artificer",
+    "age": "287",
+    "aliveStatus": "dead",
+    "residence": "The Copper Halls",
+    "color": "#2E7D32",
+    "image": "assets/images/characters/roghar.jpg",
+    "text": "Roghar was the legendary ancient Head Forgemaster of the castle under Eagle's Hope whose metallurgical innovations laid the foundation for modern weapon breakthroughs. He also ran a large subterranean restaurant within the Copper Halls. He used to work for the legendary architect Norex Volcron.\n\nHe was discovered assassinated at his private office desk following a localized gas line sabotage, with his final correspondence exposing his deep distrust of an entertainment construct sent to him by Fierre Laughingman."
+  },
+  {
+    "id": "npc-mister-sun",
+    "kind": "npc",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Mister Sun",
+    "role": "Entertainment Automaton / Assassin",
+    "race": "Automaton",
+    "class": "-",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "The Copper Halls",
+    "color": "#FBC02D",
+    "image": "assets/images/characters/mister-sun.jpg",
+    "text": "A horrific, lethal entertainment construct engineered from designs linked directly to Fierre Laughingman of Crescent Hills. Originally pitched as a novelty dining attraction for the King, the automaton functioned as an infiltration assassin, violently tearing its way out from inside Head Forgemaster Roghar's corpse to ambush the Black Cloak expedition crew. It sustained heavy structural damage before the surviving agents fled the sector."
+  },
+  {
+    "id": "player-purvi",
+    "kind": "player",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Purvi",
+    "role": "Expedition Infiltrator",
+    "race": "Tabaxi",
+    "class": "Rogue",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#4E342E",
+    "image": "assets/images/characters/purvi.jpg",
+    "text": "Purvi is a nimble tabaxi rogue who recently joined the Black Cloak expedition vanguard for Operation Judgement. Utilizing his advanced stealth capabilities to scout the vacant kitchens of the Forgemaster's restaurant, he was the last team member to interface with Roghar alive, receiving a bottle of ouzo from the ancient dragonborn."
+  },
+  {
+    "id": "player-colin",
+    "kind": "player",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Colin",
+    "role": "moral support?",
+    "race": "Changeling",
+    "class": "Spiritualist",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope",
+    "color": "#7B1FA2",
+    "image": "assets/images/characters/colin.jpg",
+    "text": "Colin is an enigmatic changeling 'adult' entertainer and spiritualist who reinforced the Black Cloak investigation squad during their second deep delve into the castle. Colin survived the catastrophic chemical gas trap and the ensuing combat encounter against the Mister Sun automaton within the Copper Halls restaurant."
   }
 ]

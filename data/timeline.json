@@ -191,6 +191,25 @@
     "tag": "Session Log",
     "color": "#c42847",
     "date": "November"
+  },
+  {
+    "order": 20,
+    "type": "session",
+    "sessionId": "session-openeyes-02",
+    "title": "Operation Judgement (Session 2)",
+    "text": "The expedition team advances into the copper restaurant layers of the castle. Head Forgemaster Roghar is discovered assassinated under suspicious gas line manipulation. The party recovers links to Fierre Laughingman before an ambush by the automaton 'Mstar Sun' claims the lives of Ninos and Dr. Thalia Veil.",
+    "tag": "Session Log",
+    "color": "#d9a927",
+    "date": ""
+  },
+  {
+    "order": 20.1,
+    "type": "event",
+    "title": "Black Cloak Expedition Lockdown",
+    "text": "Following the tragic deaths of Ninos and Dr. Thalia Veil during Operation Judgement, the Black Cloak Order issues an immediate lockdown on all exploration under or in Eagle's Hope. Both Operation Empress and Operation Star are placed on hold indefinitely, and all external contract members are ordered to remain at their current surface stations under threat of immediate termination.",
+    "tag": "World Event",
+    "color": "#d9a927",
+    "date": ""
   }
 ]
 

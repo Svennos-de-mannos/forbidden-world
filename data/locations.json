@@ -270,5 +270,21 @@
     "parent": "self",
     "color": "#D90429",
     "text": "A prestigious and highly populated town situated outside the boundaries of Eagle's Hope, widely renowned across the realm as a bastion of higher learning, research, and intellectual advancement. The town's economy, culture, and architecture are thoroughly defined by its expansive academic population, drawing scholars, researchers, and arcane students from every corner of the map. Its vibrant streets are constantly filled with ideological debates, bustling bookstores, and theoretical research, making it a critical strategic asset for any faction seeking historical, scientific, or magical data."
+  },
+    {
+    "id": "copper-halls",
+    "campaign": "openeyes",
+    "title": "The Copper Halls",
+    "parent": "the-castle",
+    "color": "#0A1424",
+    "text": "A deep, reinforced sector of the first layer of the underground castle, heavily protected with thick copper and steel plating. Bypassing the main Chariot Train lines entirely, these structural corridors run deep into the core facility, experiencing drastic environmental shifts and severe chemical oxidation whenever the subterranean facility's ancient localized gas lines are manipulated."
+  },
+  {
+    "id": "forgemaster-restaurant",
+    "campaign": "openeyes",
+    "title": "Forgemaster's Restaurant",
+    "parent": "copper-halls",
+    "color": "#060D17",
+    "text": "A massive, cavernous dining establishment hidden deep within the Copper Halls, originally managed by Head Forgemaster Roghar. The architectural marvel features a central, twenty-foot-high fire pit suspending a massive, functional record player that constantly broadcasts jazz music, alongside a hidden stone staircase that winds further down into the castle depths."
   }
 ]
