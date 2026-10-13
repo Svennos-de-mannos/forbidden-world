@@ -147,5 +147,25 @@
     "color": "#76677F",
     "description": "Identify the decaying figure seen in Avani's vision.",
     "text": "At the start of November, Avani witnessed a strange, terrifying entity wearing a fedora hat walking directly through the Hill District's farmlands, actively rotting and burning the crop fields with every step he took right before the great fire erupted."
+  },
+  {
+    "id": "mystery-laughingmen-connection",
+    "type": "mystery",
+    "campaign": ["openeyes", "crescenthills"],
+    "title": "How is Laughingmen connected to Eagle’s Hope and King Hemmeth I?",
+    "status": "ongoing",
+    "color": "#EFCB68",
+    "description": "Investigate the link between Fierre Laughingman and the ancient underground castle.",
+    "text": "The discovery of correspondence between Fierre Laughingman ('F.L.') and Head Forgemaster Roghar confirms that the Crescent Hills entertainment mogul is actively interacting with the sealed ruins under Eagle's Hope. How an entertainment company obtained blueprints to bypass castle infrastructure, and why they assassinated King Hemmeth I's chief metalworker, remains a... well mystery..."
+  },
+  {
+    "id": "mystery-king-hemmeth-alive",
+    "type": "mystery",
+    "campaign": ["openeyes"],
+    "title": "Is King Hemmeth I still alive?",
+    "status": "ongoing",
+    "color": "#76677F",
+    "description": "Determine if the ancient monarch survived the historical Castlefall event.",
+    "text": "History states that King Zohar Hemmeth I died 200 years ago in 889 when his fortress was swallowed by the earth. However, recent corporate coordination inside the ruins, ongoing automated maintenance, and the precise mechanical execution of Roghar strongly imply that a form of Master of the Castle is still actively commanding forces from the dark."
   }
 ]
