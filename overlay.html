@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overlay — The Forbidden World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body class="ov-body">
+
+<div class="ov-root" id="ovRoot" data-scene="normal">
+
+  <!-- ===== visible area (1920 x 1080) ===== -->
+  <header class="ov-header">
+    <div class="ov-info ov-info--left" id="ovLocationBlock" hidden>
+      <span class="ov-info__label">Location</span>
+      <span class="ov-info__value" id="ovLocation"></span>
+    </div>
+
+    <div class="ov-plaque">
+      <div class="ov-plaque__row">
+        <span class="ov-d20"></span>
+        <h1 class="ov-plaque__title" id="ovCampaignTitle">Open Eyes</h1>
+      </div>
+      <span class="ov-plaque__scene" id="ovSceneLabel"></span>
+    </div>
+
+    <div class="ov-info ov-info--right" id="ovGoalBlock" hidden>
+      <span class="ov-info__label">Goal</span>
+      <span class="ov-info__value" id="ovGoal"></span>
+    </div>
+  </header>
+
+  <!-- fully transparent in the middle: the webcam shows through here -->
+  <div class="ov-window"></div>
+
+  <aside class="ov-roster" id="ovRoster">
+    <h2 class="ov-roster__title">Party</h2>
+    <div class="ov-slots" id="ovSlots"></div>
+  </aside>
+
+  <!-- ===== control strip (below the visible area, cropped off in OBS) ===== -->
+  <section class="ov-controls">
+    <div class="ov-controls__row">
+      <span class="ov-controls__label">Scene</span>
+      <div class="ov-scenes" id="ovScenes"></div>
+      <button type="button" class="ov-btn ov-btn--right" id="ovToggleEmpty"></button>
+    </div>
+
+    <div class="ov-controls__row">
+      <label class="ov-controls__label" for="ovInLocation">Location</label>
+      <input type="text" class="ov-input ov-input--loc" id="ovInLocation" placeholder="Current location" autocomplete="off">
+      <label class="ov-controls__label" for="ovInGoal">Goal</label>
+      <input type="text" class="ov-input ov-input--goal" id="ovInGoal" placeholder="Session goal" autocomplete="off">
+      <button type="button" class="ov-btn" id="ovSetHeader">Set</button>
+      <button type="button" class="ov-btn" id="ovClearHeader">Clear</button>
+    </div>
+
+    <div class="ov-picker" id="ovPicker"></div>
+  </section>
+
+</div>
+
+<script src="js/card-loader.js"></script>
+<script src="js/colors.js"></script>
+<script src="js/overlay-page.js"></script>
+</body>
+</html>

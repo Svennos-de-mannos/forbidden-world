@@ -1137,4 +1137,524 @@ details[open] > .location-row__summary::after {
   color: #efe6d8;
   margin: 0;
   white-space: pre-line;
+}
+
+.ov-body {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.ov-root {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1300px;
+  transform-origin: 0 0;
+  font-family: "Roboto", sans-serif;
+  --ov-accent: #d9a927;
+  --ov-panel: rgba(18, 17, 16, 0.94);
+  --ov-border: #4a463f;
+  --ov-border-w: 2px;
+  --ov-glow: rgba(0, 0, 0, 0);
+  --ov-vig: rgba(0, 0, 0, 0);
+  --ov-vig-size: 120px;
+  --ov-anim: none;
+  --ov-anim-dur: 4s;
+  --ov-text: #efe6d8;
+  --ov-dim: #a89f90;
+  --ov-pattern: none;
+}
+
+.ov-root[data-scene=cozy] {
+  --ov-accent: #f2a65a;
+  --ov-panel: rgba(36, 21, 12, 0.94);
+  --ov-border: #8a5530;
+  --ov-border-w: 3px;
+  --ov-glow: rgba(255, 150, 60, 0.32);
+  --ov-vig: rgba(255, 125, 40, 0.30);
+  --ov-vig-size: 150px;
+  --ov-anim: ov-flicker;
+  --ov-anim-dur: 5s;
+  --ov-text: #fbe9d0;
+  --ov-dim: #cfae8c;
+}
+
+.ov-root[data-scene=exploring] {
+  --ov-accent: #4fd6cf;
+  --ov-panel: rgba(8, 26, 31, 0.94);
+  --ov-border: #1f7a80;
+  --ov-border-w: 2px;
+  --ov-glow: rgba(79, 214, 207, 0.28);
+  --ov-vig: rgba(40, 200, 215, 0.20);
+  --ov-vig-size: 130px;
+  --ov-anim: ov-breathe;
+  --ov-anim-dur: 6s;
+  --ov-text: #def7f6;
+  --ov-dim: #8fc0c0;
+  --ov-pattern: linear-gradient(rgba(79, 214, 207, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(79, 214, 207, 0.07) 1px, transparent 1px);
+}
+
+.ov-root[data-scene=combat] {
+  --ov-accent: #ff5b2e;
+  --ov-panel: rgba(36, 8, 6, 0.95);
+  --ov-border: #a3301c;
+  --ov-border-w: 4px;
+  --ov-glow: rgba(255, 70, 30, 0.5);
+  --ov-vig: rgba(255, 50, 20, 0.45);
+  --ov-vig-size: 170px;
+  --ov-anim: ov-pulse;
+  --ov-anim-dur: 1.3s;
+  --ov-text: #ffe9e1;
+  --ov-dim: #dc9f90;
+}
+
+.ov-root[data-scene=horror] {
+  --ov-accent: #c4222f;
+  --ov-panel: rgba(7, 4, 4, 0.96);
+  --ov-border: #55121a;
+  --ov-border-w: 3px;
+  --ov-glow: rgba(170, 20, 30, 0.42);
+  --ov-vig: rgba(120, 0, 12, 0.75);
+  --ov-vig-size: 280px;
+  --ov-anim: ov-heartbeat;
+  --ov-anim-dur: 3.4s;
+  --ov-text: #d4c8c8;
+  --ov-dim: #85726f;
+}
+
+@keyframes ov-flicker {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  12% {
+    opacity: 0.6;
+  }
+  24% {
+    opacity: 0.95;
+  }
+  38% {
+    opacity: 0.7;
+  }
+  55% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.75;
+  }
+  86% {
+    opacity: 0.92;
+  }
+}
+@keyframes ov-breathe {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes ov-pulse {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes ov-heartbeat {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  10% {
+    opacity: 1;
+  }
+  18% {
+    opacity: 0.55;
+  }
+  28% {
+    opacity: 0.95;
+  }
+  40% {
+    opacity: 0.45;
+  }
+}
+.ov-header,
+.ov-roster,
+.ov-window,
+.ov-slot,
+.ov-avatar,
+.ov-d20,
+.ov-controls {
+  transition: background-color 0.8s ease, border-color 0.8s ease, box-shadow 0.8s ease, color 0.8s ease;
+}
+
+.ov-header {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  height: 92px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 380px 1fr;
+  align-items: center;
+  gap: 28px;
+  padding: 0 32px;
+  background-color: var(--ov-panel);
+  background-image: var(--ov-pattern);
+  background-size: 28px 28px;
+  border: var(--ov-border-w) solid var(--ov-border);
+  box-shadow: 0 0 30px var(--ov-glow);
+}
+
+.ov-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ov-info[hidden] {
+  display: none;
+}
+
+.ov-info--left {
+  grid-column: 1;
+}
+
+.ov-info--right {
+  grid-column: 3;
+  text-align: right;
+  align-items: flex-end;
+}
+
+.ov-info__label {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ov-accent);
+}
+
+.ov-info__value {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-family: "Grenze Gotisch", serif;
+  font-size: 32px;
+  line-height: 1.15;
+  color: var(--ov-text);
+}
+
+.ov-plaque {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.ov-plaque__row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ov-d20 {
+  width: 40px;
+  height: 40px;
+  background-color: var(--ov-accent);
+  -webkit-mask: url(../assets/logo-d20.svg) center/contain no-repeat;
+  mask: url(../assets/logo-d20.svg) center/contain no-repeat;
+}
+
+.ov-plaque__title {
+  margin: 0;
+  font-family: "Grenze Gotisch", serif;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ov-text);
+}
+
+.ov-plaque__scene {
+  min-height: 16px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ov-accent);
+}
+
+.ov-window {
+  position: absolute;
+  left: 24px;
+  top: 132px;
+  width: 1516px;
+  height: 924px;
+  box-sizing: border-box;
+  border: var(--ov-border-w) solid var(--ov-border);
+  box-shadow: 0 0 30px var(--ov-glow);
+  pointer-events: none;
+}
+
+.ov-window::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 var(--ov-vig-size) var(--ov-vig);
+  animation-name: var(--ov-anim);
+  animation-duration: var(--ov-anim-dur);
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.ov-window::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(var(--ov-accent), var(--ov-accent)) left top/64px 5px no-repeat, linear-gradient(var(--ov-accent), var(--ov-accent)) left top/5px 64px no-repeat, linear-gradient(var(--ov-accent), var(--ov-accent)) right top/64px 5px no-repeat, linear-gradient(var(--ov-accent), var(--ov-accent)) right top/5px 64px no-repeat, linear-gradient(var(--ov-accent), var(--ov-accent)) left bottom/64px 5px no-repeat, linear-gradient(var(--ov-accent), var(--ov-accent)) left bottom/5px 64px no-repeat, linear-gradient(var(--ov-accent), var(--ov-accent)) right bottom/64px 5px no-repeat, linear-gradient(var(--ov-accent), var(--ov-accent)) right bottom/5px 64px no-repeat;
+}
+
+.ov-roster {
+  position: absolute;
+  right: 24px;
+  top: 132px;
+  width: 340px;
+  height: 924px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 18px 20px;
+  background-color: var(--ov-panel);
+  background-image: var(--ov-pattern);
+  background-size: 28px 28px;
+  border: var(--ov-border-w) solid var(--ov-border);
+  box-shadow: 0 0 30px var(--ov-glow);
+}
+
+.ov-roster__title {
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ov-border);
+  font-family: "Grenze Gotisch", serif;
+  font-size: 30px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--ov-accent);
+}
+
+.ov-slots {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ov-slot {
+  flex: 1;
+  min-height: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 2px solid var(--ov-border);
+  font: inherit;
+  text-align: left;
+  color: var(--ov-text);
+  cursor: pointer;
+}
+
+.ov-slot.is-selecting {
+  border-color: var(--ov-accent);
+  box-shadow: 0 0 0 2px var(--ov-accent);
+}
+
+.ov-roster--hide-empty .ov-slot--empty {
+  visibility: hidden;
+}
+
+.ov-avatar {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--char, #4a463f);
+  border: 3px solid var(--char, var(--ov-border));
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+  font-family: "Grenze Gotisch", serif;
+  font-size: 48px;
+  color: var(--char-ink, #efe6d8);
+}
+
+.ov-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.ov-slot--empty .ov-avatar {
+  background-color: transparent;
+  border: 2px dashed var(--ov-border);
+  box-shadow: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 44px;
+  color: var(--ov-dim);
+}
+
+.ov-slot__text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ov-slot__name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.ov-slot__meta {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.25;
+  color: var(--ov-dim);
+}
+
+.ov-controls {
+  position: absolute;
+  left: 0;
+  top: 1080px;
+  width: 1920px;
+  height: 220px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 24px;
+  background: #0a0a09;
+  border-top: 4px solid var(--ov-accent);
+  color: #efe6d8;
+}
+
+.ov-controls__row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ov-controls__label {
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #a89f90;
+}
+
+.ov-scenes {
+  display: flex;
+  gap: 10px;
+}
+
+.ov-scene-btn,
+.ov-btn,
+.ov-chip {
+  font: inherit;
+  font-size: 16px;
+  color: #efe6d8;
+  background: #1a1917;
+  border: 1px solid #2c2a26;
+  cursor: pointer;
+}
+
+.ov-scene-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+}
+
+.ov-scene-btn__swatch {
+  width: 14px;
+  height: 14px;
+  background: var(--swatch);
+}
+
+.ov-scene-btn.is-active {
+  border-color: var(--swatch);
+  box-shadow: inset 0 -3px 0 var(--swatch);
+}
+
+.ov-btn {
+  padding: 11px 18px;
+  border-color: #a89f90;
+}
+
+.ov-btn--right {
+  margin-left: auto;
+}
+
+.ov-input {
+  box-sizing: border-box;
+  padding: 11px 14px;
+  font: inherit;
+  font-size: 16px;
+  color: #efe6d8;
+  background: #1a1917;
+  border: 1px solid #2c2a26;
+}
+
+.ov-input--loc {
+  width: 380px;
+}
+
+.ov-input--goal {
+  width: 560px;
+}
+
+.ov-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+}
+
+.ov-picker__hint {
+  font-size: 15px;
+  color: #a89f90;
+}
+
+.ov-chip {
+  padding: 10px 16px;
+  font-size: 15px;
+  border-left: 5px solid var(--char, #4a463f);
+}
+
+.ov-chip.is-placed {
+  opacity: 0.5;
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forbidden World – OBS Overlay</title>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== CONFIG: where your player JSON lives (can also be changed in settings) ===== */
+:root{
+  --accent:#d4a017; --bg:#0a0a0a; --panel:#141210; --text:#f2ead8; --muted:#8a8272;
+  --l1:#d4a017; --l2:#8a6a10; --speed:1;
+}
+body[data-scene=cozy]{--accent:#e8913a;--bg:#140c07;--panel:#1d120a;--l1:#ff9a3c;--l2:#c4501a;--speed:1.3}
+body[data-scene=investigation]{--accent:#4a9ee8;--bg:#070c14;--panel:#0b131f;--l1:#3d8bff;--l2:#1a4a9c;--speed:1.1}
+body[data-scene=combat]{--accent:#e34a47;--bg:#180d0d;--panel:#211010;--l1:#ff3b30;--l2:#8a1414;--speed:.45}
+body[data-scene=horror]{--accent:#9a9a9a;--bg:#070707;--panel:#0e0e0e;--l1:#b0b0b0;--l2:#444;--speed:3.2;--text:#d6d6d6}
+
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden}
+body{font-family:Roboto,sans-serif;color:var(--text);background:#fff;transition:filter 1s}
+body[data-scene=horror] #top,body[data-scene=horror] #side{filter:grayscale(1)}
+body.transparent{background:transparent}
+.fx{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.28;
+  background:radial-gradient(circle,var(--l1),transparent 70%);
+  animation:drift calc(var(--d)*var(--speed)*1s) ease-in-out infinite alternate;transition:background 1s}
+.blob.b{background:radial-gradient(circle,var(--l2),transparent 70%)}
+@keyframes drift{
+  0%{transform:translate(0,0) scale(1);opacity:.15}
+  50%{transform:translate(var(--x),var(--y)) scale(1.35);opacity:.38}
+  100%{transform:translate(calc(var(--x)*-.6),calc(var(--y)*-1)) scale(.9);opacity:.2}}
+body.nofx .fx{display:none}
+
+#top{position:absolute;left:0;right:0;top:0;height:98px;background:var(--bg);border-bottom:1px solid #ffffff14;
+  display:flex;align-items:center;justify-content:space-between;padding:0 40px;overflow:hidden;transition:background 1s}
+#top>*:not(.fx){position:relative;z-index:1}
+.logo{font-family:'Pirata One',serif;font-size:42px;color:#d4a017}
+.info{text-align:center;display:grid;gap:8px}
+.info div{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.info span{font-family:'IM Fell English',serif;font-size:19px;color:var(--text);text-transform:none;letter-spacing:0;margin-left:8px}
+#badge{font-family:'Pirata One',serif;color:var(--accent);border:1px solid var(--accent);padding:10px 16px;font-size:17px;letter-spacing:.05em;text-transform:uppercase}
+
+#side{position:absolute;right:0;top:98px;bottom:0;width:247px;background:var(--bg);border-left:1px solid #ffffff14;
+  padding:22px 12px;overflow:hidden;transition:background 1s}
+#side>*:not(.fx){position:relative;z-index:1}
+#side h2{font-family:'Pirata One',serif;font-size:25px;text-align:center;color:var(--accent);letter-spacing:.06em;margin-bottom:22px;text-transform:uppercase}
+.slot{display:flex;align-items:center;gap:14px;height:87px;margin-bottom:13px;padding:0 14px;cursor:pointer;
+  background:color-mix(in srgb,var(--panel) 85%,transparent);border-left:3px solid #ffffff22;transition:.3s;position:relative}
+.slot:hover{border-left-color:var(--accent)}
+.slot.full{border-left-color:var(--accent)}
+.av{width:60px;height:60px;flex:none;border-radius:50%;border:2px solid #ffffff22;display:grid;place-items:center;
+  font-size:28px;color:var(--muted);background-size:cover;background-position:center}
+.full .av{border-color:var(--accent);color:var(--accent);font-family:'Pirata One',serif}
+.nm{font-weight:500;font-size:16px;color:#d8d0c0}.sub{font-size:12px;color:var(--muted)}
+.x{position:absolute;top:4px;right:8px;color:var(--muted);display:none}.full:hover .x{display:block}
+
+/* centre: stays clear for the cam. Lights only live in the frame around it */
+#centre{position:absolute;left:0;top:98px;bottom:0;right:247px}
+#centre .fx{-webkit-mask-image:radial-gradient(ellipse 62% 62% at 50% 50%,transparent 55%,#000 100%);
+  mask-image:radial-gradient(ellipse 62% 62% at 50% 50%,transparent 55%,#000 100%)}
+
+#gear{position:fixed;right:24px;bottom:16px;width:58px;height:58px;border-radius:50%;border:0;background:var(--accent);
+  font-size:26px;cursor:pointer;z-index:50;box-shadow:0 4px 14px #0008;transition:background 1s,opacity .3s;opacity:.9}
+body.hidegear #gear{opacity:0}body.hidegear #gear:hover{opacity:.9}
+#panel{position:fixed;right:24px;bottom:86px;width:320px;max-height:calc(100% - 110px);overflow:auto;background:#121212f2;
+  border:1px solid var(--accent);padding:18px;z-index:50;display:none;font-size:14px}
+#panel.open{display:block}
+#panel h3{font-family:'Pirata One',serif;color:var(--accent);font-size:22px;margin-bottom:10px;font-weight:400}
+label{display:block;color:var(--accent);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin:12px 0 4px}
+input[type=text],input:not([type]){width:100%;padding:8px;background:#000;color:#fff;border:1px solid #444;font:inherit}
+.scenes{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+button.sc,button.btn{background:#000;color:#ddd;border:1px solid #444;padding:8px;cursor:pointer;font:inherit}
+button.sc.on{border-color:var(--accent);color:var(--accent)}
+.row{display:flex;gap:8px;align-items:center;margin-top:10px;color:#ccc}
+
+#modal{position:fixed;inset:0;background:#000a;display:none;place-items:center;z-index:60}
+#modal.open{display:grid}
+#box{background:#121212;border:1px solid var(--accent);width:380px;max-height:80%;display:flex;flex-direction:column;padding:16px}
+#list{overflow:auto;margin-top:10px}
+.opt{display:flex;gap:12px;align-items:center;padding:8px;cursor:pointer;border-bottom:1px solid #ffffff10}
+.opt:hover{background:#ffffff10}.opt.used{opacity:.35;pointer-events:none}
+.opt .av{width:40px;height:40px;font-size:18px}
+</style>
+</head>
+<body data-scene="normal">
+
+<div id="top"><div class="fx"></div>
+  <div class="logo">FW</div>
+  <div class="info">
+    <div>Current Location:<span id="loc">Unknown</span></div>
+    <div>Session Goal:<span id="goal">Explore the world</span></div>
+  </div>
+  <div id="badge">Normal Scene</div>
+</div>
+
+<div id="centre"><div class="fx"></div></div>
+
+<div id="side"><div class="fx"></div><h2>Party Roster</h2><div id="slots"></div></div>
+
+<button id="gear" title="Settings">⚙</button>
+
+<div id="panel">
+  <h3>Settings</h3>
+  <label>Scene</label>
+  <div class="scenes" id="scenes"></div>
+  <label>Current location</label><input id="iLoc" placeholder="Unknown">
+  <label>Session goal</label><input id="iGoal" placeholder="Explore the world">
+  <label>Player JSON path / URL</label><input id="iJson">
+  <div class="row"><button class="btn" id="reload">Reload JSON</button>
+    <button class="btn" id="file">Load file…</button><input type="file" id="fileIn" accept=".json" hidden></div>
+  <div class="row"><input type="checkbox" id="cFx" checked> Light effects on</div>
+  <div class="row"><input type="checkbox" id="cTr"> Transparent centre (instead of white key)</div>
+  <div class="row"><input type="checkbox" id="cGear"> Fade settings button when idle</div>
+  <div class="row"><button class="btn" id="clear">Clear roster</button></div>
+</div>
+
+<div id="modal"><div id="box">
+  <input id="search" placeholder="Search players…"><div id="list"></div>
+  <button class="btn" id="cancel" style="margin-top:10px">Cancel</button>
+</div></div>
+
+<script>
+const SCENES={normal:'Normal',cozy:'Cozy',investigation:'Investigation',combat:'Combat',horror:'Horror / Tension'};
+const BADGE={normal:'Normal Scene',cozy:'Cozy Scene',investigation:'Investigation Scene',combat:'Combat Scene',horror:'Tension Scene'};
+const DEFAULT_JSON='data/characters.json'; // <-- change to your real JSON file
+const SLOTS=6;
+const $=id=>document.getElementById(id);
+const load=(k,d)=>{try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}};
+const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+
+let S=Object.assign({scene:'normal',loc:'Unknown',goal:'Explore the world',json:DEFAULT_JSON,fx:true,tr:false,gear:false,roster:Array(SLOTS).fill(null)},load('fw',{}));
+let players=[],target=0;
+const persist=()=>save('fw',S);
+
+/* ---- light effects: random blobs per area ---- */
+function seed(el,n){el.innerHTML='';
+  for(let i=0;i<n;i++){const b=document.createElement('div');const s=80+Math.random()*180;
+    b.className='blob'+(i%2?' b':'');
+    b.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100-8}%;top:${Math.random()*100-8}%;
+    --x:${Math.random()*160-80}px;--y:${Math.random()*100-50}px;--d:${8+Math.random()*10};animation-delay:-${Math.random()*10}s`;
+    el.appendChild(b);}}
+document.querySelectorAll('.fx').forEach((el,i)=>seed(el,i==1?16:8));
+
+/* ---- apply state ---- */
+function apply(){
+  document.body.dataset.scene=S.scene;
+  $('badge').textContent=BADGE[S.scene];
+  $('loc').textContent=S.loc||'Unknown';$('goal').textContent=S.goal||'—';
+  document.body.classList.toggle('nofx',!S.fx);
+  document.body.classList.toggle('transparent',S.tr);
+  document.body.classList.toggle('hidegear',S.gear);
+  document.querySelectorAll('.sc').forEach(b=>b.classList.toggle('on',b.dataset.s==S.scene));
+}
+Object.entries(SCENES).forEach(([k,v])=>{const b=document.createElement('button');b.className='sc';b.dataset.s=k;b.textContent=v;
+  b.onclick=()=>{S.scene=k;persist();apply()};$('scenes').appendChild(b)});
+
+/* ---- roster ---- */
+function avStyle(p){return p.img?`style="background-image:url('${p.img}')"`:''}
+function renderSlots(){
+  $('slots').innerHTML=S.roster.map((p,i)=>p?
+    `<div class="slot full" data-i="${i}"><div class="av" ${avStyle(p)}>${p.img?'':p.name[0]}</div>
+     <div><div class="nm">${p.name}</div><div class="sub">${p.sub||''}</div></div><span class="x" data-x="${i}">✕</span></div>`:
+    `<div class="slot" data-i="${i}"><div class="av">+</div><div><div class="nm">Empty Slot</div><div class="sub">Click to add</div></div></div>`).join('');
+}
+$('slots').onclick=e=>{
+  const x=e.target.dataset.x;if(x!==undefined){S.roster[x]=null;persist();renderSlots();return}
+  const s=e.target.closest('.slot');if(!s)return;target=+s.dataset.i;
+  if(S.roster[target]){return}
+  $('search').value='';renderList();$('modal').classList.add('open');$('search').focus();
+};
+function renderList(){
+  const q=$('search').value.toLowerCase(),used=S.roster.filter(Boolean).map(p=>p.name);
+  $('list').innerHTML=players.filter(p=>p.name.toLowerCase().includes(q)).map(p=>
+    `<div class="opt ${used.includes(p.name)?'used':''}" data-n="${p.name}"><div class="av" ${avStyle(p)}>${p.img?'':p.name[0]}</div>
+     <div><div class="nm">${p.name}</div><div class="sub">${p.sub||''}</div></div></div>`).join('')||'<div class="sub" style="padding:10px">No players found. Check the JSON path in settings.</div>';
+}
+$('search').oninput=renderList;
+$('list').onclick=e=>{const o=e.target.closest('.opt');if(!o)return;
+  S.roster[target]=players.find(p=>p.name==o.dataset.n);persist();renderSlots();$('modal').classList.remove('open')};
+$('cancel').onclick=()=>$('modal').classList.remove('open');
+
+/* ---- JSON loading: tolerant of different shapes/field names ---- */
+function norm(data){
+  let arr=Array.isArray(data)?data:(Object.values(data).find(Array.isArray)||Object.entries(data).map(([k,v])=>typeof v=='object'?{name:k,...v}:{name:k}));
+  const pick=(o,ks)=>{for(const k of ks)if(o[k])return o[k]};
+  return arr.map(o=>typeof o=='string'?{name:o}:({
+    name:String(pick(o,['name','Name','character','title'])||'?'),
+    img:pick(o,['image','img','portrait','avatar','icon','picture']),
+    sub:[pick(o,['race','species']),pick(o,['class','Class','role'])].filter(Boolean).join(' · ')||pick(o,['subtitle','player','description'])||''}));
+}
+async function loadJson(){
+  try{const r=await fetch(S.json);players=norm(await r.json())}catch(e){players=[];console.warn('JSON load failed',e)}
+}
+$('reload').onclick=loadJson;
+$('file').onclick=()=>$('fileIn').click();
+$('fileIn').onchange=async e=>{try{players=norm(JSON.parse(await e.target.files[0].text()))}catch(x){alert('Invalid JSON')}};
+
+/* ---- settings wiring ---- */
+$('gear').onclick=()=>$('panel').classList.toggle('open');
+const bind=(id,key,type)=>{const el=$(id);type?el.checked=S[key]:el.value=S[key];
+  el.oninput=()=>{S[key]=type?el.checked:el.value;persist();apply()}};
+bind('iLoc','loc');bind('iGoal','goal');bind('iJson','json');bind('cFx','fx',1);bind('cTr','tr',1);bind('cGear','gear',1);
+$('iLoc').value=S.loc;$('iGoal').value=S.goal;
+$('clear').onclick=()=>{S.roster=Array(SLOTS).fill(null);persist();renderSlots()};
+$('iJson').onchange=loadJson;
+
+apply();renderSlots();loadJson();
+</script>
+</body>
+</html>
