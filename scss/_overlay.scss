@@ -13,6 +13,8 @@ $ov-cozy-accent:    #f2a65a;
 $ov-explore-accent: #4fd6cf;
 $ov-combat-accent:  #ff5b2e;
 $ov-horror-accent:  #c4222f;
+$ov-city-accent:    #8fb06a;
+$ov-eldritch-accent: #b07cff;
 
 .ov-body {
   margin: 0;
@@ -101,6 +103,36 @@ $ov-horror-accent:  #c4222f;
   --ov-anim-dur: 3.4s;
   --ov-text: #d4c8c8;
   --ov-dim: #85726f;
+}
+
+.ov-root[data-scene="city"] {
+  --ov-accent: #{$ov-city-accent};
+  --ov-panel: rgba(15, 26, 17, 0.95);
+  --ov-border: #6b4a2b;
+  --ov-border-w: 3px;
+  --ov-glow: rgba(70, 120, 55, 0.30);
+  --ov-vig: rgba(58, 38, 16, 0.74);
+  --ov-vig-size: 230px;
+  --ov-anim: ov-breathe;
+  --ov-anim-dur: 7s;
+  --ov-text: #e6ddc2;
+  --ov-dim: #a3a88a;
+  --ov-pattern: linear-gradient(rgba(140, 96, 52, 0.24) 1px, transparent 1px), linear-gradient(90deg, rgba(140, 96, 52, 0.24) 1px, transparent 1px);
+  --ov-eye-iris: #bcc24c;
+}
+
+.ov-root[data-scene="eldritch"] {
+  --ov-accent: #{$ov-eldritch-accent};
+  --ov-panel: rgba(21, 10, 36, 0.95);
+  --ov-border: #5b2f93;
+  --ov-border-w: 3px;
+  --ov-glow: rgba(150, 80, 255, 0.42);
+  --ov-vig: rgba(105, 45, 190, 0.50);
+  --ov-vig-size: 210px;
+  --ov-anim: ov-breathe;
+  --ov-anim-dur: 5s;
+  --ov-text: #eadcff;
+  --ov-dim: #a794c9;
 }
 
 // --- animations (they only fade the edge glow in and out) ---------------------------
@@ -521,4 +553,116 @@ $ov-horror-accent:  #c4222f;
 
 .ov-chip.is-placed {
   opacity: 0.5;
+}
+
+// --- background decoration: blinking eyes (The City), fading runes (Eldritch) ---------------
+// JS builds these into a .ov-decor layer inside the window, header and roster.
+// They never go in the middle of the window, so your face stays clear.
+.ov-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ov-header .ov-decor,
+.ov-roster .ov-decor {
+  opacity: 0.5;
+}
+
+// keep the real header/roster content above the decoration
+.ov-header > *:not(.ov-decor),
+.ov-roster > *:not(.ov-decor) {
+  position: relative;
+  z-index: 1;
+}
+
+.ov-decor__item {
+  position: absolute;
+}
+
+.ov-decor__item svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  will-change: opacity, transform;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.ov-decor__item--eye svg {
+  animation-name: ov-eye;
+}
+
+.ov-decor__item--rune svg {
+  animation-name: ov-rune;
+}
+
+.ov-eye__white {
+  fill: #d6cea0;
+}
+
+.ov-eye__lid {
+  fill: none;
+  stroke: #1c180c;
+  stroke-width: 1.6;
+}
+
+.ov-eye__iris {
+  fill: var(--ov-eye-iris, #bcc24c);
+}
+
+.ov-eye__slit {
+  fill: #070905;
+}
+
+.ov-eye__pupil {
+  animation-name: ov-pupil;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.ov-rune__glow {
+  fill: none;
+  stroke: var(--ov-accent);
+  stroke-width: 8;
+  stroke-linecap: square;
+  opacity: 0.25;
+}
+
+.ov-rune__line {
+  fill: none;
+  stroke: var(--ov-accent);
+  stroke-width: 3;
+  stroke-linecap: square;
+}
+
+// fade in as a thin slit, open, blink once, close, fade away
+@keyframes ov-eye {
+  0% { opacity: 0; transform: scaleY(0.04); }
+  8% { opacity: 0.9; transform: scaleY(0.04); }
+  20% { transform: scaleY(1); }
+  48% { transform: scaleY(1); }
+  52% { transform: scaleY(0.06); }
+  56% { transform: scaleY(1); }
+  80% { transform: scaleY(1); }
+  92% { opacity: 0.9; transform: scaleY(0.04); }
+  100% { opacity: 0; transform: scaleY(0.04); }
+}
+
+@keyframes ov-pupil {
+  0% { transform: translateX(-6px); }
+  100% { transform: translateX(6px); }
+}
+
+@keyframes ov-rune {
+  0% { opacity: 0; transform: scale(0.9); }
+  12% { opacity: 1; }
+  18% { opacity: 0.6; }
+  24% { opacity: 1; }
+  60% { opacity: 0.85; }
+  100% { opacity: 0; transform: scale(1.08); }
 }

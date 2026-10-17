@@ -19,6 +19,8 @@ const SCENES = [
   { id: 'exploring', label: 'Explore', tag: 'Exploring', swatch: '#4fd6cf' },
   { id: 'combat',    label: 'Combat',  tag: 'Combat',    swatch: '#ff5b2e' },
   { id: 'horror',    label: 'Danger',  tag: 'Danger',    swatch: '#c4222f' },
+  { id: 'city',      label: 'The City', tag: 'The City', swatch: '#8fb06a' },
+  { id: 'eldritch',  label: 'Eldritch', tag: 'Eldritch', swatch: '#b07cff' },
 ];
 
 function makeEl(tag, className, text) {
@@ -66,6 +68,132 @@ function inkFor(color) {
   return lum > 150 ? '#0a0a09' : '#efe6d8';
 }
 
+// ---- background decoration -------------------------------------------------------------------
+// The City scatters blinking eyes, Eldritch scatters runes that fade in and
+// out. Items are drawn in the window's outer edge, the header and the roster
+// — never in the middle of the window, so your face stays clear. Each item
+// jumps to a new spot every time it has faded out.
+const DECOR_SCENES = {
+  city:     { kind: 'eye',  window: 15, header: 4, roster: 7 },
+  eldritch: { kind: 'rune', window: 16, header: 5, roster: 8 },
+};
+
+// sizes of the three places decoration can go (px), and the part of the
+// window that must stay empty
+const DECOR_ZONES = {
+  window: { w: 1516, h: 924, avoid: { x1: 270, y1: 170, x2: 1246, y2: 754 } },
+  header: { w: 1872, h: 92 },
+  roster: { w: 340, h: 924 },
+};
+
+// Simple straight-stroke runes drawn by hand (so they look the same on any
+// computer — no font needed). Each is drawn inside a 26 x 40 box.
+const RUNES = [
+  'M12 4V36',
+  'M8 36V4M8 14L20 6M8 24L20 16',
+  'M8 36V4L20 16V36',
+  'M8 36V4M8 12L20 20L8 28',
+  'M8 36V4L20 12M8 16L20 24',
+  'M8 36V4L18 12L8 22M8 22L20 36',
+  'M20 8L8 20L20 32',
+  'M6 6L20 34M20 6L6 34',
+  'M8 36V4L18 12L8 20',
+  'M8 4V36M20 4V36M8 14L20 26',
+  'M12 4V36M6 16L18 26',
+  'M12 36V8M12 20L4 8M12 20L20 8',
+  'M16 4L8 14L16 22L8 34',
+  'M12 36V4M4 14L12 4L20 14',
+  'M8 4V36M8 4L18 12L8 20L18 28L8 36',
+  'M6 36V4M20 36V4M6 4L13 14L20 4',
+  'M12 4L20 14L12 24L4 14ZM4 36L12 24L20 36',
+  'M6 6V34M20 6V34M6 6L20 34M20 6L6 34',
+];
+
+const EYE_SHAPE = 'M2 17C14 2 46 2 58 17C46 32 14 32 2 17Z';
+const SVG_NS = 'http://www.w3.org/2000/svg';
+const rand = (a, b) => a + Math.random() * (b - a);
+
+function svgEl(name, attrs) {
+  const el = document.createElementNS(SVG_NS, name);
+  Object.keys(attrs || {}).forEach((k) => el.setAttribute(k, attrs[k]));
+  return el;
+}
+
+// the eye shape, reused to keep the iris inside the eyelids
+function ensureEyeClip() {
+  if (document.getElementById('ovEyeClip')) return;
+  const holder = svgEl('svg', { width: '0', height: '0', 'aria-hidden': 'true' });
+  holder.style.position = 'absolute';
+  const clip = svgEl('clipPath', { id: 'ovEyeClip' });
+  clip.appendChild(svgEl('path', { d: EYE_SHAPE }));
+  holder.appendChild(svgEl('defs')).appendChild(clip);
+  document.body.appendChild(holder);
+}
+
+function buildEye() {
+  const svg = svgEl('svg', { viewBox: '0 0 60 34' });
+  svg.appendChild(svgEl('path', { d: EYE_SHAPE, class: 'ov-eye__white' }));
+  const clipped = svgEl('g', { 'clip-path': 'url(#ovEyeClip)' });
+  const pupil = svgEl('g', { class: 'ov-eye__pupil' });
+  pupil.appendChild(svgEl('circle', { cx: '30', cy: '17', r: '10', class: 'ov-eye__iris' }));
+  pupil.appendChild(svgEl('ellipse', { cx: '30', cy: '17', rx: '2.4', ry: '9', class: 'ov-eye__slit' }));
+  clipped.appendChild(pupil);
+  svg.appendChild(clipped);
+  svg.appendChild(svgEl('path', { d: EYE_SHAPE, class: 'ov-eye__lid' }));
+  return svg;
+}
+
+function setRuneGlyph(svg) {
+  const d = RUNES[Math.floor(Math.random() * RUNES.length)];
+  svg.querySelectorAll('path').forEach((p) => p.setAttribute('d', d));
+}
+
+function buildRune() {
+  const svg = svgEl('svg', { viewBox: '0 0 26 40' });
+  svg.appendChild(svgEl('path', { class: 'ov-rune__glow' }));
+  svg.appendChild(svgEl('path', { class: 'ov-rune__line' }));
+  setRuneGlyph(svg);
+  return svg;
+}
+
+function placeDecor(item, kind, zoneName) {
+  const zone = DECOR_ZONES[zoneName];
+  const big = zoneName === 'window';
+  const width = kind === 'eye' ? (big ? rand(52, 104) : rand(34, 58)) : (big ? rand(26, 52) : rand(18, 30));
+  let cx;
+  let cy;
+  let tries = 0;
+  do {
+    cx = rand(0, zone.w);
+    cy = rand(0, zone.h);
+    tries += 1;
+  } while (zone.avoid && tries < 40 && cx > zone.avoid.x1 && cx < zone.avoid.x2 && cy > zone.avoid.y1 && cy < zone.avoid.y2);
+
+  // eyes are wider than tall, runes taller than wide — centre on the real size
+  const height = kind === 'eye' ? (width * 34) / 60 : (width * 40) / 26;
+  item.style.width = `${width}px`;
+  item.style.left = `${cx - width / 2}px`;
+  item.style.top = `${cy - height / 2}px`;
+  item.style.transform = `rotate(${rand(-14, 14)}deg)`;
+  if (kind === 'rune') setRuneGlyph(item.firstChild);
+}
+
+function buildDecorItem(kind, zoneName) {
+  const item = makeEl('span', `ov-decor__item ov-decor__item--${kind}`);
+  const svg = kind === 'eye' ? buildEye() : buildRune();
+  const dur = kind === 'eye' ? rand(9, 15) : rand(5, 9);
+  svg.style.animationDuration = `${dur}s`;
+  svg.style.animationDelay = `${-rand(0, dur)}s`; // start mid-cycle so the scene isn't empty at first
+  if (kind === 'eye') svg.querySelector('.ov-eye__pupil').style.animationDuration = `${rand(4, 8)}s`;
+  item.appendChild(svg);
+  placeDecor(item, kind, zoneName);
+  // every time it has faded out, jump somewhere new
+  item.addEventListener('animationiteration', (e) => {
+    if (e.animationName === 'ov-eye' || e.animationName === 'ov-rune') placeDecor(item, kind, zoneName);
+  });
+  return item;
+}
+
 async function initOverlay() {
   const root = document.getElementById('ovRoot');
   const state = loadState();
@@ -92,8 +220,31 @@ async function initOverlay() {
   const sceneBox = document.getElementById('ovScenes');
   const sceneLabel = document.getElementById('ovSceneLabel');
 
+  // (re)build the background decoration for the current scene
+  function renderDecor() {
+    const hosts = {
+      window: document.querySelector('.ov-window'),
+      header: document.querySelector('.ov-header'),
+      roster: document.getElementById('ovRoster'),
+    };
+    const cfg = DECOR_SCENES[state.scene];
+    Object.keys(hosts).forEach((zoneName) => {
+      const host = hosts[zoneName];
+      let layer = host.querySelector(':scope > .ov-decor');
+      if (!layer) {
+        layer = makeEl('div', 'ov-decor');
+        host.insertBefore(layer, host.firstChild);
+      }
+      layer.innerHTML = '';
+      if (!cfg) return;
+      if (cfg.kind === 'eye') ensureEyeClip();
+      for (let i = 0; i < cfg[zoneName]; i++) layer.appendChild(buildDecorItem(cfg.kind, zoneName));
+    });
+  }
+
   function renderScenes() {
     root.dataset.scene = state.scene;
+    renderDecor();
     const current = SCENES.find((s) => s.id === state.scene);
     sceneLabel.textContent = current ? current.tag : '';
     sceneBox.querySelectorAll('.ov-scene-btn').forEach((btn) => {
