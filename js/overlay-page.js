@@ -32,7 +32,7 @@ function makeEl(tag, className, text) {
 
 // ---- saved state -------------------------------------------------------------------------
 function defaultState() {
-  return { scene: 'normal', location: '', goal: '', showEmpty: true, slots: Array(OVERLAY_SLOT_COUNT).fill(null) };
+  return { scene: 'normal', location: '', goal: '', showEmpty: true, diceCorner: 'bl', diceAutoHide: true, slots: Array(OVERLAY_SLOT_COUNT).fill(null) };
 }
 
 function loadState() {
@@ -44,6 +44,8 @@ function loadState() {
       state.location = String(saved.location || '');
       state.goal = String(saved.goal || '');
       state.showEmpty = saved.showEmpty !== false;
+      if (DICE_CORNERS.some((c) => c.id === saved.diceCorner)) state.diceCorner = saved.diceCorner;
+      state.diceAutoHide = saved.diceAutoHide !== false;
       if (Array.isArray(saved.slots)) {
         state.slots = Array.from({ length: OVERLAY_SLOT_COUNT }, (_, i) => saved.slots[i] || null);
       }
@@ -192,6 +194,56 @@ function buildDecorItem(kind, zoneName) {
     if (e.animationName === 'ov-eye' || e.animationName === 'ov-rune') placeDecor(item, kind, zoneName);
   });
   return item;
+}
+
+// ---- dice ---------------------------------------------------------------------------------------
+// The DM rolls for NPCs: a d20 with an optional modifier and advantage /
+// disadvantage, shown as a d20 pop-up in one corner of the window.
+const DICE_TUMBLE_MS = 900;    // how long the die spins before it lands
+const DICE_VISIBLE_MS = 9000;  // how long the result stays up (when auto-hide is on)
+const DICE_CORNERS = [
+  { id: 'bl', label: 'Bottom left' },
+  { id: 'br', label: 'Bottom right' },
+  { id: 'tr', label: 'Top right' },
+  { id: 'tl', label: 'Top left' },
+];
+
+// A fair 1-20: random bytes from the browser, re-drawn if they'd bias the result.
+function rollD20() {
+  if (!window.crypto || !crypto.getRandomValues) return 1 + Math.floor(Math.random() * 20);
+  const buf = new Uint32Array(1);
+  const limit = Math.floor(0x100000000 / 20) * 20;
+  do {
+    crypto.getRandomValues(buf);
+  } while (buf[0] >= limit);
+  return (buf[0] % 20) + 1;
+}
+
+// Works out one roll from the raw dice. mode: 'normal' | 'adv' | 'dis'.
+// With advantage the higher die counts, with disadvantage the lower one
+// (a tie keeps the first). A natural 20/1 is judged on the die that counts.
+function resolveRoll(mode, rolls, modifier) {
+  const dice = mode === 'normal' ? [rolls[0]] : [rolls[0], rolls[1]];
+  let keptIndex = 0;
+  if (mode === 'adv' && dice[1] > dice[0]) keptIndex = 1;
+  if (mode === 'dis' && dice[1] < dice[0]) keptIndex = 1;
+  const kept = dice[keptIndex];
+  return { mode, dice, keptIndex, kept, modifier, total: kept + modifier, nat20: kept === 20, nat1: kept === 1 };
+}
+
+// a d20 seen face-on: hexagon outline, a triangle in the middle, facet lines
+function buildDie() {
+  const die = makeEl('div', 'ov-die');
+  const svg = svgEl('svg', { viewBox: '0 0 100 100' });
+  svg.appendChild(svgEl('path', { d: 'M50 4L90 27V73L50 96L10 73V27Z', class: 'ov-die__body' }));
+  svg.appendChild(svgEl('path', { d: 'M50 23L73.4 63.5H26.6Z', class: 'ov-die__face' }));
+  svg.appendChild(svgEl('path', {
+    d: 'M50 23V4M50 23L90 27M50 23L10 27M73.4 63.5L90 73M73.4 63.5L50 96M73.4 63.5L90 27M26.6 63.5L10 73M26.6 63.5L50 96M26.6 63.5L10 27',
+    class: 'ov-die__edges',
+  }));
+  die.appendChild(svg);
+  die.appendChild(makeEl('span', 'ov-die__num'));
+  return die;
 }
 
 async function initOverlay() {
@@ -408,11 +460,145 @@ async function initOverlay() {
     picker.appendChild(cancel);
   }
 
+  // ---- dice roller ---------------------------------------------------------------------------------
+  const rollBox = document.getElementById('ovRoll');
+  const rollLabel = document.getElementById('ovRollLabel');
+  const rollDice = document.getElementById('ovRollDice');
+  const rollResult = document.getElementById('ovRollResult');
+  const rollFormula = document.getElementById('ovRollFormula');
+  const rollTotal = document.getElementById('ovRollTotal');
+  const rollFlag = document.getElementById('ovRollFlag');
+  const diceLabelIn = document.getElementById('ovDiceLabel');
+  const diceModIn = document.getElementById('ovDiceMod');
+  const cornerBtn = document.getElementById('ovCornerBtn');
+  const autoHideBtn = document.getElementById('ovAutoHideBtn');
+  let diceMode = 'normal';
+  let rollTimers = [];
+  let rollSpinner = null;
+
+  const later = (fn, ms) => rollTimers.push(setTimeout(fn, ms));
+  function stopRollTimers() {
+    rollTimers.forEach(clearTimeout);
+    rollTimers = [];
+    if (rollSpinner) clearInterval(rollSpinner);
+    rollSpinner = null;
+  }
+
+  function renderDiceControls() {
+    DICE_CORNERS.forEach((c) => rollBox.classList.toggle(`ov-roll--${c.id}`, c.id === state.diceCorner));
+    const corner = DICE_CORNERS.find((c) => c.id === state.diceCorner);
+    cornerBtn.textContent = `Pop-up: ${corner.label.toLowerCase()}`;
+    autoHideBtn.textContent = `Auto-hide: ${state.diceAutoHide ? 'on' : 'off'}`;
+    document.querySelectorAll('#ovModes .ov-mode').forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset.mode === diceMode);
+    });
+  }
+
+  function hideRoll() {
+    stopRollTimers();
+    rollBox.classList.remove('is-visible');
+  }
+
+  function readModifier() {
+    const value = Math.max(-30, Math.min(30, parseInt(diceModIn.value, 10) || 0));
+    diceModIn.value = String(value);
+    return value;
+  }
+
+  function landRoll(result, dieEls) {
+    result.dice.forEach((value, i) => {
+      const die = dieEls[i];
+      die.classList.remove('is-rolling');
+      void die.offsetWidth; // restart the animation so the landing bounce plays
+      die.classList.add('is-landed');
+      die.querySelector('.ov-die__num').textContent = String(value);
+      const counts = i === result.keptIndex;
+      if (counts && result.nat20) die.classList.add('ov-die--nat20');
+      if (counts && result.nat1) die.classList.add('ov-die--nat1');
+      // with (dis)advantage, dim the die that doesn't count a moment after landing
+      if (result.mode !== 'normal' && !counts) later(() => die.classList.add('is-dropped'), 350);
+    });
+
+    const sign = result.modifier < 0 ? '\u2212' : '+';
+    let formula = 'd20';
+    if (result.modifier !== 0) formula += ` ${sign} ${Math.abs(result.modifier)}`;
+    if (result.mode === 'adv') formula += ' \u00b7 Advantage';
+    if (result.mode === 'dis') formula += ' \u00b7 Disadvantage';
+    rollFormula.textContent = formula;
+    rollTotal.textContent = String(result.total);
+    rollFlag.textContent = result.nat20 ? 'Natural 20!' : result.nat1 ? 'Natural 1' : '';
+    rollBox.classList.toggle('ov-roll--nat20', result.nat20);
+    rollBox.classList.toggle('ov-roll--nat1', result.nat1);
+    rollResult.classList.add('is-shown');
+
+    if (state.diceAutoHide) later(hideRoll, DICE_VISIBLE_MS);
+  }
+
+  function doRoll() {
+    stopRollTimers();
+    const modifier = readModifier();
+    const result = resolveRoll(diceMode, [rollD20(), rollD20()], modifier);
+    const label = diceLabelIn.value.trim();
+
+    // reset the pop-up, then show the dice tumbling
+    rollBox.classList.remove('ov-roll--nat20', 'ov-roll--nat1');
+    rollResult.classList.remove('is-shown');
+    rollFormula.textContent = '';
+    rollTotal.textContent = '';
+    rollFlag.textContent = '';
+    rollLabel.textContent = label;
+    rollLabel.hidden = label === '';
+    rollDice.innerHTML = '';
+    const dieEls = result.dice.map(() => {
+      const die = buildDie();
+      die.classList.add('is-rolling');
+      rollDice.appendChild(die);
+      return die;
+    });
+    rollBox.classList.add('is-visible');
+
+    // while it tumbles, flicker through random faces
+    rollSpinner = setInterval(() => {
+      dieEls.forEach((die) => { die.querySelector('.ov-die__num').textContent = String(1 + Math.floor(Math.random() * 20)); });
+    }, 60);
+    later(() => {
+      clearInterval(rollSpinner);
+      rollSpinner = null;
+      landRoll(result, dieEls);
+    }, DICE_TUMBLE_MS);
+  }
+
+  document.getElementById('ovRollBtn').addEventListener('click', doRoll);
+  document.getElementById('ovHideRollBtn').addEventListener('click', hideRoll);
+  document.getElementById('ovModMinus').addEventListener('click', () => { diceModIn.value = String(readModifier() - 1); readModifier(); });
+  document.getElementById('ovModPlus').addEventListener('click', () => { diceModIn.value = String(readModifier() + 1); readModifier(); });
+  [diceLabelIn, diceModIn].forEach((input) => {
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') doRoll(); });
+  });
+  document.querySelectorAll('#ovModes .ov-mode').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      diceMode = btn.dataset.mode;
+      renderDiceControls();
+    });
+  });
+  cornerBtn.addEventListener('click', () => {
+    const i = DICE_CORNERS.findIndex((c) => c.id === state.diceCorner);
+    state.diceCorner = DICE_CORNERS[(i + 1) % DICE_CORNERS.length].id;
+    save();
+    renderDiceControls();
+  });
+  autoHideBtn.addEventListener('click', () => {
+    state.diceAutoHide = !state.diceAutoHide;
+    save();
+    renderDiceControls();
+  });
+
   // ---- first paint: scene + header straight away, roster once the data is in ------------------------
   renderScenes();
   renderHeader();
   renderRoster();
   renderPicker();
+  renderDiceControls();
 
   const [campaigns, people, loadedPalette] = await Promise.all([
     loadCards('data/campaigns.json'),

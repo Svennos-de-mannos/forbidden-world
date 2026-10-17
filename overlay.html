@@ -42,6 +42,20 @@
     <div class="ov-slots" id="ovSlots"></div>
   </aside>
 
+  <!-- dice result pop-up (shows in a corner of the transparent window) -->
+  <div class="ov-roll ov-roll--bl" id="ovRoll" aria-hidden="true">
+    <div class="ov-roll__label" id="ovRollLabel" hidden></div>
+    <div class="ov-roll__body">
+      <div class="ov-roll__dice" id="ovRollDice"></div>
+      <div class="ov-roll__result" id="ovRollResult">
+        <div class="ov-roll__formula" id="ovRollFormula"></div>
+        <div class="ov-roll__total-label">Total</div>
+        <div class="ov-roll__total" id="ovRollTotal"></div>
+        <div class="ov-roll__flag" id="ovRollFlag"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== control strip (below the visible area, cropped off in OBS) ===== -->
   <section class="ov-controls">
     <div class="ov-controls__row">
@@ -57,6 +71,25 @@
       <input type="text" class="ov-input ov-input--goal" id="ovInGoal" placeholder="Session goal" autocomplete="off">
       <button type="button" class="ov-btn" id="ovSetHeader">Set</button>
       <button type="button" class="ov-btn" id="ovClearHeader">Clear</button>
+    </div>
+
+    <div class="ov-controls__row">
+      <label class="ov-controls__label" for="ovDiceLabel">Roll</label>
+      <input type="text" class="ov-input ov-input--dice-label" id="ovDiceLabel" placeholder="Label, e.g. Robbert: Insight" autocomplete="off">
+      <div class="ov-stepper">
+        <button type="button" class="ov-btn ov-stepper__btn" id="ovModMinus" aria-label="Lower modifier">&minus;</button>
+        <input type="number" class="ov-input ov-stepper__input" id="ovDiceMod" value="0" min="-30" max="30" aria-label="Modifier">
+        <button type="button" class="ov-btn ov-stepper__btn" id="ovModPlus" aria-label="Raise modifier">+</button>
+      </div>
+      <div class="ov-modes" id="ovModes">
+        <button type="button" class="ov-btn ov-mode is-active" data-mode="normal">Normal</button>
+        <button type="button" class="ov-btn ov-mode" data-mode="adv">Advantage</button>
+        <button type="button" class="ov-btn ov-mode" data-mode="dis">Disadvantage</button>
+      </div>
+      <button type="button" class="ov-btn ov-btn--roll" id="ovRollBtn">Roll d20</button>
+      <button type="button" class="ov-btn ov-btn--right" id="ovCornerBtn"></button>
+      <button type="button" class="ov-btn" id="ovAutoHideBtn"></button>
+      <button type="button" class="ov-btn" id="ovHideRollBtn">Hide</button>
     </div>
 
     <div class="ov-picker" id="ovPicker"></div>

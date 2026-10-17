@@ -1585,8 +1585,8 @@ details[open] > .location-row__summary::after {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 16px 24px;
+  gap: 8px;
+  padding: 10px 24px;
   background: #0a0a09;
   border-top: 4px solid var(--ov-accent);
   color: #efe6d8;
@@ -1595,7 +1595,7 @@ details[open] > .location-row__summary::after {
 .ov-controls__row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .ov-controls__label {
@@ -1614,7 +1614,7 @@ details[open] > .location-row__summary::after {
 .ov-btn,
 .ov-chip {
   font: inherit;
-  font-size: 16px;
+  font-size: 15px;
   color: #efe6d8;
   background: #1a1917;
   border: 1px solid #2c2a26;
@@ -1625,7 +1625,7 @@ details[open] > .location-row__summary::after {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 18px;
+  padding: 8px 16px;
 }
 
 .ov-scene-btn__swatch {
@@ -1640,7 +1640,7 @@ details[open] > .location-row__summary::after {
 }
 
 .ov-btn {
-  padding: 11px 18px;
+  padding: 8px 16px;
   border-color: #a89f90;
 }
 
@@ -1650,9 +1650,9 @@ details[open] > .location-row__summary::after {
 
 .ov-input {
   box-sizing: border-box;
-  padding: 11px 14px;
+  padding: 8px 12px;
   font: inherit;
-  font-size: 16px;
+  font-size: 15px;
   color: #efe6d8;
   background: #1a1917;
   border: 1px solid #2c2a26;
@@ -1668,10 +1668,11 @@ details[open] > .location-row__summary::after {
 
 .ov-picker {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
   align-items: center;
   gap: 10px;
-  min-height: 48px;
+  min-height: 38px;
 }
 
 .ov-picker__hint {
@@ -1680,7 +1681,8 @@ details[open] > .location-row__summary::after {
 }
 
 .ov-chip {
-  padding: 10px 16px;
+  flex-shrink: 0;
+  padding: 8px 14px;
   font-size: 15px;
   border-left: 5px solid var(--char, #4a463f);
 }
@@ -1831,5 +1833,288 @@ details[open] > .location-row__summary::after {
   100% {
     opacity: 0;
     transform: scale(1.08);
+  }
+}
+.ov-input--dice-label {
+  width: 330px;
+}
+
+.ov-stepper {
+  display: flex;
+  align-items: center;
+}
+
+.ov-stepper__btn {
+  padding: 8px 14px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.ov-stepper__input {
+  width: 70px;
+  padding: 8px 6px;
+  text-align: center;
+  border-left: 0;
+  border-right: 0;
+}
+
+.ov-modes {
+  display: flex;
+}
+
+.ov-mode.is-active {
+  border-color: var(--ov-accent);
+  box-shadow: inset 0 -3px 0 var(--ov-accent);
+}
+
+.ov-btn--roll {
+  border-color: var(--ov-accent);
+  font-weight: 700;
+}
+
+.ov-roll {
+  position: absolute;
+  z-index: 6;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 24px 18px;
+  background-color: var(--ov-panel);
+  border: var(--ov-border-w) solid var(--ov-border);
+  box-shadow: 0 0 34px var(--ov-glow);
+  color: var(--ov-text);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px) scale(0.94);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ov-roll.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ov-roll--bl {
+  left: 52px;
+  bottom: 272px;
+}
+
+.ov-roll--br {
+  right: 408px;
+  bottom: 272px;
+}
+
+.ov-roll--tl {
+  left: 52px;
+  top: 160px;
+}
+
+.ov-roll--tr {
+  right: 408px;
+  top: 160px;
+}
+
+.ov-roll--nat20 {
+  border-color: #ffd34d;
+  box-shadow: 0 0 44px rgba(255, 211, 77, 0.55);
+}
+
+.ov-roll--nat1 {
+  border-color: #ff4b4b;
+  box-shadow: 0 0 44px rgba(255, 75, 75, 0.5);
+}
+
+.ov-roll__label {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ov-accent);
+}
+
+.ov-roll__body {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.ov-roll__dice {
+  display: flex;
+  gap: 14px;
+}
+
+.ov-roll__result {
+  min-width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.ov-roll__result.is-shown {
+  opacity: 1;
+  transform: none;
+}
+
+.ov-roll__formula {
+  font-size: 16px;
+  white-space: nowrap;
+  color: var(--ov-dim);
+}
+
+.ov-roll__total-label {
+  margin-top: 6px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ov-accent);
+}
+
+.ov-roll__total {
+  font-size: 84px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ov-text);
+}
+
+.ov-roll__flag {
+  min-height: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.ov-roll--nat20 .ov-roll__flag {
+  color: #ffd34d;
+}
+
+.ov-roll--nat1 .ov-roll__flag {
+  color: #ff6b6b;
+}
+
+.ov-die {
+  position: relative;
+  width: 168px;
+  height: 168px;
+  flex-shrink: 0;
+}
+
+.ov-die svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 12px var(--ov-glow));
+}
+
+.ov-die__body {
+  fill: var(--ov-panel);
+  stroke: var(--ov-accent);
+  stroke-width: 2.6;
+  stroke-linejoin: miter;
+}
+
+.ov-die__face {
+  fill: rgba(255, 255, 255, 0.07);
+  stroke: var(--ov-accent);
+  stroke-width: 1.4;
+  stroke-linejoin: miter;
+}
+
+.ov-die__edges {
+  fill: none;
+  stroke: var(--ov-accent);
+  stroke-width: 1.2;
+  opacity: 0.55;
+}
+
+.ov-die__num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ov-text);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.ov-die.is-rolling {
+  animation: ov-die-roll 0.9s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.ov-die.is-landed {
+  animation: ov-die-land 0.35s ease-out;
+}
+
+.ov-die.is-dropped {
+  opacity: 0.32;
+  filter: grayscale(1);
+}
+
+.ov-die.is-dropped .ov-die__num {
+  text-decoration: line-through;
+}
+
+.ov-die--nat20 .ov-die__body {
+  fill: rgba(64, 48, 6, 0.94);
+}
+
+.ov-die--nat1 .ov-die__body {
+  fill: rgba(60, 8, 8, 0.94);
+}
+
+.ov-die--nat20 .ov-die__body,
+.ov-die--nat20 .ov-die__face,
+.ov-die--nat20 .ov-die__edges {
+  stroke: #ffd34d;
+}
+
+.ov-die--nat1 .ov-die__body,
+.ov-die--nat1 .ov-die__face,
+.ov-die--nat1 .ov-die__edges {
+  stroke: #ff4b4b;
+}
+
+.ov-die--nat20 .ov-die__num {
+  color: #ffe38a;
+}
+
+.ov-die--nat1 .ov-die__num {
+  color: #ff9a9a;
+}
+
+@keyframes ov-die-roll {
+  0% {
+    opacity: 0;
+    transform: translateY(-46px) rotate(0deg) scale(0.5);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(720deg) scale(1);
+  }
+}
+@keyframes ov-die-land {
+  0% {
+    transform: scale(1.18);
+  }
+  60% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
   }
 }/*# sourceMappingURL=main.css.map */
