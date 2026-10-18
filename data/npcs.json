@@ -367,11 +367,11 @@
     "race": "Changeling",
     "class": "wizard",
     "age": "",
-    "aliveStatus": "alive",
+    "aliveStatus": "dead",
     "residence": "Eagle's Hope",
     "color": "#FF646D",
     "image": "assets/images/characters/ninos.jpg",
-    "text": "Rumours say that he can change into a lot of persona's but nobody really knows what his true face is like its an enigma"
+    "text": "Rumours say that he can change into a lot of persona's but nobody really knows what his true face is like its an enigma\n\nDead during operation judgement"
   },
   {
     "id": "player-alice",
@@ -418,11 +418,11 @@
     "race": "Tiefling",
     "class": "Cleric",
     "age": "",
-    "aliveStatus": "alive",
+    "aliveStatus": "dead",
     "residence": "Eagle's Hope",
     "color": "#EADCEA",
     "image": "assets/images/characters/thalia-veil.png",
-    "text": "She is a doctor who became a tad bit disturbed after she lost a patient to something from beyond this realm."
+    "text": "She is a doctor who became a tad bit disturbed after she lost a patient to something from beyond this realm.\n\nDead during operation judgement"
   },
   {
     "id": "npc-general-tzayad",
@@ -503,7 +503,7 @@
     "race": "Mushroom-kin",
     "class": "commoner",
     "age": "16",
-    "aliveStatus": "alive",
+    "aliveStatus": "dead",
     "residence": "Crescent Hills",
     "color": "#4A6B53",
     "image": "assets/images/characters/dave.jpg",

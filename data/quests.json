@@ -113,7 +113,7 @@
     "type": "quest",
     "campaign": ["crescenthills"],
     "title": "Kill Dave the Mushroom",
-    "status": "ongoing",
+    "status": "completed",
     "color": "#B60B02",
     "description": "Eliminate the thief Dave at his industrial workplace.",
     "text": "Following the robbery of Adalin's home, the party accepted a 53 gold piece bounty from private investigator Medio Gato to hunt down Dave the mushroom. The plan is to ambush and execute him at his job in the industrial district."
@@ -133,10 +133,10 @@
     "type": "mystery",
     "campaign": ["crescenthills"],
     "title": "What property did the Laughingmen buy?",
-    "status": "ongoing",
+    "status": "solved",
     "color": "#EFCB68",
     "description": "Uncover the newest secret purchase made by Laughingmen Entertainment.",
-    "text": "Medio Gato has offered a 50 gold piece per person reward to figure out exactly what new sector of real estate or land the Laughingmen company has acquired, deeming the massive transactional secrecy highly suspicious."
+    "text": "Medio Gato has offered a 50 gold piece per person reward to figure out exactly what new sector of real estate or land the Laughingmen company has acquired, deeming the massive transactional secrecy highly suspicious.\n\nThe Laugingmen Company has aquired the following property: Crescent Keep"
   },
   {
     "id": "mystery-man-fedora",
