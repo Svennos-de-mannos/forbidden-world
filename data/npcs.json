@@ -576,5 +576,23 @@
     "color": "#7B1FA2",
     "image": "assets/images/characters/colin.jpg",
     "text": "Colin is an enigmatic changeling 'adult' entertainer and spiritualist who reinforced the Black Cloak investigation squad during their second deep delve into the castle. Colin survived the catastrophic chemical gas trap and the ensuing combat encounter against the Mister Sun automaton within the Copper Halls restaurant."
-  }
+  },
+  {
+  "id": "npc-elixis-holion",
+  "kind": "npc",
+  "campaign": [
+    "crescenthills",
+    "openeyes"
+  ],
+  "name": "Elixis Holion",
+  "role": "Guild Lawyer / Legal Advisor",
+  "race": "Tiefling",
+  "class": "",
+  "age": "",
+  "aliveStatus": "alive",
+  "residence": "Eagle's Hope County",
+  "color": "#6A1B9A",
+  "image": "assets/images/characters/elixis-holion.jpg",
+  "text": "Elixis is a sharp, highly accomplished tiefling lawyer operating across the entire Eagle's Hope County area. She is widely renowned for her specialized legal work handling the complex, often chaotic liabilities of high-profile adventuring parties and prestigious knightly guilds, counting both the Order of the Black Cloak and the Order of the Blue Rose among her elite clientele. She recently intervened to cleanly resolve the Crescent Hills crew's outstanding town guard warrants following a house-breaking incident."
+}
 ]
