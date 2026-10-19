@@ -220,6 +220,43 @@
     "tag": "World Event",
     "color": "#d9a927",
     "date": ""
+  },
+  {
+    "order": 21,
+    "type": "event",
+    "title": "The Adventurers Take Action",
+    "text": "With the city of Eagle's Hope being closed off for exploration and documentation, and with winter incoming, the Order of the Black Cloak has made it known that they will most likely terminate the contracts of outside operators permanently, if no solution to the current safety hazard can be found.\n\nTo make matters worse, Doctor Jane Ursa has made it known that the Sandwalker effect, the same effect that is freezing the city in time, is spreading. A few meters each month, and seemingly increasing in speed. With a few calculations done, it might only be a matter of months before the entire region is frozen in time.\n\nAll of this has been going on in the later days of November 1089, and you have not been sitting idly by waiting for instructions. You have been sending messages to various benefactors and nobles, asking for their aid in negotiation of your contract. Additionally you have been sending messages from your encampment to the Academy in Red Tail seeking out knowledge. Both of these ventures are going well!\n\nFrom the most unlikely sources, help can be found. In this case, from the ocean kingdom of Tritos, ruled by the Triton Kingdom. Prince Erythros Triton, son of king Caspian, is willing to meet you and see what the possibilities are for creating an independent organisation that works with the Order. This would give you freedom to plan your own excursions, but still enjoy the resources of the order. You can meet him in Peregrine to get this moving faster.\n\nMeanwhile from Red Tail, a message has been received by its Collector of History, Lady Rayna ( Daughter of RayRay the Zoooligist ). She claims she has found concrete information about what the castle under Eagle’s Hope is, and why and how it was buried. She is eager to share this information if you were to meet her in the Graveseal Academy in Red Tail.",
+    "tag": "World Event",
+    "color": "#d9a927",
+    "date": ""
+  },
+
+  {
+    "order": 0.5,
+    "type": "event",
+    "title": "Start of the Hemmeth Conquest",
+    "text": "The grand campaign to unite the divided territories under a single banner begins. This historic expansion marks the initial rise of the Hemmeth dynasty as they aggressively conquer neighboring houses and regions.",
+    "tag": "World Event",
+    "color": "#ff7300",
+    "date": "682"
+  },
+  {
+    "order": 9.2,
+    "type": "event",
+    "title": "The Kraken Rebellion",
+    "text": "The aquatic factions and citizens of the deep launch a massive, coordinated rebellion against the brutal reign of the tyrant Kraken King in the shallow sea.",
+    "tag": "World Event",
+    "color": "#97fcfc",
+    "date": "985"
+  },
+  {
+    "order": 9.5,
+    "type": "event",
+    "title": "Founding of Tritos",
+    "text": "Following a successful campaign of peaceful persuasion after the fall of the Kraken King, House Triton successfully claims the sunken throne, officially establishing the independent oceanic kingdom of Tritos at the bottom of the shallow sea.",
+    "tag": "World Event",
+    "color": "#97fcfc",
+    "date": "998"
   }
 ]
 

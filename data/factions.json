@@ -63,6 +63,30 @@
     "image": "",
     "color": "#12695F",
     "text": "The main defense and law force within the city, widely known as corrupt, cruel, and greedy. Enforcers rely on fear and intimidation over the common folk, while higher-up detectives and the charismatic Watchmaster Robbert Blackwood focus on securing cuts from illegal spice and herb shipments."
+  },
+  {
+    "id": "house-algaros",
+    "campaign": ["openeyes", "crescenthills"],
+    "title": "House Algaros",
+    "image": "",
+    "color": "#D90429",
+    "text": "The ruling house of the Algaros kingdom, with Alexander von Algar at its head. Their colors are red, gold, and black, and their sigil is the Manta Ray. Due to Alexander's incredibly long lifespan, their family is exceptionally large, with its main prominent members being the king's son Henry, his grandson Damian, and his great-grandchildren Desmond, Vivianne, and Maximoto."
+  },
+  {
+    "id": "house-hemmeth",
+    "campaign": ["openeyes"],
+    "title": "House Hemmeth",
+    "image": "",
+    "color": "#483C32",
+    "text": "The Hemmeth kings were the first to unite the kingdom under one ruler, a conquest that started in the year 682 and finally ended its expansion conquests with the tragic death of Zohar Hemmeth I during the mysterious events of Castlefall in 889. When Zohar's son, Zohar II, later died in the fire of Crescent Keep, it marked the permanent end of their house and bloodline, shattering their great kingdom into pieces that are now slowly being glued back together by House Algaros. Their sigil is the owl eating the world serpent, and their colors are taupe, gold, and cyan."
+  },
+  {
+    "id": "house-triton",
+    "campaign": ["openeyes"],
+    "title": "House Triton",
+    "image": "",
+    "color": "#188B7D",
+    "text": "The ruling house of the underwater kingdom of Tritos. The Triton family claimed their place upon the sunken throne not by blood and steel, but by persuasion following the historic grand rebellion against the tyrant Kraken King. The house is currently ruled by King Caspian. Their sigil is the whale shark, and their colors are white, blue, and silver."
   }
 ]
 

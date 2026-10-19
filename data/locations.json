@@ -286,5 +286,21 @@
     "parent": "copper-halls",
     "color": "#060D17",
     "text": "A massive, cavernous dining establishment hidden deep within the Copper Halls, originally managed by Head Forgemaster Roghar. The architectural marvel features a central, twenty-foot-high fire pit suspending a massive, functional record player that constantly broadcasts jazz music, alongside a hidden stone staircase that winds further down into the castle depths."
+  },
+    {
+    "id": "manta-bay",
+    "campaign": "openeyes",
+    "title": "Manta Bay",
+    "parent": "self",
+    "color": "#483C32",
+    "text": "The sprawling, coastal capital of the kingdom, located within the Coastlands County. Serving as a massive geopolitical hub and a center for higher surface education, this prosperous port city links the land-dwelling realms to the vast oceanic territories, anchoring regional trade and maritime authority."
+  },
+  {
+    "id": "graveseal-academy",
+    "campaign": "openeyes",
+    "title": "Graveseal Academy",
+    "parent": "red-tail",
+    "color": "#90031B",
+    "text": "The largest scholar building in Red Tail, originally founded by the legendary Graveseal Association patriarch, Skarn Graveseal. The architectural marvel consists of three massive stone towers interconnected by a network of high-altitude tunnel bridges on various levels, with each tower strictly dedicated to one of three foundational principles: Nature, Civilization, and Magic."
   }
 ]
