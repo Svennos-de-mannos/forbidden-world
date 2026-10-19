@@ -14,7 +14,7 @@
     "title": "Construction of Castle Hemmeth Begins",
     "text": "The visionary architect Norex Volcron begins the massive architectural undertaking of building the castle of King Hemmeth I.",
     "tag": "World Event",
-    "color": "#97fcfc",
+    "color": "#d9a927",
     "date": "877"
   },
   {
@@ -23,7 +23,7 @@
     "title": "Construction of Castle Hemmeth Finished",
     "text": "Norex Volcron completes the construction of Castle Hemmeth, plunging the country into massive debt to the Volcron family.",
     "tag": "World Event",
-    "color": "#97fcfc",
+    "color": "#d9a927",
     "date": "888"
   },
   {
@@ -69,7 +69,7 @@
     "title": "Creation of the Anchor Corporation",
     "text": "The Anchor Corporation is founded, quickly establishing a shipping powerhouse and seizing control of the Harbour District.",
     "tag": "World Event",
-    "color": "#97fcfc",
+    "color": "#082f85",
     "date": ""
   },
   {
@@ -246,7 +246,7 @@
     "title": "The Kraken Rebellion",
     "text": "The aquatic factions and citizens of the deep launch a massive, coordinated rebellion against the brutal reign of the tyrant Kraken King in the shallow sea.",
     "tag": "World Event",
-    "color": "#97fcfc",
+    "color": "#082f85",
     "date": "985"
   },
   {
@@ -255,7 +255,7 @@
     "title": "Founding of Tritos",
     "text": "Following a successful campaign of peaceful persuasion after the fall of the Kraken King, House Triton successfully claims the sunken throne, officially establishing the independent oceanic kingdom of Tritos at the bottom of the shallow sea.",
     "tag": "World Event",
-    "color": "#97fcfc",
+    "color": "#082f85",
     "date": "998"
   }
 ]
