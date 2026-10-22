@@ -685,5 +685,22 @@
   "color": "#ff7300",
   "image": "",
   "text": "King Alexander became king by taking his family's fortune, buying loyalty, and making pacts with other noble houses, eventually conquering all divided houses and kingdoms back into a single realm. When he waged war, he was always at the front of the lines, getting burned and stabbed, but nothing could kill him. After years of ruling without aging, defying all human expectations, the people began calling him the Immortal King. He has ruled over the kingdom since 932."
+},
+{
+  "id": "player-julia-heliotrop",
+  "kind": "player",
+  "campaign": [
+    "openeyes"
+  ],
+  "name": "Julia Heliotrop",
+  "role": "Informant",
+  "race": "Exochon",
+  "class": "Sorcerer",
+  "age": "",
+  "aliveStatus": "alive",
+  "residence": "Eagle's Hope County",
+  "color": "#8b0000",
+  "image": "assets/images/characters/julia-heliotrop.jpg",
+  "text": ""
 }
 ]
