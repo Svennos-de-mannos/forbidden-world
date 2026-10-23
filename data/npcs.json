@@ -701,6 +701,24 @@
   "residence": "Eagle's Hope County",
   "color": "#8b0000",
   "image": "assets/images/characters/julia-heliotrop.jpg",
-  "text": ""
+  "text": "Julia Heliotrop works as a sharp, secretive informant and the newly appointed Guildkeeper of the Wonderless Timing Guild. She has recently partnered with Alice and Bippo in Peregrine to help guide their independent operations."
+},
+{
+  "id": "npc-jack-lemon",
+  "kind": "npc",
+  "campaign": [
+    "openeyes",
+    "crescenthills"
+  ],
+  "name": "Jack Lemon",
+  "role": "High-Clearance Intelligence Archivist",
+  "race": "Human",
+  "class": "Inquisitor / Rogue Scribe",
+  "age": "",
+  "aliveStatus": "alive",
+  "residence": "Unknown / Mobilized Office",
+  "color": "#f0f2f5",
+  "image": "assets/images/characters/jack-lemon.jpg",
+  "text": "Jack Lemon is the mysterious, high-ranking operative responsible for compiling the heavily classified tactical field intelligence reports regarding the Sandwalker anomaly and the political unrest of Crescent Hills. Operating closely with high nobility and military commands, Lemon monitors anomalous readings, tracks suspicious player entities, and brokers back-alley data deals—such as his recent transaction to purchase Alice's raw mission logs from Peregrine. While his ultimate allegiances remain entirely obscured, his investigative reach spans the entirety of Eagle's Hope County."
 }
 ]

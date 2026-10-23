@@ -87,6 +87,14 @@
     "image": "",
     "color": "#188B7D",
     "text": "The ruling house of the underwater kingdom of Tritos. The Triton family claimed their place upon the sunken throne not by blood and steel, but by persuasion following the historic grand rebellion against the tyrant Kraken King. The house is currently ruled by King Caspian. Their sigil is the whale shark, and their colors are white, blue, and silver."
-  }
+  },
+{
+  "id": "the-exochons",
+  "campaign": ["openeyes"],
+  "title": "The Exochons",
+  "image": "",
+  "color": "#76677F",
+  "text": "An ancient, enigmatic bloodline whose ancestors were brutally smote and cursed around the Year 100 after seeking to harness forbidden, cosmic chaos powers. Because the original Exochons passed a devastating hereditary curse down to their descendants, all mothers of this race perish in childbirth; no new members can enter the world unless born as rare twins. With every passing generation and subsequent death permanently lowering their global population by one, the remaining descendants exist as a fading, highly secretive diaspora of wanderers, intensely tracking cosmic anomalies like Eagle's Hope to decipher the entity powers that sealed their bloodline's doom."
+}
 ]
 

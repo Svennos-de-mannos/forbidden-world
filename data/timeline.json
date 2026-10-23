@@ -257,6 +257,34 @@
     "tag": "World Event",
     "color": "#082f85",
     "date": "998"
+  },
+    {
+    "order": 0.1,
+    "type": "event",
+    "title": "The Fall of Argo Navis",
+    "text": "The golden space city of Argo Navis, floating on the edge of the world's atmosphere, catastrophically collapses and plummets from the sky, leaving behind shattered celestial ruins and bringing a tragic end to the advanced era of the Astrolux Star People.",
+    "tag": "World Event",
+    "color": "#082f85",
+    "date": "0"
+  },
+  {
+    "order": 0.2,
+    "type": "event",
+    "title": "The Exochon Doom",
+    "text": "A swift and devastating doom comes for the Exochon race after they seek out to harness forbidden, cosmic chaos powers. As punishment for their hubris, the entire race is placed under a permanent curse where all mothers die in childbirth; because no new Exochons can join this world unless born as rare twins, every subsequent death permanently lowers their global population by one.",
+    "tag": "World Event",
+    "color": "#082f85",
+    "date": "approx. 100"
+  },
+  {
+    "order": 22,
+    "type": "session",
+    "sessionId": "session-openeyes-03",
+    "title": "The Hermit: Part 1 (Session 3)",
+    "text": "Bippo the Hippo and Alice the reporter went out to the city of peregrine to meet up with tthe younger prince of Tritos, Erythros. before the meeting with the prince however, the 2 had a chance encounter with one of the last remaining exochon's, Julia Heliotrop. Due to charms and oppertunities, the exochon decided to become the guide of the 2 adventurers in the city.\n\nWhen they ended up in a magic shop, they innitially wanted to purchase healing potions, but ended uup walking away with something way more valuable insead: a starcore originating from the ruins of Argo Navis.\n\nbippo had a vision when in the presence of the star, likely a memory of some sort, and thus he was th one who kept the star.\n\nNow various sources tell me that after the whole ordeal, bippo brought the star home and had another clearer vision, about the lost empire of Jolera and one of the more dangerous individuals currently roaming the world, Youri Emerald.\n\nafter leaving the shop, they found the prince in the Apollo hotel, where terms and conditons for funding a new adventuring guild were laid out. In the end, the following happened: The Wonderless Timing Guild was astablished by Erythros as guildmaster, and Julia H. as guildkeeper. The guild grounds would be located as well outside of Eagle's Hope, and would feature 5 buildings to start:\n\nThe Wonderless Guild hotel, where guild members can freely claim an apperment that they can decorate during their stay. It is a large brass and sandstone hotel featuring a giant clocktower\n\nnext is the guildhall, where the offices of julia and Erythros  are located, aswell as the mess hall, and locker rooms for adventuring. the archives are there aswell.\n\nFollowing that is Alice's Forge, where equipment can be crafted and mended with the resources found in the castle.\n\nThe research center is where the labs and and liberary are located, as well as julia's second office\n\nlastly there is the all you can eat restraunt, run by Bippo the hippo, called Hungry Hippo's, with a large hippo face at the front.\n\nIn order to secure the documents and reports that we could sp freely demand from the black cloaks, i made a deal with our friend alice, where i buy her mission reports and send them to you.\n\ni think these new situations could be very ppositive for us. it might help us gather more information and influence on a more undercover level. it is concerning however, that that hippo has a star core. Depending on what he does with it, we might need to exterminate his life. . .",
+    "tag": "Session Log",
+    "color": "#d9a927",
+    "date": ""
   }
 ]
 

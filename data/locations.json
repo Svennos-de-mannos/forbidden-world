@@ -302,5 +302,61 @@
     "parent": "red-tail",
     "color": "#90031B",
     "text": "The largest scholar building in Red Tail, originally founded by the legendary Graveseal Association patriarch, Skarn Graveseal. The architectural marvel consists of three massive stone towers interconnected by a network of high-altitude tunnel bridges on various levels, with each tower strictly dedicated to one of three foundational principles: Nature, Civilization, and Magic."
+  },
+  {
+    "id": "wonderless-guildgrounds",
+    "campaign": "openeyes",
+    "title": "Wonderless Timing Guildgrounds",
+    "parent": "eagles-hope",
+    "color": "#122238",
+    "text": "Established well outside the strict containment lines of the Black Cloak Order, these guildgrounds serve as an independent and autonomous staging base for contracted adventurers. Chartered by Prince Erythros Triton and managed by Julia Heliotrop, the compound represents a sovereign operational front designed to bypass the official expedition lockdowns."
+  },
+  {
+    "id": "wonderless-guild-hotel",
+    "campaign": "openeyes",
+    "title": "The Wonderless Guild Hotel",
+    "parent": "wonderless-guildgrounds",
+    "color": "#0A1424",
+    "text": "A massive, imposing hotel structure crafted from fine brass and sandstone, dominated by a monumental central clocktower. Guild members are granted private apartments within its walls, which they are free to claim, secure, and personalizing during their deployment in the county."
+  },
+  {
+    "id": "wonderless-guildhall",
+    "campaign": "openeyes",
+    "title": "The Guildhall",
+    "parent": "wonderless-guildgrounds",
+    "color": "#0A1424",
+    "text": "The operational and executive heart of the compound. This facility houses the primary administrative offices of Guildmaster Erythros and Guildkeeper Julia, alongside a shared mess hall, tactical locker rooms for expedition preparation, and the guild's secure historical lore archives."
+  },
+  {
+    "id": "alices-forge",
+    "campaign": "openeyes",
+    "title": "Alice's Forge",
+    "parent": "wonderless-guildgrounds",
+    "color": "#0A1424",
+    "text": "A specialized manufacturing and arcanotech forge operated by the reporter Alice. The facility is fully equipped to mend broken gear and craft custom, specialized magical items utilizing raw anomalous resources and treasures hauled out from the underground castle layers."
+  },
+  {
+    "id": "wonderless-research-center",
+    "campaign": "openeyes",
+    "title": "The Research Center",
+    "parent": "wonderless-guildgrounds",
+    "color": "#0A1424",
+    "text": "A high-security intellectual cluster containing advanced alchemical and arcane laboratory suites, a private reference library, and a secondary research office reserved exclusively for Julia Heliotrop to translate ancient data and examine cosmic artifacts."
+  },
+  {
+    "id": "hungry-hippos",
+    "campaign": "openeyes",
+    "title": "Hungry Hippo's",
+    "parent": "wonderless-guildgrounds",
+    "color": "#0A1424",
+    "text": "A massive, high-capacity all-you-can-eat restaurant operated directly by Bippo the Hippo. The bustling culinary establishment serves as the social heart of the grounds, instantly recognizable by the giant, stylized hippopotamus face sculpting that frames the entire front entrance facade."
+  },
+  {
+    "id": "apollo-hotel",
+    "campaign": "openeyes",
+    "title": "The Apollo Hotel",
+    "parent": "peregrine",
+    "color": "#255A8A",
+    "text": "A prominent and luxurious establishment located within the windy city of Peregrine. The hotel served as the historic meeting site where Prince Erythros Triton formally met with the adventurers Alice and Bippo to iron out the binding terms, funding structures, and legal parameters needed to charter their new independent faction."
   }
 ]

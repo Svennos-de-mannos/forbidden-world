@@ -167,5 +167,55 @@
     "color": "#76677F",
     "description": "Determine if the ancient monarch survived the historical Castlefall event.",
     "text": "History states that King Zohar Hemmeth I died 200 years ago in 889 when his fortress was swallowed by the earth. However, recent corporate coordination inside the ruins, ongoing automated maintenance, and the precise mechanical execution of Roghar strongly imply that a form of Master of the Castle is still actively commanding forces from the dark."
+  },
+  {
+    "id": "quest-secure-starcore-knowledge",
+    "type": "quest",
+    "campaign": ["openeyes"],
+    "title": "Decipher the Argo Navis Starcore",
+    "status": "ongoing",
+    "color": "#FBB037",
+    "description": "Utilize the new Research Center to analyze the cosmic artifact currently held by Bippo.",
+    "text": "Instead of retrieving standard healing potions, the party walked out of a Peregrine magic shop with a highly volatile Starcore originating from the ancient, fallen space city of Argo Navis. The party must keep this cosmic engine out of hostile hands while safely channeling its power to unlock hidden historical parameters regarding the deep architecture of the world."
+  },
+  {
+    "id": "quest-consult-lady-rayna",
+    "type": "quest",
+    "campaign": ["openeyes"],
+    "title": "Meet the Collector of History",
+    "status": "ongoing",
+    "color": "#4F8A4C",
+    "description": "Travel to the Graveseal Academy in Red Tail to meet Lady Rayna Ray.",
+    "text": "Lady Rayna, the Academy's Collector of History, has dispatched an urgent message claiming she has uncovered concrete, verified archival data detailing exactly what the subterranean castle under Eagle's Hope is, as well as why and how it was buried 200 years ago. She is eager to hand over her findings if the party meets her inside the multi-towered academy complex."
+  },
+  {
+    "id": "mystery-youri-emerald",
+    "type": "mystery",
+    "campaign": ["openeyes"],
+    "title": "Who is Youri Emerald, and what is his goal?",
+    "status": "ongoing",
+    "color": "#76677F",
+    "description": "Investigate the dangerous rogue figure seen in Bippo's secondary psychic vision.",
+    "text": "When Bippo brought the Starcore to his quarters, he was struck by a secondary, highly lucid vision revealing the active movements of Youri Emerald. Cataloged by internal intelligence as one of the most volatile and dangerous uncontained individuals currently walking the material plane, his direct interest in cosmic anomalies or ancient relic domains remains completely unmapped."
+  },
+  {
+    "id": "mystery-lost-empire-jolera",
+    "type": "mystery",
+    "campaign": ["openeyes"],
+    "title": "What was the Lost Empire of Jolera?",
+    "status": "ongoing",
+    "color": "#EFCB68",
+    "description": "Uncover the history of the ancient empire unearthed by the Starcore's psychic feedback.",
+    "text": "Bippo's contact with the artifact from Argo Navis opened a psychic corridor into a long-forgotten, ancient era: the lost empire of Jolera. How this historical empire correlates to the ancient Astrolux Star People, the sudden fall of Argo Navis in Year 0, or the subsequent creation of King Hemmeth's subterranean fortress remains a vital piece of the global puzzle."
+  },
+  {
+    "id": "mystery-exochon-forbidden-powers",
+    "type": "mystery",
+    "campaign": ["openeyes"],
+    "title": "What forbidden entity powers did the Exochon seek?",
+    "status": "ongoing",
+    "color": "#9C0D38",
+    "description": "Examine the catastrophic curse that brought about the Exochon Extermination.",
+    "text": "Historical records from Year 100 reveal that the Exochon race was brutally smote and cursed to perish in childbirth after attempting to harness forbidden, cosmic entity powers. With Julia Heliotrop joining the party as Guildkeeper to study the links between Eagle's Hope and her people's lost history, the party must discover which specific ancient entity or patron executed this genocidal curse."
   }
 ]
