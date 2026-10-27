@@ -358,5 +358,13 @@
     "parent": "peregrine",
     "color": "#255A8A",
     "text": "A prominent and luxurious establishment located within the windy city of Peregrine. The hotel served as the historic meeting site where Prince Erythros Triton formally met with the adventurers Alice and Bippo to iron out the binding terms, funding structures, and legal parameters needed to charter their new independent faction."
+  },
+    {
+    "id": "secret-academy-library",
+    "campaign": "openeyes",
+    "title": "The Secret Library",
+    "parent": "graveseal-academy",
+    "color": "#90031B",
+    "text": "A heavily cloaked scriptorium situated completely beyond the Academy's known underground archival floors. Discovered by Lady Rayna Ray while tracing her missing father's logs, this ancient vault preserved the forbidden vellum map of the continental castle grid and the cryptic prophetic text 'LUX INFERNO'."
   }
 ]

@@ -316,11 +316,11 @@
     "race": "Human",
     "class": "Paladin",
     "age": "",
-    "aliveStatus": "alive",
+    "aliveStatus": "brain-dead",
     "residence": "Eagle's Hope",
     "color": "#4A2306",
     "image": "assets/images/characters/maxeridius.png",
-    "text": "Max is the cousin of Sigismund, and together with him works for the Order of the Black Cloak."
+    "text": "Maxeridius is a Black Cloak Enforcer whose operational status was tragically compromised during the events at Red Tail. Blackmailed by Nox Volcron into spying on his companion Alice, Maxeridius turned on his crew during a confrontation with the unsealed Mothman. Before his betrayal could manifest completely, he was neutralized by Harley Seer, who utterly drained his intellectual essence down to a comatose stat value of 1. He remains alive, but entirely brain-dead."
   },
   {
     "id": "player-bippo",
