@@ -720,5 +720,22 @@
   "color": "#f0f2f5",
   "image": "assets/images/characters/jack-lemon.jpg",
   "text": "Jack Lemon is the mysterious, high-ranking operative responsible for compiling the heavily classified tactical field intelligence reports regarding the Sandwalker anomaly and the political unrest of Crescent Hills. Operating closely with high nobility and military commands, Lemon monitors anomalous readings, tracks suspicious player entities, and brokers back-alley data deals—such as his recent transaction to purchase Alice's raw mission logs from Peregrine. While his ultimate allegiances remain entirely obscured, his investigative reach spans the entirety of Eagle's Hope County."
+},
+{
+  "id": "npc-harley-seer-mothman",
+  "kind": "npc",
+  "campaign": [
+    "openeyes"
+  ],
+  "name": "Harley Seer",
+  "role": "Headmaster of Graveseal Academy / The Mothman",
+  "race": "MOTHMAN",
+  "class": "none",
+  "age": "223",
+  "aliveStatus": "alive",
+  "residence": "travelling",
+  "color": "#7B1FA2",
+  "image": "assets/images/characters/harley-seer.jpg",
+  "text": "Harley Seer originally served as a human test subject during the construction of Castle Hemmeth, cast directly into a dimensional rift to face 'The Allseeyer'. He returned as a towering, chitinous Mothman entity and was locked away beneath the academy by Skarn Graveseal and Norex Volcron to power the school's intellectual brilliance. Over 120 years, the vast knowledge uncovered by scholars secretly supercharged his seals, allowing him to project a perfect human illusion of himself to rule as the Academy's Headmaster. In December 1089, he successfully manipulated the expedition crew into dropping the final lore reveals needed to shatter his cage, fully manifesting to feast upon the intelligence of Maxeridius."
 }
 ]
