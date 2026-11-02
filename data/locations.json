@@ -369,7 +369,7 @@
   },
    {
     "id": "elkmane-town",
-    "campaign": "openeyes",
+    "campaign": "oneshots",
     "title": "Elkmane",
     "parent": "self",
     "color": "#064025",
@@ -377,7 +377,7 @@
   },
   {
     "id": "the-stairs-tavern",
-    "campaign": "openeyes",
+    "campaign": "oneshots",
     "title": "The Stairs Tavern",
     "parent": "elkmane-town",
     "color": "#062100",
