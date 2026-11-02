@@ -295,6 +295,16 @@
     "tag": "Session Log",
     "color": "#d9a927",
     "date": "December"
+  },
+    {
+    "order": 14.5,
+    "type": "session",
+    "sessionId": "oneshot-01",
+    "title": "Night of the Living Dead (One-Shot)",
+    "text": "The party, consisting of Finley the time thief, Snebbu the devious, Alfred Ivory, brandon sailor en Merle Dixon, are part of the Z-team, a group of royal monster hunters of a rotating roster.\n\nTheir mission, kill Frits von Armagnac the undead baron and his necromancer Alvricht von Clozen. They had turned the town of Elkmane to an undead army.\n\nthe z team arrived at dusk, making their way into a tavern called \"The Stairs\" where they meet some survivors. They fortified the Tavern before the undead came.\n\nFirst came Jill the undead jester with a horde of zombies and skeletons, then came Borrus the skullbeserker, then Krimm the beastrider, and lastly Alvricht and Fritz.\n\nIn the battle, cards were drawn out of the deck of many things, and alot happened, but in the end brandon and Finley died, before alfred layed down the last hit on Alvricht, killing the necromancer. Fritz was banished into a bottle of wine. \n\nSnebbu the wizard necromancer revived both Finley and brendon as undead.\n\nBoth Snebbu and alfred decided to stay in the Stairs tavern, building it up as their tavern for the repopulation of Elkmane.",
+    "tag": "One-Shot Log",
+    "color": "#8a4fd9",
+    "date": "1088"
   }
 ]
 

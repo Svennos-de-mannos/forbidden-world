@@ -366,5 +366,21 @@
     "parent": "graveseal-academy",
     "color": "#90031B",
     "text": "A heavily cloaked scriptorium situated completely beyond the Academy's known underground archival floors. Discovered by Lady Rayna Ray while tracing her missing father's logs, this ancient vault preserved the forbidden vellum map of the continental castle grid and the cryptic prophetic text 'LUX INFERNO'."
+  },
+   {
+    "id": "elkmane-town",
+    "campaign": "openeyes",
+    "title": "Elkmane",
+    "parent": "self",
+    "color": "#064025",
+    "text": "A frontier town located far to the north, situated near the Orca Sea that separates the Kingdom of Algaros from the Frozen Continent. After being completely overrun by an undead army in 1088, the settlement has undergone a gradual rebuilding process. Today, it serves as a remote refuge primarily populated by hardy northerners and an increasing diaspora of Exochon wanderers who choose to settle down here, intentionally keeping their distance from the harsh northern ice and the heavily urbanized southern territories of Algaros."
+  },
+  {
+    "id": "the-stairs-tavern",
+    "campaign": "openeyes",
+    "title": "The Stairs Tavern",
+    "parent": "elkmane-town",
+    "color": "#062100",
+    "text": "The bustling social and economic hub of Elkmane, constantly packed with frontier traders, rugged travelers, and mercenaries seeking quests and purpose in the northern borderlands. Following the sudden departure of its previous living owner, Alfred, in October 1089, the establishment is now entirely operated and staffed by the reanimated undead servants left behind by Alfred and Snebbu, with the skeleton of the fallen hunter Brandon Sailor serving as the tavern's permanent innkeeper."
   }
 ]
