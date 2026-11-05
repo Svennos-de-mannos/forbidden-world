@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Map — The Forbidden World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="map">
+
+<div class="page">
+
+  <div data-include="header"></div>
+
+  <main>
+    <section class="people">
+      <h1 class="page-title">Map</h1>
+
+      <div class="map-wrap">
+        <canvas class="map-canvas" id="mapCanvas"></canvas>
+        <div class="map-ctl">
+          <button type="button" class="map-ctl__btn" id="mapZoomIn" aria-label="Zoom in">+</button>
+          <button type="button" class="map-ctl__btn" id="mapZoomOut" aria-label="Zoom out">&minus;</button>
+          <button type="button" class="map-ctl__btn map-ctl__btn--small" id="mapFit" aria-label="Show everything">Fit</button>
+        </div>
+      </div>
+
+      <div class="map-legend" id="mapLegend"></div>
+      <div id="mapInfo"></div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+</div>
+
+<script src="js/nav-links.js"></script>
+<script src="js/include.js"></script>
+<script src="js/card-loader.js"></script>
+<script src="js/colors.js"></script>
+<script src="js/hexmap.js"></script>
+<script src="js/map-page.js"></script>
+</body>
+</html>

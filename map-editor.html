@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map editor — The Forbidden World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body class="ed-body">
+
+<header class="ed-top">
+  <h1 class="ed-top__title">Map editor</h1>
+
+  <div class="ed-group" id="edTools">
+    <button type="button" class="ed-btn is-active" data-tool="place">Locations</button>
+    <button type="button" class="ed-btn" data-tool="region">Regions</button>
+  </div>
+
+  <div class="ed-group" id="edRegionTools" hidden>
+    <button type="button" class="ed-btn" id="edDragMode"></button>
+    <button type="button" class="ed-btn" id="edBrush"></button>
+  </div>
+
+  <div class="ed-group">
+    <button type="button" class="ed-btn" id="edCoords"></button>
+    <button type="button" class="ed-btn" id="edFit">Fit</button>
+    <button type="button" class="ed-btn" id="edZoomOut" aria-label="Zoom out">&minus;</button>
+    <button type="button" class="ed-btn" id="edZoomIn" aria-label="Zoom in">+</button>
+  </div>
+
+  <span class="ed-top__status" id="edStatus"></span>
+  <a class="ed-link" href="map.html">View map</a>
+</header>
+
+<div class="ed-main">
+  <div class="ed-canvas-wrap">
+    <canvas class="ed-canvas" id="edCanvas"></canvas>
+    <div class="ed-hud" id="edHud"></div>
+  </div>
+  <aside class="ed-panel" id="edPanel"></aside>
+</div>
+
+<script src="js/card-loader.js"></script>
+<script src="js/colors.js"></script>
+<script src="js/hexmap.js"></script>
+<script src="js/map-editor.js"></script>
+</body>
+</html>
