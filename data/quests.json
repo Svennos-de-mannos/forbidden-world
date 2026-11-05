@@ -183,7 +183,7 @@
     "type": "quest",
     "campaign": ["openeyes"],
     "title": "Meet the Collector of History",
-    "status": "ongoing",
+    "status": "completed",
     "color": "#4F8A4C",
     "description": "Travel to the Graveseal Academy in Red Tail to meet Lady Rayna Ray.",
     "text": "Lady Rayna, the Academy's Collector of History, has dispatched an urgent message claiming she has uncovered concrete, verified archival data detailing exactly what the subterranean castle under Eagle's Hope is, as well as why and how it was buried 200 years ago. She is eager to hand over her findings if the party meets her inside the multi-towered academy complex."
@@ -217,5 +217,15 @@
     "color": "#9C0D38",
     "description": "Examine the catastrophic curse that brought about the Exochon Extermination.",
     "text": "Historical records from Year 100 reveal that the Exochon race was brutally smote and cursed to perish in childbirth after attempting to harness forbidden, cosmic entity powers. With Julia Heliotrop joining the party as Guildkeeper to study the links between Eagle's Hope and her people's lost history, the party must discover which specific ancient entity or patron executed this genocidal curse."
+  },
+    {
+    "id": "mystery-lux-inferno",
+    "type": "mystery",
+    "campaign": ["openeyes"],
+    "title": "The Prophecy of LUX INFERNO",
+    "status": "ongoing",
+    "color": "#D90429",
+    "description": "Examine the apocalyptic text uncovered in the Academy's secret library.",
+    "text": "Discovered within the hidden depths of the Graveseal Academy, the ancient biblical text titled 'LUX INFERNO' outlines a catastrophic prophecy dedicated to a primordial fire entity known as The Scorched Lord. The manuscript decrees that the world must be entirely consumed by holy flame to grant it permanent 'shelter' from the impending, absolute arrival of a Frozen Doom."
   }
 ]
