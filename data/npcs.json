@@ -737,5 +737,22 @@
   "color": "#7B1FA2",
   "image": "assets/images/characters/harley-seer.jpg",
   "text": "Harley Seer originally served as a human test subject during the construction of Castle Hemmeth, cast directly into a dimensional rift to face 'The Allseeyer'. He returned as a towering, chitinous Mothman entity and was locked away beneath the academy by Skarn Graveseal and Norex Volcron to power the school's intellectual brilliance. Over 120 years, the vast knowledge uncovered by scholars secretly supercharged his seals, allowing him to project a perfect human illusion of himself to rule as the Academy's Headmaster. In December 1089, he successfully manipulated the expedition crew into dropping the final lore reveals needed to shatter his cage, fully manifesting to feast upon the intelligence of Maxeridius."
+},
+{
+  "id": "player-merle-dixon",
+  "kind": "player",
+  "campaign": [
+    "openeyes"
+  ],
+  "name": "Merle Dixon",
+  "role": "Frontier Ranger",
+  "race": "Undead",
+  "class": "Ranger",
+  "age": "",
+  "aliveStatus": "undead",
+  "residence": "",
+  "color": "#4A6B53",
+  "image": "assets/images/characters/merle-dixon.jpg",
+  "text": ""
 }
 ]
