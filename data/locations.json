@@ -387,7 +387,7 @@
     "id": "cittamare",
     "campaign": "openeyes",
     "title": "Cittamare",
-    "parent": "coastlands-county",
+    "parent": "self",
     "color": "#188B7D",
     "text": "A breathtaking coastal city in the Coastlands County, entirely enclosed beneath a colossal, shimmering glass dome. The city's interior is lushly decorated with vibrant tropical flora and crisscrossed by clear water canals, maintaining a warm, humid greenhouse climate year-round. In the far south of the city, resting right beside a towering volcano, stands the imposing Obsidian Keep."
   },
