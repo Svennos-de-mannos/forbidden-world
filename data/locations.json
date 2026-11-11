@@ -382,5 +382,77 @@
     "parent": "elkmane-town",
     "color": "#062100",
     "text": "The bustling social and economic hub of Elkmane, constantly packed with frontier traders, rugged travelers, and mercenaries seeking quests and purpose in the northern borderlands. Following the sudden departure of its previous living owner, Alfred, in October 1089, the establishment is now entirely operated and staffed by the reanimated undead servants left behind by Alfred and Snebbu, with the skeleton of the fallen hunter Brandon Sailor serving as the tavern's permanent innkeeper."
+  },
+    {
+    "id": "cittamare",
+    "campaign": "openeyes",
+    "title": "Cittamare",
+    "parent": "coastlands-county",
+    "color": "#188B7D",
+    "text": "A breathtaking coastal city in the Coastlands County, entirely enclosed beneath a colossal, shimmering glass dome. The city's interior is lushly decorated with vibrant tropical flora and crisscrossed by clear water canals, maintaining a warm, humid greenhouse climate year-round. In the far south of the city, resting right beside a towering volcano, stands the imposing Obsidian Keep."
+  },
+  {
+    "id": "obsidian-keep",
+    "campaign": "openeyes",
+    "title": "The Obsidian Keep",
+    "parent": "cittamare",
+    "color": "#1A181D",
+    "text": "The primary headquarters and central bastion of the Order of the Black Cloak, situated in the far southern reaches of Cittamare right alongside the city's volcano. Forged from sharp black obsidian glass and intricate dark stained glass, the fortress reflects the fiery volcanic glow while overseeing the Order's empire-wide operations."
+  },
+  {
+    "id": "tzayads-glass-house",
+    "campaign": "openeyes",
+    "title": "General Tzayad's Glass House",
+    "parent": "cittamare",
+    "color": "#4A7FB5",
+    "text": "A secluded, transparent glass residence tucked away on the quiet outskirts of Cittamare. Serving as the private estate of Black Cloak commander General Tzayad, the property harbors a staggering spatial anomaly: a concealed rope ladder hidden inside the floorboards that descends directly into the VIP pirate-ship lounge of G. Hunter Station beneath Eagle's Hope."
+  },
+    {
+    "id": "crown-basalt",
+    "campaign": "openeyes",
+    "title": "Crown Basalt",
+    "parent": "self",
+    "color": "#6bbB7D",
+    "text": "A towering, imposing volcano situated along the southern edge of the Coastlands County, looming directly beside the domed coastal city of Cittamare. Its dark, jagged volcanic rock and persistent geothermal heat dominate the surrounding landscape, standing as a monumental natural backdrop to the Black Cloak Order's Obsidian Keep."
+  },
+  {
+    "id": "g-hunter-station",
+    "campaign": "openeyes",
+    "title": "G. Hunter Station",
+    "parent": "the-castle",
+    "color": "#D9A927",
+    "text": "An opulent, gilded wing of the subterranean castle complex accessed via the automated white trains. Built entirely from gleaming gold and polished marble, this grand sector functions as an elaborate entertainment and combat hub centered around a massive gladiator arena."
+  },
+  {
+    "id": "g-hunter-colosseum",
+    "campaign": "openeyes",
+    "title": "The Gilded Colosseum",
+    "parent": "g-hunter-station",
+    "color": "#B8860B",
+    "text": "A monumental subterranean gladiator stadium flanked by faceless golden mannequin statues. Managed by automated ticket-selling constructs, the arena hosts lethal three-versus-three deathmatches where losing combatants face immediate execution."
+  },
+  {
+    "id": "golden-pub",
+    "campaign": "openeyes",
+    "title": "The Golden Pub",
+    "parent": "g-hunter-station",
+    "color": "#9E7B2F",
+    "text": "A cluttered, neglected tavern stationed within the gold-and-marble terminal, littered with empty bottles and tended by an automaton perpetually polishing a single glass. Behind a false portrait on the wall lies a concealed passage leading directly to the VIP lounge."
+  },
+  {
+    "id": "g-hunter-vip-lounge",
+    "campaign": "openeyes",
+    "title": "The Pirate Ship VIP Lounge",
+    "parent": "g-hunter-station",
+    "color": "#7A5230",
+    "text": "An extravagant viewing balcony constructed in the shape of a full-sized ship overlooking the Colosseum floor. Beyond the observation deck sits a hidden captain's office housing three life-support tubes filled with gold-infused bodies—George Hunter, Nikos Gladius, and Bratt Cemby—alongside a secret rope ladder ascending into Cittamare."
+  },
+  {
+    "id": "g-hunter-dungeon",
+    "campaign": "openeyes",
+    "title": "The Gladiator Dungeon",
+    "parent": "g-hunter-station",
+    "color": "#4A3B32",
+    "text": "A grim subterranean detention block beneath the arena used to hold special combat guests and prisoners. Lining the stone walls are standard-issue Black Cloak weapons used for centuries of interrogation, and its solitary cell long held the tortured Astrolux knight Regor."
   }
 ]

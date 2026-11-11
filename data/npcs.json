@@ -439,7 +439,7 @@
     "residence": "Eagle's Hope",
     "color": "#010924",
     "image": "assets/images/characters/tzayad.jpg",
-    "text": "Tzayad was sent here shortly after Tower Fall, and is the general commanding officer of the Eagle's Hope Operation. He can not enter the zone himself."
+    "text": "General Tzayad is the supreme commander of the Order of the Black Cloak forces overseeing the containment perimeter around Eagle's Hope. Following the events of Operation Star, intelligence uncovered from the ancient Astrolux prisoner Regor revealed a terrifying truth: Tzayad is merely the latest physical vessel for a centuries-old, body-hopping entity who previously lived and died as Captain George Hunter, Nikos Gladius, and General Bratt Cemby—figures deeply entangled in the betrayal and fall of the Exochon empire. A concealed ladder inside G. Hunter Station leads directly into Tzayad's private glass residence in the coastal city of Cittamare. Immediately following the expedition's return to the surface, Tzayad vanished completely from the Black Cloak encampment."
   },
   {
     "id": "npc-tyler-the-harp",
@@ -754,5 +754,39 @@
   "color": "#4A6B53",
   "image": "assets/images/characters/merle-dixon.jpg",
   "text": ""
-}
+},
+  {
+    "id": "npc-regor",
+    "kind": "npc",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Regor",
+    "role": "First Knight of the Emperor (Former Prisoner)",
+    "race": "Astrolux",
+    "class": "",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Wonderless Timing Guildgrounds",
+    "color": "#FBB037",
+    "image": "assets/images/characters/regor.jpg",
+    "text": "Regor is an ancient Astrolux from the fallen atmospheric sky-city of Argo Navis who once served as the First Knight of the Star Emperor. Centuries ago, he was captured and imprisoned by Captain George Hunter after threatening a woman named Elixis. Enduring hundreds of years of relentless torture inside the dungeons beneath G. Hunter Station, his mind was severely fractured, leaving him paranoid that his captor was constantly returning in new disguises. Persuaded by the Wonderless Timing Guild expedition during Operation Star, Regor collapsed himself into a dormant Starcore to escape the subterranean complex and is now being sheltered and rehabilitated at the guildgrounds."
+  },
+  {
+    "id": "npc-aster-prince",
+    "kind": "npc",
+    "campaign": [
+      "openeyes"
+    ],
+    "name": "Aster Prince",
+    "role": "Royal Cleaner / Special Operative",
+    "race": "Human",
+    "class": "",
+    "age": "",
+    "aliveStatus": "alive",
+    "residence": "Eagle's Hope County",
+    "color": "#ff233f",
+    "image": "assets/images/characters/aster-prince.jpg",
+    "text": "Operating under the cover alias 'Jack Pineberry,' Aster Prince is a lethal, high-clearance royal cleaner dispatched to Eagle's Hope County at the urgent recommendation of Jack Lemon to neutralize the reality-warping threat posed by the anomaly JK. Having previously executed another '4th-wall breaker' who spoke of the forbidden rules of the world, Aster possesses deep institutional knowledge of anomalous threats. Utilizing the Mothman Harley Seer as an extradimensional translator, Aster recently cornered JK and brokered a tense truce—sparing his life on the strict condition that JK cooperates with the Crown's agents and ceases his reality-bleeding outbursts."
+  }
 ]

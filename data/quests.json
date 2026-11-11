@@ -30,7 +30,7 @@
       "openeyes"
     ],
     "title": "Operation Star",
-    "status": "ongoing",
+    "status": "complete",
     "color": "#FFD23F",
     "description": "Explore the Golden Hallways",
     "text": "The white sphinx train will bring you to where the dove familiar of doctor Jane Ursa described a golden hallway filled with statues of what could only be described as heroes. The station was called G. Hunter Station."
@@ -227,5 +227,25 @@
     "color": "#D90429",
     "description": "Examine the apocalyptic text uncovered in the Academy's secret library.",
     "text": "Discovered within the hidden depths of the Graveseal Academy, the ancient biblical text titled 'LUX INFERNO' outlines a catastrophic prophecy dedicated to a primordial fire entity known as The Scorched Lord. The manuscript decrees that the world must be entirely consumed by holy flame to grant it permanent 'shelter' from the impending, absolute arrival of a Frozen Doom."
+  },
+  {
+    "id": "quest-find-evan-glass-body",
+    "type": "quest",
+    "campaign": ["openeyes"],
+    "title": "Locate the Remains of Evan Glass",
+    "status": "ongoing",
+    "color": "#FBB037",
+    "description": "Track down and inspect the body of Evan Glass to verify whether he is truly dead.",
+    "text": "Following theories raised aboard the white train during Operation Star, the party suspects that Evan Glass may not be as dead as he appeared after being sniped on the night the clocktower fell. Because of his deep, unsettling ties to The Allseeyer, Merle Dixon intends to use his tracking abilities to locate Glass's physical remains within the frozen streets of Eagle's Hope and confirm his fate once and for all."
+  },
+  {
+    "id": "quest-defeat-tzayad",
+    "type": "quest",
+    "campaign": ["openeyes"],
+    "title": "Hunt Down and Defeat General Tzayad",
+    "status": "ongoing",
+    "color": "#c42847",
+    "description": "Track the vanished Black Cloak General and put an end to his centuries-long body-hopping.",
+    "text": "Intelligence extracted from the Astrolux knight Regor exposed General Tzayad as the latest vessel for a centuries-old, body-hopping entity who previously lived as Captain George Hunter, Nikos Gladius, and General Bratt Cemby. Now that Tzayad has completely vanished from the Black Cloak encampment outside Eagle's Hope—and with a secret spatial ladder linking G. Hunter Station directly to his private glass house in Cittamare—the party must track him down and permanently end his threat."
   }
 ]
