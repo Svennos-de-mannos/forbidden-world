@@ -247,5 +247,15 @@
     "color": "#c42847",
     "description": "Track the vanished Black Cloak General and put an end to his centuries-long body-hopping.",
     "text": "Intelligence extracted from the Astrolux knight Regor exposed General Tzayad as the latest vessel for a centuries-old, body-hopping entity who previously lived as Captain George Hunter, Nikos Gladius, and General Bratt Cemby. Now that Tzayad has completely vanished from the Black Cloak encampment outside Eagle's Hope—and with a secret spatial ladder linking G. Hunter Station directly to his private glass house in Cittamare—the party must track him down and permanently end his threat."
+  },
+    {
+    "id": "mystery-doomsday-conspiracy",
+    "type": "mystery",
+    "campaign": ["crescenthills", "openeyes"],
+    "title": "Why are the Flesh Church, Police Force, and Dark Family seeking the end of the world?",
+    "status": "ongoing",
+    "color": "#9C0D38",
+    "description": "Uncover the shared apocalyptic motives of Crescent Hills' major power players.",
+    "text": "Before being executed by Bonkus following his failed vermin-portal ritual at the Laughingmen Circus, the faceless Inspector confessed that he was not alone in his apocalyptic ambitions. With his dying breath, he revealed that the Flesh Church, the city's Police Force, and the Dark Family are all actively pursuing the end of the world. Whether these three factions are secretly collaborating toward a single catastrophic event or competing to usher in rival cosmic entities remains a critical unknown."
   }
 ]

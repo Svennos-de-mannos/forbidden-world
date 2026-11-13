@@ -315,6 +315,15 @@
     "tag": "Session Log",
     "color": "#d9a927",
     "date": ""
+  },
+    {
+    "order": 19.15,
+    "type": "event",
+    "title": "The Circus Incident & The Inspector's Ritual",
+    "text": "Following a break-in at the Laughingmen Circus tower in Crescent Hills, the faceless Inspector—revealed to be a corrupted vessel of Rät—attempts to open a vermin-and-rot-fueled portal inside the main tent. After reanimating a plague-ridden skeleton jester and summoning the head of a massive slime beast, the Inspector is neutralized and executed by the Crescent Hills crew. With his dying breath, he reveals that the Flesh Church, the Police Force, and the Dark Family are all actively pursuing the end of the world.",
+    "tag": "World Event",
+    "color": "#c42847",
+    "date": ""
   }
 ]
 
