@@ -95,6 +95,18 @@
   "image": "",
   "color": "#76677F",
   "text": "An ancient, enigmatic bloodline whose ancestors were brutally smote and cursed around the Year 100 after seeking to harness forbidden, cosmic chaos powers. Because the original Exochons passed a devastating hereditary curse down to their descendants, all mothers of this race perish in childbirth; no new members can enter the world unless born as rare twins. With every passing generation and subsequent death permanently lowering their global population by one, the remaining descendants exist as a fading, highly secretive diaspora of wanderers, intensely tracking cosmic anomalies like Eagle's Hope to decipher the entity powers that sealed their bloodline's doom."
+},
+{
+  "id": "kingdom-of-falthromar",
+  "campaign": [
+    "openeyes",
+    "crescenthills"
+  ],
+  "title": "Kingdom of Falthromar (House Zarkos)",
+  "image": "",
+  "color": "#5B8FB9",
+  "text": "A powerful and enigmatic superpower spanning the harsh World Spine continent, ruled by King Kresimir Zarkos of House Zarkos and rooted in the faith of The Dragon Trinity. Stretching from southern savannahs and hurricane fields to the icy World Spine Mountains in the far north, the realm stands as a formidable geopolitical rival to the Algaros Empire. According to legend, its radiant capital at the foot of the mountains was built by the dragon goddess Aurora using bricks of pure light that shimmer beneath the aurora borealis. While outside merchants, scholars, and diplomats are permitted entry so long as they respect its laws, Falthromar maintains a carefully guarded façade to protect its greatest secret: the kingdom is in truth a hidden sanctuary for dragons living undetected among its populace in human form."
 }
+
 ]
 

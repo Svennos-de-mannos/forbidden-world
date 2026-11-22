@@ -212,6 +212,15 @@
     "color": "#d9a927",
     "date": ""
   },
+    {
+    "order": 20.01,
+    "type": "event",
+    "title": "Black Cloak Raid on the Anchor Corporation",
+    "text": "During the events of Open Eyes: Judgement, Black Cloak operative Sigismund leads a tactical raid against an Anchor Corporation ship anchored in Crescent Hills. Fighting his way aboard, Sigismund successfully disrupts and halts a dangerous anomalous ritual taking place on the vessel—a feat visible from afar across the city that earns him an official promotion to the rank of Champion within the Order.",
+    "tag": "World Event",
+    "color": "#ff7300",
+    "date": "December 1089"
+  },
   {
     "order": 20.1,
     "type": "event",
@@ -324,6 +333,16 @@
     "text": "Following a break-in at the Laughingmen Circus tower in Crescent Hills, the faceless Inspector—revealed to be a corrupted vessel of Rät—attempts to open a vermin-and-rot-fueled portal inside the main tent. After reanimating a plague-ridden skeleton jester and summoning the head of a massive slime beast, the Inspector is neutralized and executed by the Crescent Hills crew. With his dying breath, he reveals that the Flesh Church, the Police Force, and the Dark Family are all actively pursuing the end of the world.",
     "tag": "Session Log",
     "color": "#c42847",
+    "date": ""
+  },
+    {
+    "order": 23.1,
+    "type": "session",
+    "sessionId": "oneshot-02",
+    "title": "The Frozen Shipment & The Fall of Peregrine's Tower (One-Shot)",
+    "text": "Guildkeeper Julia Heliotrop, Merle Dixon, Black Cloak operative Sigismund, and adventurer Shandar Bayborn investigate a mysteriously frozen vessel carrying guild supplies and a secret cargo linked to former General Tzayad. Inside the cargo hold, the group discovers three floating crystals and clashes with an armor-thieving dragonborn. Immediately following the battle, Shandar approaches one of the crystals—triggering a catastrophic explosion that obliterates parts of Peregrine and the Tower of Air, covers the city in unending snow, costs Julia her right arm to severe frostbite, and releases Winterbreeze (The Frozen Doom) into Shandar's body as its mortal vessel.",
+    "tag": "One-Shot Log",
+    "color": "#5B8FB9",
     "date": ""
   }
 ]

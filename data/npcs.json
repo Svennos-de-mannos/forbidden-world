@@ -354,7 +354,7 @@
     "residence": "Eagle's Hope",
     "color": "#d3d3d3",
     "image": "assets/images/characters/sigismund.jpg",
-    "text": "Sigismund is the cousin of Max, and one of the crusaders in the Order of the Black Cloak."
+    "text": "Sigismund is a dedicated, honor-bound operative of the Order of the Black Cloak. During the events of Open Eyes: Judgement, he led a decisive Black Cloak raid against an Anchor Corporation vessel docked in Crescent Hills, successfully halting a dangerous anomalous ritual aboard the ship—an achievement that earned him a promotion to the prestigious rank of Champion. He later enlisted the aid of the Wonderless Timing Guild to investigate a frozen shipment outside Peregrine, narrowly surviving the catastrophic crystal detonation that released Winterbreeze."
   },
   {
     "id": "player-ninos",
@@ -788,5 +788,22 @@
     "color": "#ff233f",
     "image": "assets/images/characters/aster-prince.jpg",
     "text": "Operating under the cover alias 'Jack Pineberry,' Aster Prince is a lethal, high-clearance royal cleaner dispatched to Eagle's Hope County at the urgent recommendation of Jack Lemon to neutralize the reality-warping threat posed by the anomaly JK. Having previously executed another '4th-wall breaker' who spoke of the forbidden rules of the world, Aster possesses deep institutional knowledge of anomalous threats. Utilizing the Mothman Harley Seer as an extradimensional translator, Aster recently cornered JK and brokered a tense truce—sparing his life on the strict condition that JK cooperates with the Crown's agents and ceases his reality-bleeding outbursts."
-  }
+  },
+  {
+  "id": "player-shandar-bayborn",
+  "kind": "player",
+  "campaign": [
+    "openeyes"
+  ],
+  "name": "Shandar Bayborn",
+  "role": "Adventurer / Vessel of Winterbreeze",
+  "race": "Elf",
+  "class": "Rogue",
+  "age": "",
+  "aliveStatus": "compromised",
+  "residence": "",
+  "color": "#4A7FB5",
+  "image": "assets/images/characters/shandar-bayborn.jpg",
+  "text": "Shandar Bayborn is an adventurer who joined Julia Heliotrop, Merle Dixon, and Black Cloak operative Sigismund to investigate a mysteriously frozen cargo vessel outside Peregrine. Inside the ship's hold, Shandar approached a sealed, floating crystal tied to former General Tzayad's secret shipment. The crystal detonated with catastrophic force—destroying parts of Peregrine and the Tower of Air, blanketing the city in unending frost, and releasing the primordial entity Winterbreeze (The Frozen Doom), which claimed Shandar's body as its living vessel."
+}
 ]
