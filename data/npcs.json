@@ -805,5 +805,22 @@
   "color": "#4A7FB5",
   "image": "assets/images/characters/shandar-bayborn.jpg",
   "text": "Shandar Bayborn is an adventurer who joined Julia Heliotrop, Merle Dixon, and Black Cloak operative Sigismund to investigate a mysteriously frozen cargo vessel outside Peregrine. Inside the ship's hold, Shandar approached a sealed, floating crystal tied to former General Tzayad's secret shipment. The crystal detonated with catastrophic force—destroying parts of Peregrine and the Tower of Air, blanketing the city in unending frost, and releasing the primordial entity Winterbreeze (The Frozen Doom), which claimed Shandar's body as its living vessel."
+},
+{
+  "id": "player-alistair-ravenshade",
+  "kind": "player",
+  "campaign": [
+    "openeyes"
+  ],
+  "name": "Alistair Ravenshade",
+  "role": "The Last Ravenshade",
+  "race": "Human",
+  "class": "Paladin",
+  "age": "",
+  "aliveStatus": "alive",
+  "residence": "Eagle's Hope County",
+  "color": "#7A1C1C",
+  "image": "assets/images/characters/alistair-ravenshade.jpg",
+  "text": "Alistair Ravenshade descends from an ancient bloodline of renowned vampire hunters. For generations, his family dedicated their lives to protecting humanity from vampires and the monsters that lurk in their shadows. However, as time passed, the Ravenshade name faded into obscurity, leaving Alistair as the last living heir to carry on his family's sworn oath against the darkness."
 }
 ]
