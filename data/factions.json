@@ -106,7 +106,18 @@
   "image": "",
   "color": "#5B8FB9",
   "text": "A powerful and enigmatic superpower spanning the harsh World Spine continent, ruled by King Kresimir Zarkos of House Zarkos and rooted in the faith of The Dragon Trinity. Stretching from southern savannahs and hurricane fields to the icy World Spine Mountains in the far north, the realm stands as a formidable geopolitical rival to the Algaros Empire. According to legend, its radiant capital at the foot of the mountains was built by the dragon goddess Aurora using bricks of pure light that shimmer beneath the aurora borealis. While outside merchants, scholars, and diplomats are permitted entry so long as they respect its laws, Falthromar maintains a carefully guarded façade to protect its greatest secret: the kingdom is in truth a hidden sanctuary for dragons living undetected among its populace in human form."
+},
+{
+  "id": "wonderless-timing-guild",
+  "campaign": [
+    "openeyes"
+  ],
+  "title": "The Wonderless Timing Guild",
+  "image": "",
+  "color": "#D9A927",
+  "text": "An independent adventuring organization chartered in late November 1089 to bypass the Black Cloak lockdown of Eagle's Hope. Funded through a diplomatic pact with Prince Erythros Triton of Tritos—who serves as Guildmaster alongside Guildkeeper Julia Heliotrop—the guild operates out of an autonomous compound just outside the containment zone, housing a clocktower hotel, research labs, Alice's Forge, and Hungry Hippo's."
 }
+
 
 ]
 
